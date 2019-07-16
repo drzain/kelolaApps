@@ -62,6 +62,7 @@
                 app:cardElevation="6dp"
                 app:cardCornerRadius="12dp"
                 android:layout_margin="12dp"
+                android:layout_gravity="fill"
                 >
 
                 <LinearLayout
@@ -100,6 +101,7 @@
                 app:cardElevation="6dp"
                 app:cardCornerRadius="12dp"
                 android:layout_margin="12dp"
+                android:layout_gravity="fill"
                 >
 
                 <LinearLayout

@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/icon_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DashboardActivity"></activity>
-        <activity android:name=".DashboardHospital"></activity>
-        <activity android:name=".HospitalFormRequest"></activity>
-        <activity android:name=".DashboardOperator"></activity>
-        <activity android:name=".DashboardDriver"></activity>
+        <activity android:name=".DashboardUmkm"></activity>
+        <activity android:name=".DashboardActivity" />
+        <activity android:name=".DashboardHospital" />
+        <activity android:name=".HospitalFormRequest" />
+        <activity android:name=".DashboardOperator" />
+        <activity android:name=".DashboardDriver" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

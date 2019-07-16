@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    private LinearLayout btn_hospital,btn_operator, btn_driver;
+    private LinearLayout btn_hospital,btn_operator, btn_driver, btn_umkm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -57,6 +57,14 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
+        btn_umkm = (LinearLayout) findViewById(R.id.umkm);
+        btn_umkm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(DashboardActivity.this, DashboardUmkm.class);
+                startActivity(i);
+            }
+        });
 
 
     }
