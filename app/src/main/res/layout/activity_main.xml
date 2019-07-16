@@ -101,11 +101,11 @@
             android:layout_alignParentBottom="true"
             android:layout_above="@+id/skipTextView"
             android:layout_marginBottom="5dp"
-            android:background="@drawable/button_drawable"
+            android:background="@color/colorPrimary"
             android:text="@string/login"
             android:gravity="center"
             android:textAllCaps="false"
-            android:textColor="@color/colorAccent"
+            android:textColor="#FFFFFF"
             android:textSize="16sp" />
 
         <TextView
