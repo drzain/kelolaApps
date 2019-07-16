@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 
 public class DashboardHospital extends AppCompatActivity
 {
-    private LinearLayout btn_form_request, btn_checkout_request;
+    private LinearLayout btn_order, btn_logout;
     private SessionManager session;
 
     protected void onCreate(Bundle savedInstanceState)
@@ -23,8 +23,8 @@ public class DashboardHospital extends AppCompatActivity
 
     private void action()
     {
-        btn_form_request=(LinearLayout)findViewById(R.id.form_request);
-        btn_form_request.setOnClickListener(new View.OnClickListener()
+        btn_order=(LinearLayout)findViewById(R.id.hospital_order);
+        btn_order.setOnClickListener(new View.OnClickListener()
         {
         @Override
         public void onClick(View v)
@@ -35,8 +35,8 @@ public class DashboardHospital extends AppCompatActivity
         }
         });
 
-        btn_checkout_request=(LinearLayout)findViewById(R.id.checkout_request);
-        btn_checkout_request.setOnClickListener(new View.OnClickListener() {
+        btn_logout=(LinearLayout)findViewById(R.id.hospital_logout);
+        btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {

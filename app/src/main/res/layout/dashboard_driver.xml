@@ -78,7 +78,7 @@
                         android:textSize="18sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Delivery Order"/>
+                        android:text="Delivery \nOrder"/>
 
                 </LinearLayout>
 
@@ -96,6 +96,7 @@
                 >
 
                 <LinearLayout
+                    android:id="@+id/driver_logout"
                     android:orientation="vertical"
                     android:padding="16dp"
                     android:gravity="center"
@@ -103,7 +104,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/bookmark"
+                        android:src="@drawable/cancel"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         />
@@ -115,7 +116,7 @@
                         android:textSize="18sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Form Report"/>
+                        android:text="Logout"/>
 
                 </LinearLayout>
 

@@ -95,6 +95,7 @@
                 >
 
                 <LinearLayout
+                    android:id="@+id/umkm_logout"
                     android:orientation="vertical"
                     android:padding="16dp"
                     android:gravity="center"

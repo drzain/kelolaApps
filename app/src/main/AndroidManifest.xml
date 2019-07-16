@@ -13,13 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".DashboardLandfill"></activity>
-        <activity android:name=".DashboardVendor" />
+
 
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
-
+        <activity android:name=".DashboardLandfill"/>
+        <activity android:name=".DashboardVendor" />
         <activity android:name=".DashboardUmkm" />
         <activity android:name=".DashboardActivity" />
         <activity android:name=".DashboardHospital" />
