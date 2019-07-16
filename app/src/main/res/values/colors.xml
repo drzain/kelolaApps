@@ -11,4 +11,6 @@
     <color name="colotBackgroundOperator">#4d9900</color>
     <color name="colotBackgroundDriver">#ffa31a</color>
     <color name="colotBackgroundUmkm">#00cccc</color>
+    <color name="colotBackgroundVendor">#b30000</color>
+    <color name="colotBackgroundLandfill">#8000ff</color>
 </resources>
