@@ -9,10 +9,15 @@ import android.widget.LinearLayout;
 public class DashboardHospital extends AppCompatActivity
 {
     private LinearLayout btn_form_request, btn_checkout_request;
+    private SessionManager session;
+
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard_hospital);
+
+        session = new SessionManager(getApplicationContext());
+
         action();
     }
 
@@ -35,8 +40,10 @@ public class DashboardHospital extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(DashboardHospital.this, HospitalFormRequest.class);
+                session.setLogin(false);
+                Intent i = new Intent(DashboardHospital.this, MainActivity.class);
                 startActivity(i);
+                finish();
             }
         });
     }
