@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".DashboardActivity"></activity>
+        <activity android:name=".DashboardHospital"></activity>
+        <activity android:name=".HospitalFormRequest"></activity>
+        <activity android:name=".DashboardOperator"></activity>
+        <activity android:name=".DashboardDriver"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

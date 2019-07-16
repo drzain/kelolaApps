@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HospitalFormRequest">
+
+    <RelativeLayout
+        android:id="@+id/rel_form"
+        android:layout_width="fill_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+
+        <TextView
+            android:id="@+id/txt_form_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/colorBackground"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:text="Form Request"
+             />
+
+        <ImageView
+            android:id="@+id/img_loc"
+            android:layout_height="75dp"
+            android:layout_width="75dp"
+            android:background="@drawable/logo"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="25dp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scroll_form"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="50dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/rel_form"
+
+        >
+
+        <RelativeLayout
+            android:id="@+id/rel_detail"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/rel_profile"
+            >
+
+            <TextView
+                android:id="@+id/txt_item1"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:textSize="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:hint="Infusion Set"
+                android:textColor="#0000ff"
+                android:textStyle="normal|bold" />
+
+            <EditText
+                android:id="@+id/edt_item1"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/txt_item1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/colorTextView"
+                android:textColorHint="@color/colorAccent"
+                android:textStyle="normal|italic"
+                android:hint="ex : 1"
+                android:inputType="numberDecimal"
+                />
+            <TextView
+                android:id="@+id/txt_item2"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:textSize="15dp"
+                android:layout_below="@+id/edt_item1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:hint="Syringe 50ml"
+                android:textColor="#0000ff"
+                android:textStyle="normal|bold" />
+
+            <EditText
+                android:id="@+id/edt_item2"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/txt_item2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:inputType="numberDecimal"
+                android:textStyle="normal|italic"
+                android:textColor="@color/colorTextView"
+                android:textColorHint="@color/colorAccent"
+                android:hint="ex : 1"
+                />
+
+            <TextView
+                android:id="@+id/txt_item3"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:textSize="15dp"
+                android:layout_below="@+id/edt_item2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:hint="NaCl Infus 1000 ml"
+
+                android:textColor="#0000ff"
+                android:textStyle="normal|bold" />
+
+
+
+            <EditText
+                android:id="@+id/edt_item3"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/colorTextView"
+                android:textColorHint="@color/colorAccent"
+                android:layout_below="@+id/txt_item3"
+                android:textStyle="normal|italic"
+                android:hint="ex : 1"
+                android:inputType="numberDecimal"
+                />
+
+            <Button
+                android:id="@+id/btn_order"
+                android:layout_below="@id/edt_item3"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:text="Order"
+                android:background="#FAA41A"
+                android:textColor="#fff"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+
+                />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>

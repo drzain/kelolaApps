@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgapps"
-    tools:context=".DashboardActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colotBackgroundHospital"
+    tools:context=".DashboardHospital">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +22,7 @@
 
             <TextView
                 android:id="@+id/textDashboard"
-                android:text="My Dashboard"
+                android:text="Hospital Dashboard"
                 android:textColor="#ffffff"
                 android:textSize="22sp"
                 android:layout_width="wrap_content"
@@ -64,7 +65,7 @@
                 >
 
                 <LinearLayout
-                    android:id="@+id/hospital"
+                    android:id="@+id/form_request"
                     android:orientation="vertical"
                     android:padding="16dp"
                     android:gravity="center"
@@ -85,7 +86,7 @@
                         android:textSize="18sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Hospital"/>
+                        android:text="Form \nRequest"/>
 
                 </LinearLayout>
 
@@ -102,7 +103,7 @@
                 >
 
                 <LinearLayout
-                    android:id="@+id/operator"
+                    android:id="@+id/checkout_request"
                     android:orientation="vertical"
                     android:padding="16dp"
                     android:gravity="center"
@@ -122,52 +123,11 @@
                         android:textSize="18sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Operator"/>
+                        android:text="Check Out \nRequest"/>
 
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp"
-                >
-
-                <LinearLayout
-                    android:id="@+id/driver"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/bookmark"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        />
-
-                    <TextView
-
-                        android:layout_marginTop="12dp"
-                        android:textColor="#6f6f6f"
-                        android:textSize="18sp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Driver"/>
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-
-
-
 
 
 
