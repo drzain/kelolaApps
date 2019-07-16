@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 bookITextView.setVisibility(GONE);
                 loadingProgressBar.setVisibility(GONE);
                 rootView.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.colorSplashText));
-                bookIconImageView.setImageResource(R.drawable.background_color_book);
+                bookIconImageView.setImageResource(R.drawable.logo);
                 startAnimation();
             }
 
