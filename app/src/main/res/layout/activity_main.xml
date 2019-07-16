@@ -76,7 +76,8 @@
                 android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/email"
+                android:inputType="text"
+                android:hint="Username"
                 android:textColor="@color/colorTextView"
                 android:textColorHint="@color/colorAccent"
                 android:textSize="15sp" />
@@ -85,6 +86,7 @@
                 android:id="@+id/passwordEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textPassword"
                 android:layout_marginTop="25dp"
                 android:hint="@string/password"
                 android:textColor="@color/colorTextView"
