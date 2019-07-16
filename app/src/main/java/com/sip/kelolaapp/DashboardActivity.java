@@ -8,13 +8,16 @@ import android.widget.LinearLayout;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    private LinearLayout btn_hospital,btn_operator, btn_driver, btn_umkm;
+    private LinearLayout btn_hospital,btn_operator, btn_driver, btn_umkm, btn_logout;
+    private SessionManager session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
+        session = new SessionManager(getApplicationContext());
 
         action();
     }
@@ -63,6 +66,17 @@ public class DashboardActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(DashboardActivity.this, DashboardUmkm.class);
                 startActivity(i);
+            }
+        });
+
+        btn_logout = (LinearLayout) findViewById(R.id.logout_admin);
+        btn_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                session.setLogin(false);
+                Intent i = new Intent(DashboardActivity.this, MainActivity.class);
+                startActivity(i);
+                finish();
             }
         });
 
