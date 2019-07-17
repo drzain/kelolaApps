@@ -16,6 +16,7 @@ public class HospitalFormRequest extends Activity
 {
 
     private Button btn_order;
+    private LinearLayout btn_send;
     Dialog myDialog;
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -37,9 +38,19 @@ public class HospitalFormRequest extends Activity
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(HospitalFormRequest.this, DashboardHospital.class);
-                startActivity(i);
-                finish();
+
+                myDialog.setContentView(R.layout.hospital_popup_ordersend);
+                btn_send =(LinearLayout) myDialog.findViewById(R.id.popup_success);
+                btn_send.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        Intent i = new Intent(HospitalFormRequest.this, DashboardHospital.class);
+                        startActivity(i);
+                        finish();
+                    }
+                });
+
 
             }
         });
@@ -55,6 +66,7 @@ public class HospitalFormRequest extends Activity
         myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         myDialog.show();
     }
+
 
 
 }

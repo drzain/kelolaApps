@@ -3,20 +3,12 @@
     android:orientation="vertical"
     android:layout_width="350dp"
     android:layout_height="400dp"
-    android:background="#E3EEF6"
+    android:background="#4d9900"
     android:padding="5dp"
+
     android:layout_gravity="center"
-    >
-    <TextView
-        android:id="@+id/txtclose"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:textColor="@color/white"
-        android:text="X"
-        android:textStyle="bold"
-        android:layout_gravity="end"
-        android:gravity="center"
-        android:background="@color/colotBackgroundVendor"/>
+    android:id="@+id/popup_success">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,13 +17,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="REKAPTULASI"
+            android:text="SUCCESS"
             android:textSize="30dp"
             android:textStyle="bold"
-            android:textColor="@color/cardview_dark_background"
+            android:textColor="@color/df_alert_success"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="40dp"/>
+            android:layout_marginTop="40dp"/>
 
     </LinearLayout>
     <LinearLayout
@@ -45,12 +36,12 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="100dp">
+            android:layout_height="200dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="150"
+
                 android:textSize="18sp"
                 android:textColor="@color/cardview_dark_background"
                 android:gravity="center"/>
@@ -58,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Infusion\nSet"
+
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/cardview_dark_background"/>
@@ -69,23 +60,15 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="100dp">
+            android:layout_height="200dp">
 
-            <TextView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="19"
-                android:textSize="18sp"
-                android:textColor="@color/cardview_dark_background"
-                android:gravity="center"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Syringe\n50ml"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/cardview_dark_background"
-                android:gravity="center"/>
+                android:src="@drawable/df_dialog_success"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"/>
         </LinearLayout>
         <LinearLayout
             android:background="@color/cardview_light_background"
@@ -93,19 +76,19 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="100dp">
+            android:layout_height="200dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="50"
+
                 android:textSize="18sp"
                 android:textColor="@color/cardview_dark_background"
                 android:gravity="center"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NaCl Infus\n1000 ml"
+
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/cardview_dark_background"
@@ -113,14 +96,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_struck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SEND"
-        android:layout_marginTop="25dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/colorProgressBar"
-        android:textColor="@color/white"/>
+
 
 </LinearLayout>
