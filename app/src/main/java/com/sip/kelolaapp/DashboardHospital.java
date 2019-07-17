@@ -31,6 +31,7 @@ public class DashboardHospital extends AppCompatActivity
         {
             Intent i = new Intent(DashboardHospital.this, HospitalFormRequest.class);
             startActivity(i);
+            finish();
 
         }
         });
