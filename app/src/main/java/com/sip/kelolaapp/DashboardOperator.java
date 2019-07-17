@@ -3,12 +3,13 @@ package com.sip.kelolaapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.LinearLayout;
 
 public class DashboardOperator extends Activity
 {
-    private LinearLayout btn_logout;
+    private CardView btn_logout, btn_receive;
     private SessionManager session;
 
     protected void onCreate(Bundle savedInstanceState)
@@ -22,7 +23,16 @@ public class DashboardOperator extends Activity
 
     private void action()
     {
-        btn_logout= (LinearLayout) findViewById(R.id.operator_logout);
+        btn_receive = (CardView) findViewById(R.id.order_receive);
+        btn_receive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(DashboardOperator.this, ReceiveOrder.class);
+                startActivity(i);
+            }
+        });
+
+        btn_logout= (CardView) findViewById(R.id.operator_logout);
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
