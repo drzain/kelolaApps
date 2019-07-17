@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--bs4 colors-->
+
+    <color name="df_blue">#007bff</color>
+    <color name="df_indigo">#6610f2</color>
+    <color name="df_purple">#6f42c1</color>
+    <color name="df_pink">#e83e8c</color>
+    <color name="df_red">#dc3545</color>
+    <color name="df_orange">#fd7e14</color>
+    <color name="df_yellow">#ffc107</color>
+    <color name="df_green">#28a745</color>
+    <color name="df_teal">#20c997</color>
+    <color name="df_cyan">#17a2b8</color>
+    <color name="df_white">#fff</color>
+    <color name="df_gray">#6c757d</color>
+    <color name="df_gray_dark">#343a40</color>
+    <color name="df_primary">#343a40</color>
+    <color name="df_secondary">#6c757d</color>
+    <color name="df_success">#6c757d</color>
+    <color name="df_info">#17a2b8</color>
+    <color name="df_warning">#ffc107</color>
+    <color name="df_danger">#dc3545</color>
+    <color name="df_light">#f8f9fa</color>
+    <color name="df_dark">#343a40</color>
+
+    <!--colors for alerts-->
+    <color name="df_alert_primary">#cce5ff</color>
+    <color name="df_alert_primary_text">#004085</color>
+    <color name="df_alert_secondary">#e2e3e5</color>
+    <color name="df_alert_secondary_text">#383d41</color>
+    <color name="df_alert_success">#d4edda</color>
+    <color name="df_alert_success_text">#155724</color>
+    <color name="df_alert_danger">#f8d7da</color>
+    <color name="df_alert_danger_text">#721c24</color>
+    <color name="df_alert_warning">#fff3cd</color>
+    <color name="df_alert_warning_text">#856404</color>
+    <color name="df_alert_info">#d1ecf1</color>
+    <color name="df_alert_info_text">#0c5460</color>
+    <color name="df_alert_light">#fefefe</color>
+    <color name="df_alert_light_text">#818182</color>
+    <color name="df_alert_dark">#d6d8d9</color>
+    <color name="df_alert_dark_text">#1b1e21</color>
+
+    <!--colors for hr-->
+    <color name="df_hr_primary">#9fcdff</color>
+    <color name="df_hr_secondary">#c8cbcf</color>
+    <color name="df_hr_success">#b1dfbb</color>
+    <color name="df_hr_info">#abdde5</color>
+    <color name="df_hr_warning">#ffe8a1</color>
+    <color name="df_hr_danger">#f1b0b7</color>
+    <color name="df_hr_light">#ececf6</color>
+    <color name="df_hr_dark">#b9bbbe</color>
+    <color name="black">#ff000000</color>
+
+    <color name="df_text_color">#212529</color>
+    <color name="df_card_header">#30000000</color>
+    <color name="df_form_bg">#edeff1</color>
+
+    <!--transparent dialog background color-->
+    <color name="df_transparent_black_background">#80000000</color>
+
+    <!--specific colors-->
+    <color name="df_no_internet_dialog_bk">#fafafb</color>
+
+    <!-- Screens background color-->
+    <color name="bg_screen1">#007bff</color>
+    <color name="bg_screen2">#dc3545</color>
+    <color name="bg_screen3">#17a2b8</color>
+    <color name="bg_screen4">#ffc107</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#616161</color>
+    <color name="dot_dark_screen2">#616161</color>
+    <color name="dot_dark_screen3">#616161</color>
+    <color name="dot_dark_screen4">#616161</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#9E9E9E</color>
+    <color name="dot_light_screen2">#9E9E9E</color>
+    <color name="dot_light_screen3">#9E9E9E</color>
+    <color name="dot_light_screen4">#9E9E9E</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+    </array>
+
+
+
+</resources>

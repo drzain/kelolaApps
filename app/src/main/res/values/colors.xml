@@ -13,4 +13,6 @@
     <color name="colotBackgroundUmkm">#00cccc</color>
     <color name="colotBackgroundVendor">#b30000</color>
     <color name="colotBackgroundLandfill">#8000ff</color>
+    <color name="contentTextColor">#020000</color>
+    <color name="whiteTextColor">#fff</color>
 </resources>
