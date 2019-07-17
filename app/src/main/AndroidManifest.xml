@@ -13,7 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ReceiveOrder"></activity>
+        <activity android:name=".ReceiveOrder"
+            android:label="Kelola Apps"
+            android:parentActivityName=".DashboardOperator">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DashboardOperator"/>
+        </activity>
 
         <uses-library
             android:name="org.apache.http.legacy"
