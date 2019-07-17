@@ -55,6 +55,7 @@
                 app:cardCornerRadius="12dp"
                 android:layout_margin="12dp"
                 android:layout_gravity="fill"
+                android:id="@+id/vendor_receive"
                 >
 
                 <LinearLayout
@@ -65,7 +66,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/approve_vendor"
+
                         android:src="@drawable/truck"
                         android:layout_width="80dp"
                         android:layout_height="80dp"

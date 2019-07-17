@@ -1,6 +1,8 @@
 package com.sip.kelolaapp;
 
+
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,30 +21,28 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-
-public class UmkmReceiveOrder extends AppCompatActivity
+public class VendorReceiveOrder extends AppCompatActivity
 {
     private SessionManager session;
     private RecyclerView mRecyclerView;
-    private UmkmReceiveOrder.ListAdapter mListadapter;
+    private VendorReceiveOrder.ListAdapter mListadapter;
     private ArrayList<DataNote> arraylist = new ArrayList<DataNote>();
-
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.umkm_receive_order_list);
-        // Session manager
+        setContentView(R.layout.vendor_recieve_order_list);
+
         session = new SessionManager(this.getApplicationContext());
         // Check if user is already logged in or not
         if (!session.isLoggedIn())
         {
             // User is already logged in. Take him to main activity
-            Intent intent = new Intent(UmkmReceiveOrder.this, MainActivity.class);
+            Intent intent = new Intent(VendorReceiveOrder.this, MainActivity.class);
             startActivity(intent);
             finish();
         }
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_umkm_order);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_vendor_order);
 
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -59,9 +59,8 @@ public class UmkmReceiveOrder extends AppCompatActivity
             arraylist.add(wp);
         }
 
-        mListadapter = new UmkmReceiveOrder.ListAdapter(arraylist);
+        mListadapter = new VendorReceiveOrder.ListAdapter(arraylist);
         mRecyclerView.setAdapter(mListadapter);
-
     }
 
     public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>
@@ -86,22 +85,22 @@ public class UmkmReceiveOrder extends AppCompatActivity
             {
                 super(itemView);
                 this.code_uuid = (TextView) itemView.findViewById(R.id.code_uuid);
-                this.qtysampah = (TextView) itemView.findViewById(R.id.qty_umkm);
-                this.tanggalTransaksi = (TextView) itemView.findViewById(R.id.dateTransaksi_umkm);
-                this.cardReceive = (CardView) itemView.findViewById(R.id.card_umkm);
+                this.qtysampah = (TextView) itemView.findViewById(R.id.qty_vendor);
+                this.tanggalTransaksi = (TextView) itemView.findViewById(R.id.dateTransaksi_vendor);
+                this.cardReceive = (CardView) itemView.findViewById(R.id.card_vendor);
             }
         }
 
         @Override
         public ListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
         {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.umkm_receive_order, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.vendor_recieve_order, parent, false);
 
-            UmkmReceiveOrder.ListAdapter.ViewHolder viewHolder = new UmkmReceiveOrder.ListAdapter.ViewHolder(view);
+            VendorReceiveOrder.ListAdapter.ViewHolder viewHolder = new VendorReceiveOrder.ListAdapter.ViewHolder(view);
             return viewHolder;
         }
 
-        @Override
+
         public void onBindViewHolder(ListAdapter.ViewHolder holder, final int position)
         {
             holder.code_uuid.setText(filterlist.get(position).getCode());
@@ -113,24 +112,14 @@ public class UmkmReceiveOrder extends AppCompatActivity
                 @Override
                 public void onClick(View v)
                 {
-                    Toast.makeText(UmkmReceiveOrder.this, "Item " + position + " is clicked.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(VendorReceiveOrder.this, "Item " + position + " is clicked.", Toast.LENGTH_SHORT).show();
 
-                    /*setFlagging(filterlist.get(position).getWarehouse_order_id());
-                    Intent intent = new Intent(getActivity(),
-                            ReceiveActivity.class);
-                    intent.putExtra("name",filterlist.get(position).getCustomer_name());
-                    intent.putExtra("code",filterlist.get(position).getAgreement_no());
-                    intent.putExtra("plat",filterlist.get(position).getLicense_plate());
-                    intent.putExtra("desc",filterlist.get(position).getAsset_description());
-                    intent.putExtra("year",filterlist.get(position).getManufacturing_year());
-                    intent.putExtra("asset_type",filterlist.get(position).getAsset_type());
-                    intent.putExtra("idwarehouse",filterlist.get(position).getWarehouse_order_id());
-                    startActivity(intent);*/
+
                 }
-            });
-        }
 
-        @Override
+
+          });
+        }
         public int getItemCount()
         {
             if(filterlist != null){
@@ -138,6 +127,5 @@ public class UmkmReceiveOrder extends AppCompatActivity
             }
             return 0;
         }
-
     }
 }
