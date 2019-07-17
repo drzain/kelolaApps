@@ -54,6 +54,7 @@
                 app:cardCornerRadius="12dp"
                 android:layout_margin="12dp"
                 android:layout_gravity="fill"
+                android:id="@+id/umkm_receive"
                 >
 
                 <LinearLayout
@@ -64,7 +65,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/form_request"
+
                         android:src="@drawable/approve"
                         android:layout_width="80dp"
                         android:layout_height="80dp"

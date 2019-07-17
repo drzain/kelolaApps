@@ -32,6 +32,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".DashboardDriver"/>
         </activity>
+        <activity android:name=".UmkmReceiveOrder"/>
         <activity android:name=".DashboardLandfill" />
         <activity android:name=".DashboardVendor" />
         <activity android:name=".DashboardUmkm" />
