@@ -20,30 +20,29 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReceiveOrder extends AppCompatActivity {
+public class DriverReceiveOrder extends AppCompatActivity
+{
 
     private SessionManager session;
     private RecyclerView mRecyclerView;
-    private ListAdapter mListadapter;
+    private DriverReceiveOrder.ListAdapter mListadapter;
     private ArrayList<DataNote> arraylist = new ArrayList<DataNote>();
 
-    @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.receive_order);
-
+        setContentView(R.layout.driver_receive_order_list);
         // Session manager
         session = new SessionManager(this.getApplicationContext());
         // Check if user is already logged in or not
         if (!session.isLoggedIn()) {
             // User is already logged in. Take him to main activity
-            Intent intent = new Intent(ReceiveOrder.this, MainActivity.class);
+            Intent intent = new Intent(DriverReceiveOrder.this, MainActivity.class);
             startActivity(intent);
             finish();
         }
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_order);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_driver_order);
 
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -60,7 +59,7 @@ public class ReceiveOrder extends AppCompatActivity {
             arraylist.add(wp);
         }
 
-        mListadapter = new ListAdapter(arraylist);
+        mListadapter = new DriverReceiveOrder.ListAdapter(arraylist);
         mRecyclerView.setAdapter(mListadapter);
 
     }
@@ -87,18 +86,18 @@ public class ReceiveOrder extends AppCompatActivity {
             {
                 super(itemView);
                 this.code_uuid = (TextView) itemView.findViewById(R.id.code_uuid);
-                this.qtysampah = (TextView) itemView.findViewById(R.id.qtytrash);
-                this.tanggalTransaksi = (TextView) itemView.findViewById(R.id.dateTransaksi);
-                this.cardReceive = (CardView) itemView.findViewById(R.id.card_receive);
+                this.qtysampah = (TextView) itemView.findViewById(R.id.qty_driver);
+                this.tanggalTransaksi = (TextView) itemView.findViewById(R.id.dateTransaksi_driver);
+                this.cardReceive = (CardView) itemView.findViewById(R.id.card_driver);
             }
         }
 
         @Override
         public ListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
         {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.order_list_item, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.driver_receive_order, parent, false);
 
-            ViewHolder viewHolder = new ViewHolder(view);
+            DriverReceiveOrder.ListAdapter.ViewHolder viewHolder = new DriverReceiveOrder.ListAdapter.ViewHolder(view);
             return viewHolder;
         }
 
@@ -114,7 +113,7 @@ public class ReceiveOrder extends AppCompatActivity {
                 @Override
                 public void onClick(View v)
                 {
-                    Toast.makeText(ReceiveOrder.this, "Item " + position + " is clicked.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DriverReceiveOrder.this, "Item " + position + " is clicked.", Toast.LENGTH_SHORT).show();
 
                     /*setFlagging(filterlist.get(position).getWarehouse_order_id());
                     Intent intent = new Intent(getActivity(),

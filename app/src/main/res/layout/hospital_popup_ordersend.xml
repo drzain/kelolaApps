@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="350dp"
-    android:layout_height="400dp"
+    android:layout_width="300dp"
+    android:layout_height="350dp"
     android:background="#4d9900"
     android:padding="5dp"
 
@@ -22,7 +22,7 @@
             android:textStyle="bold"
             android:textColor="@color/df_alert_success"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginTop="20dp"/>
 
     </LinearLayout>
     <LinearLayout
