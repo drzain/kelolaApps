@@ -20,7 +20,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReceiveOrder extends AppCompatActivity {
+public class ReceiveOrder extends AppCompatActivity
+{
 
     private SessionManager session;
     private RecyclerView mRecyclerView;
