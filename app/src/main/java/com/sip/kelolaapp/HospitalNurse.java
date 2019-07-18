@@ -3,7 +3,6 @@ package com.sip.kelolaapp;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
-import android.drm.DrmStore;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -13,29 +12,25 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class HospitalFormRequest extends Activity
-{
-
+public class HospitalNurse  extends Activity {
     private Button btn_order;
     private LinearLayout btn_send;
     Dialog myDialog;
     private TextView judul;
     private ImageView icon_form;
-    protected void onCreate(Bundle savedInstanceState)
-    {
+
+    protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hospital_form_request);
         myDialog = new Dialog(this);
 
         judul = (TextView) findViewById(R.id.txt_form_request);
-        judul.setText("Form Emergency");
+        judul.setText("Form Nurse");
 
         icon_form = (ImageView) findViewById(R.id.img_loc);
-        icon_form.setImageResource(R.drawable.ic_emergeny);
+        icon_form.setImageResource(R.drawable.ic_nurse);
     }
-
-
 
     public void Order(View v)
     {
@@ -54,7 +49,7 @@ public class HospitalFormRequest extends Activity
                     @Override
                     public void onClick(View v)
                     {
-                        Intent i = new Intent(HospitalFormRequest.this, DashboardHospital.class);
+                        Intent i = new Intent(HospitalNurse.this, DashboardHospital.class);
                         startActivity(i);
                         finish();
                     }
@@ -75,7 +70,4 @@ public class HospitalFormRequest extends Activity
         myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         myDialog.show();
     }
-
-
-
 }

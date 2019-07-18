@@ -47,7 +47,7 @@
             android:layout_height="wrap_content">
 
             <android.support.v7.widget.CardView
-                android:id="@+id/order_receive"
+                android:id="@+id/process_receive"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
@@ -67,7 +67,7 @@
 
                     <ImageView
                         android:id="@+id/form_request"
-                        android:src="@drawable/approve"
+                        android:src="@drawable/ic_received"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         />

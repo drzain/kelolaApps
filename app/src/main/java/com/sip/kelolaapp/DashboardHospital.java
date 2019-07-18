@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 
 public class DashboardHospital extends AppCompatActivity
 {
-    private LinearLayout btn_order, btn_logout;
+    private LinearLayout btn_emergency,btn_polyclinic, btn_nurse, btn_logout;
     private SessionManager session;
 
     protected void onCreate(Bundle savedInstanceState)
@@ -23,8 +23,8 @@ public class DashboardHospital extends AppCompatActivity
 
     private void action()
     {
-        btn_order=(LinearLayout)findViewById(R.id.hospital_emergency_order);
-        btn_order.setOnClickListener(new View.OnClickListener()
+        btn_emergency=(LinearLayout)findViewById(R.id.hospital_emergency_order);
+        btn_emergency.setOnClickListener(new View.OnClickListener()
         {
         @Override
         public void onClick(View v)
@@ -34,6 +34,32 @@ public class DashboardHospital extends AppCompatActivity
             finish();
 
         }
+        });
+
+        btn_polyclinic=(LinearLayout)findViewById(R.id.hospital_polyclinic_order);
+        btn_polyclinic.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent i = new Intent(DashboardHospital.this, HospitalPolyclinic.class);
+                startActivity(i);
+                finish();
+
+            }
+        });
+
+        btn_nurse=(LinearLayout)findViewById(R.id.hospital_nurse_order);
+        btn_nurse.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent i = new Intent(DashboardHospital.this, HospitalNurse.class);
+                startActivity(i);
+                finish();
+
+            }
         });
 
         btn_logout=(LinearLayout)findViewById(R.id.hospital_logout);

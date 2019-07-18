@@ -98,11 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, DashboardDriver.class);
                 startActivity(intent);
                 finish();
-            }else if(session.isUser().equals("5")){
-                Intent intent = new Intent(MainActivity.this, DashboardUmkm.class);
-                startActivity(intent);
-                finish();
-            }else if(session.isUser().equals("5")){
+            }else if(session.isUser().equals("5")) {
                 Intent intent = new Intent(MainActivity.this, DashboardUmkm.class);
                 startActivity(intent);
                 finish();

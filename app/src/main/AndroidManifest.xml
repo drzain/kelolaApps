@@ -40,6 +40,8 @@
         <activity android:name=".DashboardActivity" />
         <activity android:name=".DashboardHospital" />
         <activity android:name=".HospitalFormRequest" />
+        <activity android:name=".HospitalPolyclinic"/>
+        <activity android:name=".HospitalNurse"/>
         <activity android:name=".DashboardOperator" />
         <activity android:name=".DashboardDriver" />
         <activity android:name=".MainActivity">

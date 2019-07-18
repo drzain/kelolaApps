@@ -11,7 +11,7 @@ public class DashboardDriver extends Activity
 {
     private LinearLayout btn_logout;
     private SessionManager session;
-    private CardView btn_receive;
+    private CardView btn_load, btn_unload;
 
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -23,8 +23,8 @@ public class DashboardDriver extends Activity
 
     private void action()
     {
-        btn_receive = (CardView) findViewById(R.id.driver_receive);
-        btn_receive.setOnClickListener(new View.OnClickListener() {
+        btn_load = (CardView) findViewById(R.id.transpoter_load);
+        btn_load.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(DashboardDriver.this, DriverReceiveOrder.class);
@@ -32,7 +32,16 @@ public class DashboardDriver extends Activity
             }
         });
 
-        btn_logout= (LinearLayout) findViewById(R.id.driver_logout);
+        btn_unload = (CardView) findViewById(R.id.transpoter_unload);
+        btn_unload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(DashboardDriver.this, DriverReceiveOrder.class);
+                startActivity(i);
+            }
+        });
+
+        btn_logout= (LinearLayout) findViewById(R.id.transporter_logout);
         btn_logout.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v)

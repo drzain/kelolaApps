@@ -136,7 +136,7 @@
                 >
 
                 <LinearLayout
-                    android:id="@+id/driver_logout"
+                    android:id="@+id/transporter_logout"
                     android:orientation="vertical"
                     android:padding="16dp"
                     android:gravity="center"

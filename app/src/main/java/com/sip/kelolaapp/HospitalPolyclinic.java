@@ -3,9 +3,9 @@ package com.sip.kelolaapp;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
-import android.drm.DrmStore;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,9 +13,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class HospitalFormRequest extends Activity
+public class HospitalPolyclinic extends Activity
 {
-
     private Button btn_order;
     private LinearLayout btn_send;
     Dialog myDialog;
@@ -29,10 +28,10 @@ public class HospitalFormRequest extends Activity
         myDialog = new Dialog(this);
 
         judul = (TextView) findViewById(R.id.txt_form_request);
-        judul.setText("Form Emergency");
+        judul.setText("Form Polyclinic");
 
         icon_form = (ImageView) findViewById(R.id.img_loc);
-        icon_form.setImageResource(R.drawable.ic_emergeny);
+        icon_form.setImageResource(R.drawable.ic_polyclinic);
     }
 
 
@@ -54,7 +53,7 @@ public class HospitalFormRequest extends Activity
                     @Override
                     public void onClick(View v)
                     {
-                        Intent i = new Intent(HospitalFormRequest.this, DashboardHospital.class);
+                        Intent i = new Intent(HospitalPolyclinic.this, DashboardHospital.class);
                         startActivity(i);
                         finish();
                     }
@@ -75,7 +74,5 @@ public class HospitalFormRequest extends Activity
         myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         myDialog.show();
     }
-
-
 
 }

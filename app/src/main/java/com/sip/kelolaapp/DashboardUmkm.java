@@ -11,7 +11,7 @@ public class DashboardUmkm extends AppCompatActivity {
 
     private LinearLayout btn_logout;
     private SessionManager session;
-    private CardView btn_receive;
+    private CardView btn_receive, btn_umkm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,16 @@ public class DashboardUmkm extends AppCompatActivity {
 
     private void action()
     {
-        btn_receive = (CardView) findViewById(R.id.umkm_receive);
+        btn_umkm = (CardView) findViewById(R.id.commodities_umkm);
+        btn_umkm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(DashboardUmkm.this, UmkmReceiveOrder.class);
+                startActivity(i);
+            }
+        });
+
+        btn_receive = (CardView) findViewById(R.id.commodities_received);
         btn_receive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,7 +42,7 @@ public class DashboardUmkm extends AppCompatActivity {
         });
 
 
-        btn_logout= (LinearLayout) findViewById(R.id.umkm_logout);
+        btn_logout= (LinearLayout) findViewById(R.id.commodities_logout);
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
