@@ -23,7 +23,7 @@ public class DashboardHospital extends AppCompatActivity
 
     private void action()
     {
-        btn_order=(LinearLayout)findViewById(R.id.hospital_order);
+        btn_order=(LinearLayout)findViewById(R.id.hospital_emergency_order);
         btn_order.setOnClickListener(new View.OnClickListener()
         {
         @Override

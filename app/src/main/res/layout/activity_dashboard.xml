@@ -115,7 +115,7 @@
                         android:textSize="18sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Operator"/>
+                        android:text="Processor"/>
 
                 </LinearLayout>
 
@@ -152,7 +152,7 @@
                         android:textSize="18sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Driver"/>
+                        android:text="Transporter"/>
 
                 </LinearLayout>
 
@@ -189,16 +189,92 @@
                         android:textSize="18sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="UMKM"/>
+                        android:text="Commodities"/>
 
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+            <!--
+                        <android.support.v7.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:layout_rowWeight="1"
+                            app:cardElevation="6dp"
+                            app:cardCornerRadius="12dp"
+                            android:layout_margin="12dp"
+                            >
+
+                            <LinearLayout
+                                android:id="@+id/vendor"
+                                android:orientation="vertical"
+                                android:padding="16dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:src="@drawable/ic_vendor"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    />
+
+                                <TextView
+
+                                    android:layout_marginTop="12dp"
+                                    android:textColor="#6f6f6f"
+                                    android:textSize="18sp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Vendor"/>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:layout_rowWeight="1"
+                            app:cardElevation="6dp"
+                            app:cardCornerRadius="12dp"
+                            android:layout_margin="12dp"
+                            >
+
+                            <LinearLayout
+                                android:id="@+id/landfill"
+                                android:orientation="vertical"
+                                android:padding="16dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:src="@drawable/ic_landfill"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    />
+
+                                <TextView
+
+                                    android:layout_marginTop="12dp"
+                                    android:textColor="#6f6f6f"
+                                    android:textSize="18sp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Landfill"/>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+                        -->
 
             <android.support.v7.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
+                android:layout_columnSpan="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
                 app:cardCornerRadius="12dp"
@@ -206,7 +282,7 @@
                 >
 
                 <LinearLayout
-                    android:id="@+id/vendor"
+                    android:id="@+id/admin_live_dashboard"
                     android:orientation="vertical"
                     android:padding="16dp"
                     android:gravity="center"
@@ -214,7 +290,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/ic_vendor"
+                        android:src="@drawable/ic_report"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         />
@@ -226,93 +302,56 @@
                         android:textSize="18sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Vendor"/>
+                        android:text="Live Dashboard"/>
 
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
 
-            <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp"
-                >
+                        <android.support.v7.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:layout_columnSpan="1"
+                            android:layout_rowWeight="1"
+                            app:cardElevation="6dp"
+                            app:cardCornerRadius="12dp"
+                            android:layout_margin="12dp"
+                            >
 
-                <LinearLayout
-                    android:id="@+id/landfill"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                            <LinearLayout
+                                android:id="@+id/logout_admin"
+                                android:orientation="vertical"
+                                android:padding="16dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
 
-                    <ImageView
-                        android:src="@drawable/ic_landfill"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        />
+                                <ImageView
+                                    android:src="@drawable/cancel"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    />
 
-                    <TextView
+                                <TextView
 
-                        android:layout_marginTop="12dp"
-                        android:textColor="#6f6f6f"
-                        android:textSize="18sp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Landfill"/>
+                                    android:layout_marginTop="12dp"
+                                    android:textColor="#6f6f6f"
+                                    android:textSize="18sp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Logout"/>
 
-                </LinearLayout>
+                            </LinearLayout>
 
-            </android.support.v7.widget.CardView>
+                        </android.support.v7.widget.CardView>
 
-            <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_columnSpan="2"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp"
-                >
 
-                <LinearLayout
-                    android:id="@+id/logout_admin"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
 
-                    <ImageView
-                        android:src="@drawable/cancel"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        />
 
-                    <TextView
 
-                        android:layout_marginTop="12dp"
-                        android:textColor="#6f6f6f"
-                        android:textSize="18sp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Logout"/>
+                    </GridLayout>
 
                 </LinearLayout>
 
-            </android.support.v7.widget.CardView>
-
-
-
-
-
-        </GridLayout>
-
-    </LinearLayout>
-
-</ScrollView>
+            </ScrollView>

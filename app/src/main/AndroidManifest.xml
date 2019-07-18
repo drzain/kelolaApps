@@ -34,8 +34,8 @@
         </activity>
         <activity android:name=".UmkmReceiveOrder"/>
         <activity android:name=".VendorReceiveOrder"/>
-        <activity android:name=".DashboardLandfill" />
-        <activity android:name=".DashboardVendor" />
+     <!--   <activity android:name=".DashboardLandfill" />
+        <activity android:name=".DashboardVendor" />-->
         <activity android:name=".DashboardUmkm" />
         <activity android:name=".DashboardActivity" />
         <activity android:name=".DashboardHospital" />

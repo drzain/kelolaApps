@@ -69,7 +69,7 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
-        btn_landfill = (LinearLayout) findViewById(R.id.landfill);
+      /*  btn_landfill = (LinearLayout) findViewById(R.id.landfill);
         btn_landfill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,7 +86,7 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
+*/
         btn_logout = (LinearLayout) findViewById(R.id.logout_admin);
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
