@@ -264,7 +264,7 @@ public class MainActivity extends AppCompatActivity {
                         // Error in login. Get the error message
                         String errorMsg = jObj.getString("message");
                         Toast.makeText(getApplicationContext(),
-                                errorMsg, Toast.LENGTH_LONG).show();
+                                "Password atau Username Anda Salah", Toast.LENGTH_LONG).show();
                     }
                 } catch (JSONException e) {
                     // JSON error
