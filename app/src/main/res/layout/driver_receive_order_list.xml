@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".DriverReceiveOrder">
+    >
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -17,12 +17,13 @@
         app:cardElevation="6dp">
 
         <TextView
+            android:id="@+id/unload_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:paddingLeft="10dp"
             android:textSize="25sp"
-            android:text="Driver Receive"
+            android:text="Load Received"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="15dp"/>
 
