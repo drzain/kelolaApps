@@ -1,5 +1,6 @@
 package com.sip.kelolaapp;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,12 +27,15 @@ public class OperatorInProgress extends AppCompatActivity
     private OperatorInProgress.ListAdapter mListadapter;
     private ArrayList<DataNote> arraylist = new ArrayList<DataNote>();
     private TextView operator_inprogress;
+    private Dialog myDialog;
+    private Button btn_received_save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.receive_order);
+        myDialog = new Dialog(this);
 
         operator_inprogress= (TextView) findViewById(R.id.operator_title);
         operator_inprogress.setText("In Process order");
@@ -83,6 +89,7 @@ public class OperatorInProgress extends AppCompatActivity
             TextView qtysampah;
             TextView tanggalTransaksi;
             CardView cardReceive;
+            LinearLayout receivedList;
 
             public ViewHolder(View itemView)
             {
@@ -91,6 +98,7 @@ public class OperatorInProgress extends AppCompatActivity
                 this.qtysampah = (TextView) itemView.findViewById(R.id.qtytrash);
                 this.tanggalTransaksi = (TextView) itemView.findViewById(R.id.dateTransaksi);
                 this.cardReceive = (CardView) itemView.findViewById(R.id.card_receive);
+                this.receivedList =(LinearLayout) itemView.findViewById(R.id.receive_list);
             }
         }
 
@@ -115,7 +123,8 @@ public class OperatorInProgress extends AppCompatActivity
                 @Override
                 public void onClick(View v)
                 {
-                    Toast.makeText(OperatorInProgress.this, "Item " + position + " is clicked.", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(OperatorInProgress.this, "Item " + position + " is clicked.", Toast.LENGTH_SHORT).show();
+                    myDialog.setContentView(R.layout.operator_inproses_form);
 
                     /*setFlagging(filterlist.get(position).getWarehouse_order_id());
                     Intent intent = new Intent(getActivity(),

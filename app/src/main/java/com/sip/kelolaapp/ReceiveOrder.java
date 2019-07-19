@@ -29,7 +29,7 @@ public class ReceiveOrder extends AppCompatActivity
     private RecyclerView mRecyclerView;
     private ListAdapter mListadapter;
     private ArrayList<DataNote> arraylist = new ArrayList<DataNote>();
-    Dialog myDialog;
+    private Dialog myDialog;
     private Button btn_received_save;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -116,7 +116,7 @@ public class ReceiveOrder extends AppCompatActivity
             holder.qtysampah.setText(filterlist.get(position).getQty() +" Kg");
             holder.tanggalTransaksi.setText(filterlist.get(position).getDate());
 
-            holder.receivedList.setOnClickListener(new View.OnClickListener()
+            holder.cardReceive.setOnClickListener(new View.OnClickListener()
             {
                 @Override
                 public void onClick(View v)

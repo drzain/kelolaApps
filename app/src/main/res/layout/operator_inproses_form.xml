@@ -12,16 +12,16 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@color/design_default_color_primary">
-    <TextView
-        android:id="@+id/txtclose"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:textColor="@color/white"
-        android:text="X"
-        android:textStyle="bold"
-        android:layout_gravity="end"
-        android:gravity="center"
-        android:background="@color/colotBackgroundVendor"/>
+        <TextView
+            android:id="@+id/txtclose"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:textColor="@color/white"
+            android:text="X"
+            android:textStyle="bold"
+            android:layout_gravity="end"
+            android:gravity="center"
+            android:background="@color/colotBackgroundVendor"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Received Form"
+            android:text="In Progress Form"
             android:textSize="30dp"
             android:textStyle="bold"
             android:textColor="@color/cardview_dark_background"
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center">
         <LinearLayout
-            android:id="@+id/receive_form_no"
+            android:id="@+id/inprogress_form_no"
             android:background="@color/cardview_light_background"
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
@@ -73,10 +73,12 @@
                 android:background="@color/cardview_dark_background"
                 android:gravity="center"
                 android:text="150"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textColor="@color/cardview_light_background"
+                />
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/receive_form_date"
+            android:id="@+id/inprogress_form_date"
             android:background="@color/cardview_light_background"
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
@@ -101,10 +103,12 @@
                 android:background="@color/cardview_dark_background"
                 android:gravity="center"
                 android:text="100"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textColor="@color/cardview_light_background"
+                />
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/receive_form_weigth"
+            android:id="@+id/inprogress_form_weigth"
             android:background="@color/cardview_light_background"
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -113,21 +117,22 @@
             android:layout_weight="1">
 
             <TextView
-            android:layout_width="150dp"
-            android:layout_marginLeft="5dp"
-            android:layout_height="wrap_content"
-            android:text="Weight"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/cardview_dark_background"
-            />
+                android:layout_width="150dp"
+                android:layout_marginLeft="5dp"
+                android:layout_height="wrap_content"
+                android:text="Weight"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/cardview_dark_background"
+                />
 
-            <EditText
+            <TextView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:background="@color/cardview_light_background"
+                android:background="@color/cardview_dark_background"
                 android:gravity="center"
-
+                android:text="16"
+                android:textColor="@color/cardview_light_background"
                 android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
@@ -136,7 +141,7 @@
         android:id="@+id/btn_struck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
+        android:text="Process"
         android:layout_marginTop="25dp"
         android:layout_gravity="center_horizontal"
         android:background="@color/colorProgressBar"
