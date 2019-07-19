@@ -1,5 +1,6 @@
 package com.sip.kelolaapp;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,12 +29,14 @@ public class ReceiveOrder extends AppCompatActivity
     private RecyclerView mRecyclerView;
     private ListAdapter mListadapter;
     private ArrayList<DataNote> arraylist = new ArrayList<DataNote>();
-
+    Dialog myDialog;
+    private Button btn_received_save;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.receive_order);
+        myDialog = new Dialog(this);
 
         // Session manager
         session = new SessionManager(this.getApplicationContext());
@@ -83,6 +87,7 @@ public class ReceiveOrder extends AppCompatActivity
             TextView qtysampah;
             TextView tanggalTransaksi;
             CardView cardReceive;
+            LinearLayout receivedList;
 
             public ViewHolder(View itemView)
             {
@@ -91,6 +96,7 @@ public class ReceiveOrder extends AppCompatActivity
                 this.qtysampah = (TextView) itemView.findViewById(R.id.qtytrash);
                 this.tanggalTransaksi = (TextView) itemView.findViewById(R.id.dateTransaksi);
                 this.cardReceive = (CardView) itemView.findViewById(R.id.card_receive);
+                this.receivedList =(LinearLayout) itemView.findViewById(R.id.receive_list);
             }
         }
 
@@ -110,12 +116,25 @@ public class ReceiveOrder extends AppCompatActivity
             holder.qtysampah.setText(filterlist.get(position).getQty() +" Kg");
             holder.tanggalTransaksi.setText(filterlist.get(position).getDate());
 
-            holder.cardReceive.setOnClickListener(new View.OnClickListener()
+            holder.receivedList.setOnClickListener(new View.OnClickListener()
             {
                 @Override
                 public void onClick(View v)
                 {
-                    Toast.makeText(ReceiveOrder.this, "Item " + position + " is clicked.", Toast.LENGTH_SHORT).show();
+                    myDialog.setContentView(R.layout.operator_received_form);
+                    btn_received_save=(Button) myDialog.findViewById(R.id.btn_struck);
+                    btn_received_save.setOnClickListener(new View.OnClickListener(){
+                        public void onClick(View v)
+                        {
+                            finish();
+                        }
+
+                    });
+                  //  btn_received_save=(Button) myDialog.findViewById(R.id.btn_struck);
+
+
+
+                    //Toast.makeText(ReceiveOrder.this, "Item " + position + " is clicked.", Toast.LENGTH_SHORT).show();
 
                     /*setFlagging(filterlist.get(position).getWarehouse_order_id());
                     Intent intent = new Intent(getActivity(),
