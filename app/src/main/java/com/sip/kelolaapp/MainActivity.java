@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-            else if(session.isUser().equals("6")){
+        /*    else if(session.isUser().equals("6")){
                 Intent intent = new Intent(MainActivity.this, DashboardVendor.class);
                 startActivity(intent);
                 finish();
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, DashboardLandfill.class);
                 startActivity(intent);
                 finish();
-            }
+            }*/
         }
 
         usernameEdt = (EditText) findViewById(R.id.emailEditText);

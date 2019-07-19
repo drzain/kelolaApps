@@ -25,6 +25,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".DashboardOperator"/>
         </activity>
+        <activity android:name=".DriverUnload"/>
         <activity android:name=".DriverReceiveOrder"
             android:label="Kelola Apps"
             android:parentActivityName=".DashboardDriver">
@@ -32,10 +33,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".DashboardDriver"/>
         </activity>
+
+        <activity android:name=".OperatorInProgress"/>
+        <activity android:name=".OperatorPacked"/>
         <activity android:name=".UmkmReceiveOrder"/>
-        <activity android:name=".VendorReceiveOrder"/>
-     <!--   <activity android:name=".DashboardLandfill" />
-        <activity android:name=".DashboardVendor" />-->
+        <activity android:name=".CommoditiesRecevied"/>
         <activity android:name=".DashboardUmkm" />
         <activity android:name=".DashboardActivity" />
         <activity android:name=".DashboardHospital" />

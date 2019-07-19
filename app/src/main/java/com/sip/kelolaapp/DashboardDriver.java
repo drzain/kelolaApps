@@ -36,7 +36,7 @@ public class DashboardDriver extends Activity
         btn_unload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(DashboardDriver.this, DriverReceiveOrder.class);
+                Intent i = new Intent(DashboardDriver.this, DriverUnload.class);
                 startActivity(i);
             }
         });

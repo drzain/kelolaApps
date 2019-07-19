@@ -37,7 +37,7 @@ public class DashboardOperator extends Activity
         btn_in_progress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(DashboardOperator.this, ReceiveOrder.class);
+                Intent i = new Intent(DashboardOperator.this, OperatorInProgress.class);
                 startActivity(i);
             }
         });
@@ -46,7 +46,7 @@ public class DashboardOperator extends Activity
         btn_packed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(DashboardOperator.this, ReceiveOrder.class);
+                Intent i = new Intent(DashboardOperator.this, OperatorPacked.class);
                 startActivity(i);
             }
         });

@@ -33,7 +33,7 @@
                 android:id="@+id/imgTrash"
                 android:layout_width="60dp"
                 android:layout_height="65dp"
-                android:src="@drawable/ic_received" />
+                android:src="@drawable/ic_process2" />
 
         </LinearLayout>
 

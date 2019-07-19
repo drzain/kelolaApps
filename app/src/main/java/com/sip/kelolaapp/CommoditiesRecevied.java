@@ -10,30 +10,28 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
 import java.util.List;
 
-public class DriverUnload extends AppCompatActivity {
-
-
+public class CommoditiesRecevied extends AppCompatActivity
+{
     private SessionManager session;
     private RecyclerView mRecyclerView;
-    private DriverUnload.ListAdapter mListadapter;
+    private CommoditiesRecevied.ListAdapter mListadapter;
     private ArrayList<DataNote> arraylist = new ArrayList<DataNote>();
-    private TextView unload_title;
-
+    private TextView commodities_recieved;
 
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.driver_receive_order_list);
+        setContentView(R.layout.umkm_receive_order_list);
 
-        unload_title= (TextView) findViewById(R.id.driver_title);
-        unload_title.setText("Unload Received");
+        commodities_recieved= (TextView) findViewById(R.id.commodities_title);
+        commodities_recieved.setText("Commodities Recieved");
 
         // Session manager
         session = new SessionManager(this.getApplicationContext());
@@ -41,19 +39,20 @@ public class DriverUnload extends AppCompatActivity {
         if (!session.isLoggedIn())
         {
             // User is already logged in. Take him to main activity
-            Intent intent = new Intent(DriverUnload.this, MainActivity.class);
+            Intent intent = new Intent(CommoditiesRecevied.this, MainActivity.class);
             startActivity(intent);
             finish();
         }
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_driver_order);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_umkm_order);
 
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         mRecyclerView.setLayoutManager(layoutManager);
 
-        for (int i = 0; i < DataNoteInformation.codeArray.length; i++) {
+        for (int i = 0; i < DataNoteInformation.codeArray.length; i++)
+        {
             DataNote wp = new DataNote(
                     DataNoteInformation.codeArray[i],
                     DataNoteInformation.dateArray[i],
@@ -62,59 +61,61 @@ public class DriverUnload extends AppCompatActivity {
             arraylist.add(wp);
         }
 
-        mListadapter = new DriverUnload.ListAdapter(arraylist);
+        mListadapter = new ListAdapter(arraylist);
         mRecyclerView.setAdapter(mListadapter);
 
     }
 
-    public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
+    public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>
+    {
         private ArrayList<DataNote> dataList;
         private List<DataNote> filterlist = null;
 
-        public ListAdapter(ArrayList<DataNote> data) {
+        public ListAdapter(ArrayList<DataNote> data)
+        {
             this.dataList = data;
             this.filterlist = new ArrayList(dataList);
         }
 
-        public class ViewHolder extends RecyclerView.ViewHolder {
+        public class ViewHolder extends RecyclerView.ViewHolder
+        {
             TextView code_uuid;
             TextView qtysampah;
             TextView tanggalTransaksi;
             CardView cardReceive;
 
-            public ViewHolder(View itemView) {
+            public ViewHolder(View itemView)
+            {
                 super(itemView);
                 this.code_uuid = (TextView) itemView.findViewById(R.id.code_uuid);
-                this.qtysampah = (TextView) itemView.findViewById(R.id.qty_driver);
-                this.tanggalTransaksi = (TextView) itemView.findViewById(R.id.dateTransaksi_driver);
-                this.cardReceive = (CardView) itemView.findViewById(R.id.card_driver);
+                this.qtysampah = (TextView) itemView.findViewById(R.id.qty_umkm);
+                this.tanggalTransaksi = (TextView) itemView.findViewById(R.id.dateTransaksi_umkm);
+                this.cardReceive = (CardView) itemView.findViewById(R.id.card_umkm);
             }
         }
 
         @Override
         public ListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
         {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.driver_unload, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.commodities_receive, parent, false);
 
             ListAdapter.ViewHolder viewHolder = new ListAdapter.ViewHolder(view);
             return viewHolder;
-
-
-
-
         }
 
         @Override
         public void onBindViewHolder(ListAdapter.ViewHolder holder, final int position)
         {
             holder.code_uuid.setText(filterlist.get(position).getCode());
-            holder.qtysampah.setText(filterlist.get(position).getQty() + " Kg");
+            holder.qtysampah.setText(filterlist.get(position).getQty() +" Kg");
             holder.tanggalTransaksi.setText(filterlist.get(position).getDate());
 
-            holder.cardReceive.setOnClickListener(new View.OnClickListener() {
+            holder.cardReceive.setOnClickListener(new View.OnClickListener()
+            {
                 @Override
-                public void onClick(View v) {
-                    Toast.makeText(DriverUnload.this, "Item " + position + " is clicked.", Toast.LENGTH_SHORT).show();
+                public void onClick(View v)
+                {
+                    Toast.makeText(CommoditiesRecevied.this, "Item " + position + " is clicked.", Toast.LENGTH_SHORT).show();
 
                     /*setFlagging(filterlist.get(position).getWarehouse_order_id());
                     Intent intent = new Intent(getActivity(),
@@ -134,12 +135,12 @@ public class DriverUnload extends AppCompatActivity {
         @Override
         public int getItemCount()
         {
-            if (filterlist != null)
-            {
+            if(filterlist != null){
                 return filterlist.size();
             }
             return 0;
         }
 
     }
+
 }

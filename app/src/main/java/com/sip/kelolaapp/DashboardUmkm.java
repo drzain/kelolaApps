@@ -36,7 +36,7 @@ public class DashboardUmkm extends AppCompatActivity {
         btn_receive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(DashboardUmkm.this, UmkmReceiveOrder.class);
+                Intent i = new Intent(DashboardUmkm.this, CommoditiesRecevied.class);
                 startActivity(i);
             }
         });

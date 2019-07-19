@@ -26,11 +26,16 @@ public class UmkmReceiveOrder extends AppCompatActivity
     private RecyclerView mRecyclerView;
     private UmkmReceiveOrder.ListAdapter mListadapter;
     private ArrayList<DataNote> arraylist = new ArrayList<DataNote>();
+    private TextView commodities_recieved;
 
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.umkm_receive_order_list);
+
+        commodities_recieved= (TextView) findViewById(R.id.commodities_title);
+        commodities_recieved.setText("UMKM Recieved");
+
         // Session manager
         session = new SessionManager(this.getApplicationContext());
         // Check if user is already logged in or not
