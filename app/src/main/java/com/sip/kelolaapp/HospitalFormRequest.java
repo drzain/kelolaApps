@@ -120,7 +120,8 @@ public class HospitalFormRequest extends Activity
         myDialog.show();
     }
 
-    private void sendData(final String infusx, final String syringex, final String naclx, final String uniqueidx) {
+    private void sendData(final String infusx, final String syringex, final String naclx, final String uniqueidx)
+    {
         // Tag used to cancel the request
         String tag_string_req = "req_senddata";
 
