@@ -9,6 +9,7 @@
     android:layout_marginBottom="5dip"
     android:layout_marginTop="5dip"
     android:layout_columnWeight="1"
+    android:onClick="InProcess"
     android:layout_rowWeight="1"
     app:cardElevation="6dp"
     android:foreground="?attr/selectableItemBackground">
