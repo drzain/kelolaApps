@@ -4,7 +4,7 @@
     android:layout_width="300dp"
     android:layout_height="350dp"
     android:background="#FFF"
-
+    android:id="@+id/operator_received_form_id"
     android:layout_gravity="center"
     >
     <LinearLayout

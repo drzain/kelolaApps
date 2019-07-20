@@ -1,6 +1,7 @@
 package com.sip.kelolaapp;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -9,13 +10,16 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,14 +33,14 @@ public class ReceiveOrder extends AppCompatActivity
     private RecyclerView mRecyclerView;
     private ListAdapter mListadapter;
     private ArrayList<DataNote> arraylist = new ArrayList<DataNote>();
-    private Dialog myDialog;
+
     private Button btn_received_save;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.receive_order);
-        myDialog = new Dialog(this);
+
 
         // Session manager
         session = new SessionManager(this.getApplicationContext());
@@ -97,6 +101,30 @@ public class ReceiveOrder extends AppCompatActivity
                 this.tanggalTransaksi = (TextView) itemView.findViewById(R.id.dateTransaksi);
                 this.cardReceive = (CardView) itemView.findViewById(R.id.card_receive);
                 this.receivedList =(LinearLayout) itemView.findViewById(R.id.receive_list);
+                itemView.setOnClickListener(new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        showPop();
+
+                    }
+
+                    private void showPop()
+                    {
+
+                        Context mContext;
+                        final View popupView = LayoutInflater.from(mContext).inflate(R.layout.operator_received_form,null);
+                        final PopupWindow popupWindow = new PopupWindow(popupView, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
+
+                        RecyclerView recyclerView = (RecyclerView)popupView.findViewById(R.id.operator_received_form_id);
+                        PopupRecyclerViewAdapter adapter = new PopupRecyclerViewAdapter(mContext,arraylist);
+                        recyclerView.setAdapter(adapter);
+
+                        popupWindow.showAtLocation(popupView, Gravity.CENTER, 0, 0);
+
+                    }
+                });
             }
         }
 
@@ -121,20 +149,8 @@ public class ReceiveOrder extends AppCompatActivity
                 @Override
                 public void onClick(View v)
                 {
-                    myDialog.setContentView(R.layout.operator_received_form);
-                    btn_received_save=(Button) myDialog.findViewById(R.id.btn_struck);
-                    btn_received_save.setOnClickListener(new View.OnClickListener(){
-                        public void onClick(View v)
-                        {
-                            finish();
-                        }
 
-                    });
-                  //  btn_received_save=(Button) myDialog.findViewById(R.id.btn_struck);
-
-
-
-                    //Toast.makeText(ReceiveOrder.this, "Item " + position + " is clicked.", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(ReceiveOrder.this, "Item " + position + " is clicked.", Toast.LENGTH_SHORT).show();
 
                     /*setFlagging(filterlist.get(position).getWarehouse_order_id());
                     Intent intent = new Intent(getActivity(),
@@ -159,6 +175,8 @@ public class ReceiveOrder extends AppCompatActivity
             }
             return 0;
         }
+
+
 
     }
 }
