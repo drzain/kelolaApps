@@ -5,14 +5,14 @@
     android:layout_width="300dp"
     android:layout_height="350dp"
     android:background="#FFF"
-    android:padding="5dp"
+
     android:layout_gravity="center"
     >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/design_default_color_primary">
+        android:background="@color/colotBackgroundUmkm">
         <TextView
             android:id="@+id/txtclose"
             android:layout_width="30dp"
@@ -32,6 +32,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
             android:text="Received Form"
             android:textSize="30dp"
             android:textStyle="bold"
@@ -42,6 +43,7 @@
 
     </LinearLayout>
     <LinearLayout
+        android:padding="5dp"
         android:layout_marginTop="5dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -142,10 +144,10 @@
         android:id="@+id/btn_struck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Process"
-        android:layout_marginTop="25dp"
         android:layout_gravity="center_horizontal"
-        android:background="@color/colorProgressBar"
-        android:textColor="@color/white"/>
+        android:layout_marginTop="25dp"
+        android:background="@color/colotBackgroundUmkm"
+        android:text="Process"
+        android:textColor="@color/df_white" />
 
 </LinearLayout>
