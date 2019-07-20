@@ -114,17 +114,23 @@ public class OperatorInProgress extends AppCompatActivity
         @Override
         public void onBindViewHolder(ListAdapter.ViewHolder holder, final int position)
         {
+
+
             holder.code_uuid.setText(filterlist.get(position).getCode());
             holder.qtysampah.setText(filterlist.get(position).getQty() +" Kg");
             holder.tanggalTransaksi.setText(filterlist.get(position).getDate());
 
             holder.cardReceive.setOnClickListener(new View.OnClickListener()
             {
-                @Override
+                TextView txtclose;
+                Button btnstruck;
+
                 public void onClick(View v)
                 {
                     //Toast.makeText(OperatorInProgress.this, "Item " + position + " is clicked.", Toast.LENGTH_SHORT).show();
                     myDialog.setContentView(R.layout.operator_inproses_form);
+                    txtclose =(TextView) myDialog.findViewById(R.id.txtclose);
+                    btnstruck=(Button) myDialog.findViewById(R.id.btn_struck);
 
                     /*setFlagging(filterlist.get(position).getWarehouse_order_id());
                     Intent intent = new Intent(getActivity(),
