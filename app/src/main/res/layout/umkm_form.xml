@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/umkm_form"
     android:orientation="vertical"
     android:layout_width="300dp"
     android:layout_height="350dp"
     android:background="#FFF"
-
+    android:padding="5dp"
     android:layout_gravity="center"
     >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/colotBackgroundOperator">
-    <TextView
-        android:id="@+id/txtclose"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:textColor="@color/white"
-        android:text="X"
-        android:textStyle="bold"
-        android:layout_gravity="end"
-        android:gravity="center"
-        android:background="@color/colotBackgroundVendor"/>
+        android:background="@color/design_default_color_primary">
+        <TextView
+            android:id="@+id/txtclose"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:textColor="@color/white"
+            android:text="X"
+            android:textStyle="bold"
+            android:layout_gravity="end"
+            android:gravity="center"
+            android:background="@color/colotBackgroundVendor"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,27 +32,27 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Received Form"
-            android:textAlignment="center"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:textColor="@color/cardview_dark_background"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:text="UMKM Form"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
     <LinearLayout
-        android:padding="5dp"
         android:layout_marginTop="5dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:textAlignment="center">
         <LinearLayout
-            android:id="@+id/receive_form_no"
+            android:id="@+id/umkm_form_no"
             android:background="@color/cardview_light_background"
             android:layout_marginTop="10dp"
+
             android:orientation="horizontal"
             android:layout_weight="1"
             android:layout_width="match_parent"
@@ -64,10 +65,10 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="No. Receive"
+                android:text="No. UMKM"
+                android:textColor="@color/cardview_dark_background"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/cardview_dark_background"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="150dp"
@@ -78,7 +79,7 @@
                 android:textSize="18sp" />
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/receive_form_date"
+            android:id="@+id/umkm_form_date"
             android:background="@color/cardview_light_background"
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
@@ -106,7 +107,7 @@
                 android:textSize="18sp" />
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/receive_form_weigth"
+            android:id="@+id/umkm_form_qty"
             android:background="@color/cardview_light_background"
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -115,14 +116,13 @@
             android:layout_weight="1">
 
             <TextView
-            android:layout_width="150dp"
-            android:layout_marginLeft="5dp"
-            android:layout_height="wrap_content"
-            android:text="Weight"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/cardview_dark_background"
-            />
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Qty"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:layout_width="150dp"
@@ -141,7 +141,7 @@
         android:text="Save"
         android:layout_marginTop="25dp"
         android:layout_gravity="center_horizontal"
-        android:background="@color/colotBackgroundOperator"
+        android:background="@color/colorProgressBar"
         android:textColor="@color/white"/>
 
 </LinearLayout>

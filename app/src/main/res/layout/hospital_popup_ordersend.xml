@@ -3,9 +3,9 @@
     android:orientation="vertical"
     android:layout_width="300dp"
     android:layout_height="350dp"
-    android:background="#4d9900"
-    android:padding="5dp"
 
+
+    android:background="@color/colotBackgroundHospital"
     android:layout_gravity="center"
     android:id="@+id/popup_success">
 
