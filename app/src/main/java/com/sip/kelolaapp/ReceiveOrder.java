@@ -33,14 +33,14 @@ public class ReceiveOrder extends AppCompatActivity
     private RecyclerView mRecyclerView;
     private ListAdapter mListadapter;
     private ArrayList<DataNote> arraylist = new ArrayList<DataNote>();
-    Dialog myDialog;
+
     private Button btn_received_save;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.receive_order);
-        myDialog = new Dialog(this);
+
 
         // Session manager
         session = new SessionManager(this.getApplicationContext());
@@ -129,7 +129,9 @@ public class ReceiveOrder extends AppCompatActivity
                 @Override
                 public void onClick(View v)
                 {
-                    showPop();
+                    Intent i = new Intent(ReceiveOrder.this, OperatorReceiveForm.class);
+                    startActivity(i);
+                    finish();
                     //Toast.makeText(ReceiveOrder.this, "Item " + position + " is clicked.", Toast.LENGTH_SHORT).show();
 
                     /*setFlagging(filterlist.get(position).getWarehouse_order_id());
@@ -160,8 +162,5 @@ public class ReceiveOrder extends AppCompatActivity
 
     }
 
-    public void showPop()
-    {
-        myDialog.setContentView(R.layout.operator_received_form);
-    }
+
 }
