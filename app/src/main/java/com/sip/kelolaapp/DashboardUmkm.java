@@ -41,17 +41,5 @@ public class DashboardUmkm extends AppCompatActivity {
             }
         });
 
-
-        btn_logout= (LinearLayout) findViewById(R.id.commodities_logout);
-        btn_logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                session.setLogin(false);
-                Intent i = new Intent(DashboardUmkm.this, MainActivity.class);
-                startActivity(i);
-                finish();
-            }
-        });
     }
 }

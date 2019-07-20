@@ -61,17 +61,5 @@ public class DashboardHospital extends AppCompatActivity
 
             }
         });
-
-        btn_logout=(LinearLayout)findViewById(R.id.hospital_logout);
-        btn_logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                session.setLogin(false);
-                Intent i = new Intent(DashboardHospital.this, MainActivity.class);
-                startActivity(i);
-                finish();
-            }
-        });
     }
 }

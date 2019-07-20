@@ -51,18 +51,6 @@ public class DashboardOperator extends Activity
             }
         });
 
-        btn_logout= (CardView) findViewById(R.id.operator_logout);
-        btn_logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                session.setLogin(false);
-                Intent i = new Intent(DashboardOperator.this, MainActivity.class);
-                startActivity(i);
-                finish();
-            }
-        });
-
     }
 }
 

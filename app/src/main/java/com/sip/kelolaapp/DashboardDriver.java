@@ -40,17 +40,5 @@ public class DashboardDriver extends Activity
                 startActivity(i);
             }
         });
-
-        btn_logout= (LinearLayout) findViewById(R.id.transporter_logout);
-        btn_logout.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v)
-        {
-            session.setLogin(false);
-            Intent i = new Intent(DashboardDriver.this, MainActivity.class);
-            startActivity(i);
-            finish();
-        }
-        });
     }
 }
