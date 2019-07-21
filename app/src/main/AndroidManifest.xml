@@ -13,37 +13,40 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
+        <activity android:name=".OperatorResultForm"></activity>
 
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
-        <activity android:name=".ReceiveOrder"
+
+        <activity
+            android:name=".ReceiveOrder"
             android:label="Kelola Apps"
             android:parentActivityName=".DashboardOperator">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".DashboardOperator"/>
+                android:value=".DashboardOperator" />
         </activity>
-        <activity android:name=".DriverUnload"/>
-        <activity android:name=".DriverReceiveOrder"
+        <activity android:name=".DriverUnload" />
+        <activity
+            android:name=".DriverReceiveOrder"
             android:label="Kelola Apps"
             android:parentActivityName=".DashboardDriver">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".DashboardDriver"/>
+                android:value=".DashboardDriver" />
         </activity>
-        <activity android:name=".OperatorReceiveForm"/>
-        <activity android:name=".OperatorInProgress"/>
-        <activity android:name=".OperatorPacked"/>
-        <activity android:name=".UmkmReceiveOrder"/>
-        <activity android:name=".CommoditiesRecevied"/>
+        <activity android:name=".OperatorReceiveForm" />
+        <activity android:name=".OperatorInProgress" />
+        <activity android:name=".OperatorPacked" />
+        <activity android:name=".UmkmReceiveOrder" />
+        <activity android:name=".CommoditiesRecevied" />
         <activity android:name=".DashboardUmkm" />
         <activity android:name=".DashboardActivity" />
         <activity android:name=".DashboardHospital" />
         <activity android:name=".HospitalFormRequest" />
-        <activity android:name=".HospitalPolyclinic"/>
-        <activity android:name=".HospitalNurse"/>
+        <activity android:name=".HospitalPolyclinic" />
+        <activity android:name=".HospitalNurse" />
         <activity android:name=".DashboardOperator" />
         <activity android:name=".DashboardDriver" />
         <activity android:name=".MainActivity">
@@ -53,10 +56,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="544ff378536f524ca9b029e3c750ec0083b74133"
-            />
+            android:value="544ff378536f524ca9b029e3c750ec0083b74133" />
     </application>
 
 </manifest>

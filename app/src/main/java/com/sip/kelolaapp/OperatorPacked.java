@@ -1,6 +1,7 @@
 package com.sip.kelolaapp;
 
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,17 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +40,8 @@ public class OperatorPacked extends AppCompatActivity
     private ArrayList<DataNote> arraylist = new ArrayList<DataNote>();
     private TextView operator_packed;
     private Dialog myDialog;
+    ProgressDialog pDialog;
+    private static final String TAG = OperatorPacked.class.getSimpleName();
     private Button btn_received_save;
 
     protected void onCreate(Bundle savedInstanceState)
@@ -36,7 +51,10 @@ public class OperatorPacked extends AppCompatActivity
         myDialog = new Dialog(this);
 
         operator_packed= (TextView) findViewById(R.id.operator_title);
-        operator_packed.setText("Packed order");
+        operator_packed.setText("Result Packed");
+
+        pDialog = new ProgressDialog(this);
+        pDialog.setCancelable(false);
 
         // Session manager
         session = new SessionManager(this.getApplicationContext());
@@ -55,7 +73,9 @@ public class OperatorPacked extends AppCompatActivity
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         mRecyclerView.setLayoutManager(layoutManager);
 
-        for (int i = 0; i < DataNoteInformation.codeArray.length; i++)
+        LoadAsset();
+
+        /*for (int i = 0; i < DataNoteInformation.codeArray.length; i++)
         {
             DataNote wp = new DataNote(
                     DataNoteInformation.codeArray[i],
@@ -66,18 +86,77 @@ public class OperatorPacked extends AppCompatActivity
         }
 
         mListadapter = new ListAdapter(arraylist);
-        mRecyclerView.setAdapter(mListadapter);
+        mRecyclerView.setAdapter(mListadapter);*/
 
     }
 
+    public void LoadAsset(){
 
+        //creating a string request to send request to the url
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, AppConfig.URL_ASSET_LIST_RESULT,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        try {
+                            Log.e("Refresh",response);
+                            //getting the whole json object from the response
+                            JSONArray obj = new JSONArray(response);
+
+                            //we have the array named hero inside the object
+                            //so here we are getting that json array
+                            //now looping through all the elements of the json array
+                            ArrayList data = new ArrayList<DataProses>();
+                            Log.e("data parts",obj.toString());
+                            for (int i = 0; i < obj.length(); i++) {
+                                JSONObject queObject = obj.getJSONObject(i);
+                                data.add(
+                                        new DataProses(
+                                                queObject.getString("transaksi_no"),
+                                                queObject.getString("transaksi_date"),
+                                                queObject.getString("receive_qty"),
+                                                queObject.getString("createdTimeStamp")
+                                        )
+                                );
+                                //getting the json object of the particular index inside the array
+
+                            }
+                            mListadapter = new ListAdapter(data);
+                            mRecyclerView.setAdapter(mListadapter);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //displaying the error in toast if occurrs
+                        try {
+                            //Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                        }catch (Exception x){
+                            x.printStackTrace();
+                        }
+                    }
+                }){
+
+        };
+
+        //creating a request queue
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+        //adding the string request to request queue
+        requestQueue.add(stringRequest);
+
+    }
 
     public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>
     {
-        private ArrayList<DataNote> dataList;
-        private List<DataNote> filterlist = null;
+        private ArrayList<DataProses> dataList;
+        private List<DataProses> filterlist = null;
 
-        public ListAdapter(ArrayList<DataNote> data)
+        public ListAdapter(ArrayList<DataProses> data)
         {
             this.dataList = data;
             this.filterlist = new ArrayList(dataList);
@@ -115,9 +194,9 @@ public class OperatorPacked extends AppCompatActivity
         @Override
         public void onBindViewHolder(ListAdapter.ViewHolder holder, final int position)
         {
-            holder.code_uuid.setText(filterlist.get(position).getCode());
-            holder.qtysampah.setText(filterlist.get(position).getQty() +" Kg");
-            holder.tanggalTransaksi.setText(filterlist.get(position).getDate());
+            holder.code_uuid.setText(filterlist.get(position).getTransaksi_no());
+            holder.qtysampah.setText(filterlist.get(position).getReceive_qty() +" Kg");
+            holder.tanggalTransaksi.setText(filterlist.get(position).getTransaksi_date());
 
             holder.cardReceive.setOnClickListener(new View.OnClickListener()
             {
@@ -125,7 +204,13 @@ public class OperatorPacked extends AppCompatActivity
                 public void onClick(View v)
                 {
                     //Toast.makeText(OperatorPacked.this, "Item " + position + " is clicked.", Toast.LENGTH_SHORT).show();
-                    myDialog.setContentView(R.layout.operator_inproses_form);
+                    //myDialog.setContentView(R.layout.operator_inproses_form);
+                    Intent i = new Intent(OperatorPacked.this, OperatorResultForm.class);
+                    i.putExtra("transaksi_no",filterlist.get(position).getTransaksi_no());
+                    i.putExtra("transaksi_date",filterlist.get(position).getTransaksi_date());
+                    i.putExtra("receive_qty",filterlist.get(position).getReceive_qty());
+                    startActivity(i);
+                    finish();
 
                     /*setFlagging(filterlist.get(position).getWarehouse_order_id());
                     Intent intent = new Intent(getActivity(),
