@@ -4,8 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center|top"
-    android:background="#FFF"
+    android:padding="5dp"
+    android:background="#F6F6F6"
     android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="vertical"
+        android:background="@color/colotBackgroundOperator"></LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,10 +53,10 @@
 
 
             <TextView
+                android:text="No. Receive"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="No. Receive"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -72,7 +79,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
-            android:background="@color/cardview_light_background"
+            android:background="#F6F6F6"
             android:orientation="horizontal">
 
 
