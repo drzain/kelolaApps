@@ -10,6 +10,7 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,8 +24,22 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ReceiveOrder extends AppCompatActivity
 {
@@ -59,7 +74,9 @@ public class ReceiveOrder extends AppCompatActivity
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         mRecyclerView.setLayoutManager(layoutManager);
 
-        for (int i = 0; i < DataNoteInformation.codeArray.length; i++)
+        LoadAsset();
+
+        /*for (int i = 0; i < DataNoteInformation.codeArray.length; i++)
         {
             DataNote wp = new DataNote(
                     DataNoteInformation.codeArray[i],
@@ -70,16 +87,78 @@ public class ReceiveOrder extends AppCompatActivity
         }
 
         mListadapter = new ListAdapter(arraylist);
-        mRecyclerView.setAdapter(mListadapter);
+        mRecyclerView.setAdapter(mListadapter);*/
+
+    }
+
+    public void LoadAsset(){
+
+        //creating a string request to send request to the url
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, AppConfig.URL_ASSET_LIST,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        try {
+                            Log.e("Refresh",response);
+                            //getting the whole json object from the response
+                            JSONArray obj = new JSONArray(response);
+
+                            //we have the array named hero inside the object
+                            //so here we are getting that json array
+                            //now looping through all the elements of the json array
+                            ArrayList data = new ArrayList<DataReceive>();
+                            Log.e("data parts",obj.toString());
+                            for (int i = 0; i < obj.length(); i++) {
+                                JSONObject queObject = obj.getJSONObject(i);
+                                data.add(
+                                        new DataReceive(
+                                                queObject.getString("transaksi_no"),
+                                                queObject.getString("transaksi_date"),
+                                                queObject.getString("tipe_order"),
+                                                queObject.getString("waste_qty"),
+                                                queObject.getString("createdTimeStamp")
+                                        )
+                                );
+                                //getting the json object of the particular index inside the array
+
+                            }
+                            mListadapter = new ListAdapter(data);
+                            mRecyclerView.setAdapter(mListadapter);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //displaying the error in toast if occurrs
+                        try {
+                            //Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                        }catch (Exception x){
+                            x.printStackTrace();
+                        }
+                    }
+                }){
+
+        };
+
+        //creating a request queue
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+        //adding the string request to request queue
+        requestQueue.add(stringRequest);
 
     }
 
     public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>
     {
-        private ArrayList<DataNote> dataList;
-        private List<DataNote> filterlist = null;
+        private ArrayList<DataReceive> dataList;
+        private List<DataReceive> filterlist = null;
 
-        public ListAdapter(ArrayList<DataNote> data)
+        public ListAdapter(ArrayList<DataReceive> data)
         {
             this.dataList = data;
             this.filterlist = new ArrayList(dataList);
@@ -102,9 +181,6 @@ public class ReceiveOrder extends AppCompatActivity
                 this.cardReceive = (CardView) itemView.findViewById(R.id.card_receive);
                 this.receivedList =(LinearLayout) itemView.findViewById(R.id.receive_list);
 
-
-
-
             }
         }
 
@@ -120,9 +196,9 @@ public class ReceiveOrder extends AppCompatActivity
         @Override
         public void onBindViewHolder(ListAdapter.ViewHolder holder, final int position)
         {
-            holder.code_uuid.setText(filterlist.get(position).getCode());
-            holder.qtysampah.setText(filterlist.get(position).getQty() +" Kg");
-            holder.tanggalTransaksi.setText(filterlist.get(position).getDate());
+            holder.code_uuid.setText(filterlist.get(position).getTransaksi_no());
+            holder.qtysampah.setText(filterlist.get(position).getWaste_qty() +" Kg");
+            holder.tanggalTransaksi.setText(filterlist.get(position).getTransaksi_date());
 
             holder.cardReceive.setOnClickListener(new View.OnClickListener()
             {

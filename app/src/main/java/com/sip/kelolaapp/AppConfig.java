@@ -6,4 +6,6 @@ public class AppConfig {
 
     public static String URL_ORDER_WASTE = "http://35.240.141.26/api/receive";
 
+    public static String URL_ASSET_LIST = "http://35.240.141.26/api/receive/list_receive";
+
 }
