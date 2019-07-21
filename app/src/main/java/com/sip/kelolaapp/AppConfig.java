@@ -12,4 +12,6 @@ public class AppConfig {
 
     public static String URL_ASSET_LIST_PROSES = "http://35.240.141.26/api/receive/list_proses";
 
+    public static String URL_SET_PROSES = "http://35.240.141.26/api/receive/set_proses";
+
 }

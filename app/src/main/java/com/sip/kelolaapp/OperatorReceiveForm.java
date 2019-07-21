@@ -27,7 +27,7 @@ import java.util.Map;
 public class OperatorReceiveForm extends AppCompatActivity
 {
     private Button btn_struck;
-    String transaksi_no,transaksi_date,waste_qty,receive_qty;
+    String transaksi_no,transaksi_date,waste_qty,receive_qty,receive_no;
     TextView txtTransaksiNo, txtTransaksiDate, txtWasteQty;
     EditText edtQtyReceive;
     ProgressDialog pDialog;
@@ -50,6 +50,7 @@ public class OperatorReceiveForm extends AppCompatActivity
         transaksi_date = intent.getStringExtra("transaksi_date");
         waste_qty = intent.getStringExtra("waste_qty");
 
+
         txtTransaksiNo.setText(transaksi_no);
         txtTransaksiDate.setText(transaksi_date);
         txtWasteQty.setText(waste_qty);
@@ -60,7 +61,10 @@ public class OperatorReceiveForm extends AppCompatActivity
             public void onClick(View v)
             {
                 receive_qty = edtQtyReceive.getText().toString();
-                sendReceive(transaksi_no,receive_qty);
+                Long tsLong = System.currentTimeMillis()/1000;
+                String ts = tsLong.toString();
+                receive_no = ts;
+                sendReceive(transaksi_no,receive_qty,receive_no);
                 /*Intent i = new Intent(OperatorReceiveForm.this, ReceiveOrder.class);
                 startActivity(i);
                 finish();*/
@@ -69,7 +73,7 @@ public class OperatorReceiveForm extends AppCompatActivity
 
     }
 
-    private void sendReceive(final String transaksi_no, final String receive_qty)
+    private void sendReceive(final String transaksi_no, final String receive_qty, final String receive_no)
     {
         // Tag used to cancel the request
         String tag_string_req = "req_senddata";
@@ -131,6 +135,7 @@ public class OperatorReceiveForm extends AppCompatActivity
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("transaksi_no", transaksi_no);
                 params.put("receive_qty", receive_qty);
+                params.put("receive_no", receive_no);
 
                 return params;
             }

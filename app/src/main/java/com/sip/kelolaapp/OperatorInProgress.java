@@ -1,6 +1,9 @@
 package com.sip.kelolaapp;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -29,7 +32,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class OperatorInProgress extends AppCompatActivity
 {
@@ -40,6 +45,8 @@ public class OperatorInProgress extends AppCompatActivity
     private ArrayList<DataNote> arraylist = new ArrayList<DataNote>();
     private TextView operator_inprogress;
     private Dialog myDialog;
+    ProgressDialog pDialog;
+    private static final String TAG = OperatorInProgress.class.getSimpleName();
     private Button btn_received_save;
 
     @Override
@@ -51,6 +58,9 @@ public class OperatorInProgress extends AppCompatActivity
 
         operator_inprogress= (TextView) findViewById(R.id.operator_title);
         operator_inprogress.setText("Set Process Receive");
+
+        pDialog = new ProgressDialog(this);
+        pDialog.setCancelable(false);
 
         // Session manager
         session = new SessionManager(this.getApplicationContext());
@@ -202,22 +212,16 @@ public class OperatorInProgress extends AppCompatActivity
 
                 public void onClick(View v)
                 {
-                    //Toast.makeText(OperatorInProgress.this, "Item " + position + " is clicked.", Toast.LENGTH_SHORT).show();
-                    myDialog.setContentView(R.layout.operator_inproses_form);
-                    txtclose =(TextView) myDialog.findViewById(R.id.txtclose);
-                    btnstruck=(Button) myDialog.findViewById(R.id.btn_struck);
+                    new AlertDialog.Builder(OperatorInProgress.this)
+                    .setTitle("Set Proses")
+                    .setMessage("Apakah anda yakin mengubah statusnya menjadi proses?")
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 
-                    /*setFlagging(filterlist.get(position).getWarehouse_order_id());
-                    Intent intent = new Intent(getActivity(),
-                            ReceiveActivity.class);
-                    intent.putExtra("name",filterlist.get(position).getCustomer_name());
-                    intent.putExtra("code",filterlist.get(position).getAgreement_no());
-                    intent.putExtra("plat",filterlist.get(position).getLicense_plate());
-                    intent.putExtra("desc",filterlist.get(position).getAsset_description());
-                    intent.putExtra("year",filterlist.get(position).getManufacturing_year());
-                    intent.putExtra("asset_type",filterlist.get(position).getAsset_type());
-                    intent.putExtra("idwarehouse",filterlist.get(position).getWarehouse_order_id());
-                    startActivity(intent);*/
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            SetProses(filterlist.get(position).getTransaksi_no());
+                        }})
+                    .setNegativeButton(android.R.string.no, null).show();
                 }
             });
         }
@@ -231,6 +235,83 @@ public class OperatorInProgress extends AppCompatActivity
             return 0;
         }
 
+    }
+
+    private void SetProses(final String transaksi_no)
+    {
+        // Tag used to cancel the request
+        String tag_string_req = "req_senddata";
+
+        pDialog.setMessage("Loading...");
+        showDialog();
+
+        StringRequest strReq = new StringRequest(Request.Method.POST,
+                AppConfig.URL_SET_PROSES, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Log.d(TAG, "Save Response: " + response.toString());
+                hideDialog();
+
+                try {
+                    JSONObject jObj = new JSONObject(response);
+                    Log.e(TAG, "obj: " + jObj.toString());
+                    String error = jObj.getString("status");
+                    Log.e(TAG, "obj: " + error);
+                    // Check for error node in json
+                    if (error.equals("1")) {
+                        LoadAsset();
+                    } else {
+                        // Error in login. Get the error message
+                        String errorMsg = jObj.getString("message");
+                        Toast.makeText(getApplicationContext(),
+                                "Set Proses Gagal, Silakan Cek Koneksi Internet Anda !", Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    // JSON error
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                /*Intent intent = new Intent(LoginActivity.this,
+                        MainActivity.class);
+                startActivity(intent);
+                finish();*/
+                Log.e(TAG, "Send Data Error: " + error.getMessage());
+                Toast.makeText(getApplicationContext(),
+                        "Send Data Error", Toast.LENGTH_LONG).show();
+                hideDialog();
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() {
+                // Posting parameters to login url
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("transaksi_no", transaksi_no);
+
+                return params;
+            }
+
+        };
+
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
+    }
+
+    private void showDialog() {
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+
+    private void hideDialog() {
+        if (pDialog.isShowing())
+            pDialog.dismiss();
     }
 }
 
