@@ -18,4 +18,12 @@ public class AppConfig {
 
     public static String URL_SET_RESULT = "http://35.240.141.26/api/receive/set_result";
 
+    public static String URL_TRANSPORT_LIST = "http://35.240.141.26/api/receive/list_transport";
+
+    public static String URL_DELIVERY_LIST = "http://35.240.141.26/api/receive/list_delivery";
+
+    public static String URL_SET_LOAD = "http://35.240.141.26/api/receive/load_transport";
+
+    public static String URL_SET_FINISH = "http://35.240.141.26/api/receive/finish_transport";
+
 }

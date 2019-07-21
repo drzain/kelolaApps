@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".OperatorResultForm"></activity>
+        <activity android:name=".DriverLoadForm"></activity>
+        <activity android:name=".OperatorResultForm" />
 
         <uses-library
             android:name="org.apache.http.legacy"
