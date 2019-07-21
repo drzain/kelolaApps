@@ -112,12 +112,12 @@
 
                     <TextView
 
-                        android:layout_marginTop="12dp"
-                        android:textColor="#6f6f6f"
-                        android:textSize="18sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="In Process"/>
+                        android:layout_marginTop="12dp"
+                        android:text="Set Process"
+                        android:textColor="#6f6f6f"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 

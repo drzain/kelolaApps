@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="300dp"
-    android:layout_height="350dp"
-    android:background="#FFF"
     android:id="@+id/operator_received_form_id"
-    android:layout_gravity="center"
-    >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/colotBackgroundOperator">
-    <TextView
-        android:id="@+id/txtclose"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:textColor="@color/white"
-        android:text="X"
-        android:textStyle="bold"
-        android:layout_gravity="end"
-        android:gravity="center"
-        android:background="@color/colotBackgroundVendor"/>
-    </LinearLayout>
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center|top"
+    android:background="#FFF"
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,33 +15,34 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Received Form"
-            android:textAlignment="center"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:textColor="@color/cardview_dark_background"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:text="Received Form"
+            android:textAlignment="center"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
+
     <LinearLayout
-        android:padding="5dp"
-        android:layout_marginTop="5dp"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        android:padding="5dp"
         android:textAlignment="center">
+
         <LinearLayout
             android:id="@+id/receive_form_no"
-            android:background="@color/cardview_light_background"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            >
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="#c6c6c6"
+            android:orientation="horizontal">
 
 
             <TextView
@@ -65,71 +50,102 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="No. Receive"
+                android:textColor="@color/cardview_dark_background"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/cardview_dark_background"/>
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/no_transaksi"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:background="@color/cardview_dark_background"
                 android:gravity="center"
                 android:text="150"
+                android:textColor="#000000"
                 android:textSize="18sp" />
         </LinearLayout>
+
+
+
         <LinearLayout
             android:id="@+id/receive_form_date"
-            android:background="@color/cardview_light_background"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@color/cardview_light_background"
+            android:orientation="horizontal">
 
 
             <TextView
                 android:layout_width="150dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_height="wrap_content"
                 android:text="Date"
-                android:textSize="18sp"
-                android:textStyle="bold"
                 android:textColor="@color/cardview_dark_background"
-                />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/date_transaksi"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:background="@color/cardview_dark_background"
                 android:gravity="center"
                 android:text="100"
+                android:textColor="#000000"
                 android:textSize="18sp" />
         </LinearLayout>
+
         <LinearLayout
-            android:id="@+id/receive_form_weigth"
-            android:background="@color/cardview_light_background"
-            android:orientation="horizontal"
+            android:id="@+id/receive_total_qty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="#c6c6c6"
+            android:orientation="horizontal">
+
 
             <TextView
-            android:layout_width="150dp"
-            android:layout_marginLeft="5dp"
-            android:layout_height="wrap_content"
-            android:text="Weight"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/cardview_dark_background"
-            />
-
-            <EditText
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:background="@color/cardview_light_background"
-                android:gravity="center"
+                android:layout_marginLeft="5dp"
+                android:text="Total Qty Order"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/total_qty"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="100"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/receive_form_weigth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Weight"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/receive_qty"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#000000"
                 android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
@@ -138,10 +154,10 @@
         android:id="@+id/btn_struck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
-        android:layout_marginTop="25dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
         android:background="@color/colotBackgroundOperator"
-        android:textColor="@color/white"/>
+        android:text="Save"
+        android:textColor="@color/white" />
 
 </LinearLayout>

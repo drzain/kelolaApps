@@ -206,6 +206,9 @@ public class ReceiveOrder extends AppCompatActivity
                 public void onClick(View v)
                 {
                     Intent i = new Intent(ReceiveOrder.this, OperatorReceiveForm.class);
+                    i.putExtra("transaksi_no",filterlist.get(position).getTransaksi_no());
+                    i.putExtra("transaksi_date",filterlist.get(position).getTransaksi_date());
+                    i.putExtra("waste_qty",filterlist.get(position).getWaste_qty());
                     startActivity(i);
                     finish();
                     //Toast.makeText(ReceiveOrder.this, "Item " + position + " is clicked.", Toast.LENGTH_SHORT).show();
