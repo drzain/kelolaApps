@@ -181,7 +181,7 @@ public class DriverReceiveOrder extends AppCompatActivity
         public void onBindViewHolder(ListAdapter.ViewHolder holder, final int position)
         {
             holder.code_uuid.setText(filterlist.get(position).getReceive_no());
-            holder.qtysampah.setText(filterlist.get(position).getReceive_qty() +" Kg");
+            holder.qtysampah.setText(filterlist.get(position).getEnd_qty() +" Kg");
             holder.tanggalTransaksi.setText(filterlist.get(position).getTransaksi_date());
 
             holder.cardReceive.setOnClickListener(new View.OnClickListener()

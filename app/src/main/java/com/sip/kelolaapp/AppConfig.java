@@ -20,10 +20,18 @@ public class AppConfig {
 
     public static String URL_TRANSPORT_LIST = "http://35.240.141.26/api/receive/list_transport";
 
+    public static String URL_UMKM_LIST = "http://35.240.141.26/api/receive/list_umkm";
+
     public static String URL_DELIVERY_LIST = "http://35.240.141.26/api/receive/list_delivery";
+
+    public static String URL_REQUEST_LIST = "http://35.240.141.26/api/receive/list_request";
 
     public static String URL_SET_LOAD = "http://35.240.141.26/api/receive/load_transport";
 
+    public static String URL_SET_UMKM = "http://35.240.141.26/api/receive/load_umkm";
+
     public static String URL_SET_FINISH = "http://35.240.141.26/api/receive/finish_transport";
+
+    public static String URL_SAVE_UMKM = "http://35.240.141.26/api/receive/receive_umkm";
 
 }

@@ -18,7 +18,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:text="Load Transport Form"
+            android:text="UMKM Load Form"
             android:textAlignment="center"
             android:textColor="@color/cardview_dark_background"
             android:textSize="30dp"
@@ -41,13 +41,13 @@
             android:background="#c6c6c6">
 
             <TextView
-                android:id="@+id/noTransport"
+                android:id="@+id/noUmkm"
                 android:layout_marginTop="5dp"
                 android:padding="5dp"
                 android:textSize="18sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="No Transport"/>
+                android:text="No UMKM"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -57,42 +57,13 @@
             android:divider="@drawable/divider_shape">
 
             <TextView
-                android:id="@+id/dateTransport"
+                android:id="@+id/dateUmkm"
                 android:layout_marginTop="5dp"
                 android:padding="5dp"
                 android:textSize="18sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Date Transport"/>
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:divider="@drawable/divider_shape"
-            android:background="#c6c6c6"
-            >
-        <TextView
-            android:id="@+id/dropTransport"
-            android:layout_marginTop="5dp"
-            android:padding="5dp"
-            android:textSize="18sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Landfill"/>
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:divider="@drawable/divider_shape">
-            <Spinner
-                android:paddingTop="10dp"
-                android:paddingBottom="5dp"
-                android:id="@+id/nopolis"
-                android:entries="@array/nopolis"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"></Spinner>
+                android:text="Date UMKM"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -100,13 +71,13 @@
             android:layout_height="wrap_content"
             android:divider="@drawable/divider_shape"
             android:background="#c6c6c6">
-        <android.support.design.widget.TextInputEditText
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/qtyTransport"
-            android:hint="Qty Transport"
-            android:inputType="text"/>
+            <android.support.design.widget.TextInputEditText
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/qtyUmkm"
+                android:hint="Qty UMKM"
+                android:inputType="text"/>
         </android.support.design.widget.TextInputLayout>
 
     </LinearLayout>

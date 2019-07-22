@@ -8,6 +8,7 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,17 @@ import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +66,9 @@ public class UmkmReceiveOrder extends AppCompatActivity
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         mRecyclerView.setLayoutManager(layoutManager);
 
-        for (int i = 0; i < DataNoteInformation.codeArray.length; i++)
+        LoadAsset();
+
+        /*for (int i = 0; i < DataNoteInformation.codeArray.length; i++)
         {
             DataNote wp = new DataNote(
                     DataNoteInformation.codeArray[i],
@@ -65,16 +79,80 @@ public class UmkmReceiveOrder extends AppCompatActivity
         }
 
         mListadapter = new UmkmReceiveOrder.ListAdapter(arraylist);
-        mRecyclerView.setAdapter(mListadapter);
+        mRecyclerView.setAdapter(mListadapter);*/
+
+    }
+
+
+    public void LoadAsset(){
+
+        //creating a string request to send request to the url
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, AppConfig.URL_UMKM_LIST,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        try {
+                            Log.e("Refresh",response);
+                            //getting the whole json object from the response
+                            JSONArray obj = new JSONArray(response);
+
+                            //we have the array named hero inside the object
+                            //so here we are getting that json array
+                            //now looping through all the elements of the json array
+                            ArrayList data = new ArrayList<DataTransport>();
+                            Log.e("data parts",obj.toString());
+                            for (int i = 0; i < obj.length(); i++) {
+                                JSONObject queObject = obj.getJSONObject(i);
+                                data.add(
+                                        new DataTransport(
+                                                queObject.getString("receive_no"),
+                                                queObject.getString("transaksi_no"),
+                                                queObject.getString("transaksi_date"),
+                                                queObject.getString("receive_qty"),
+                                                queObject.getString("recycleble_qty"),
+                                                queObject.getString("end_qty")
+                                        )
+                                );
+                                //getting the json object of the particular index inside the array
+
+                            }
+                            mListadapter = new ListAdapter(data);
+                            mRecyclerView.setAdapter(mListadapter);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //displaying the error in toast if occurrs
+                        try {
+                            //Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                        }catch (Exception x){
+                            x.printStackTrace();
+                        }
+                    }
+                }){
+
+        };
+
+        //creating a request queue
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+        //adding the string request to request queue
+        requestQueue.add(stringRequest);
 
     }
 
     public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>
     {
-        private ArrayList<DataNote> dataList;
-        private List<DataNote> filterlist = null;
+        private ArrayList<DataTransport> dataList;
+        private List<DataTransport> filterlist = null;
 
-        public ListAdapter(ArrayList<DataNote> data)
+        public ListAdapter(ArrayList<DataTransport> data)
         {
             this.dataList = data;
             this.filterlist = new ArrayList(dataList);
@@ -109,28 +187,24 @@ public class UmkmReceiveOrder extends AppCompatActivity
         @Override
         public void onBindViewHolder(ListAdapter.ViewHolder holder, final int position)
         {
-            holder.code_uuid.setText(filterlist.get(position).getCode());
-            holder.qtysampah.setText(filterlist.get(position).getQty() +" Kg");
-            holder.tanggalTransaksi.setText(filterlist.get(position).getDate());
+            holder.code_uuid.setText(filterlist.get(position).getReceive_no());
+            holder.qtysampah.setText(filterlist.get(position).getRecycleble_qty() +" Kg");
+            holder.tanggalTransaksi.setText(filterlist.get(position).getTransaksi_date());
 
             holder.cardReceive.setOnClickListener(new View.OnClickListener()
             {
                 @Override
                 public void onClick(View v)
                 {
-                    Toast.makeText(UmkmReceiveOrder.this, "Item " + position + " is clicked.", Toast.LENGTH_SHORT).show();
-
-                    /*setFlagging(filterlist.get(position).getWarehouse_order_id());
-                    Intent intent = new Intent(getActivity(),
-                            ReceiveActivity.class);
-                    intent.putExtra("name",filterlist.get(position).getCustomer_name());
-                    intent.putExtra("code",filterlist.get(position).getAgreement_no());
-                    intent.putExtra("plat",filterlist.get(position).getLicense_plate());
-                    intent.putExtra("desc",filterlist.get(position).getAsset_description());
-                    intent.putExtra("year",filterlist.get(position).getManufacturing_year());
-                    intent.putExtra("asset_type",filterlist.get(position).getAsset_type());
-                    intent.putExtra("idwarehouse",filterlist.get(position).getWarehouse_order_id());
-                    startActivity(intent);*/
+                    Intent i = new Intent(UmkmReceiveOrder.this, UmkmLoadForm.class);
+                    i.putExtra("receive_no",filterlist.get(position).getReceive_no());
+                    i.putExtra("transaksi_no",filterlist.get(position).getTransaksi_no());
+                    i.putExtra("transaksi_date",filterlist.get(position).getTransaksi_date());
+                    i.putExtra("receive_qty",filterlist.get(position).getReceive_qty());
+                    i.putExtra("recycleble_qty",filterlist.get(position).getRecycleble_qty());
+                    i.putExtra("end_qty",filterlist.get(position).getEnd_qty());
+                    startActivity(i);
+                    finish();
                 }
             });
         }
