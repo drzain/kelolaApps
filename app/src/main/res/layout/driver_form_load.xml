@@ -105,8 +105,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/qtyTransport"
+            android:textColor="@color/black"
             android:hint="Qty Transport"
-            android:inputType="text"/>
+            android:inputType="numberDecimal"/>
         </android.support.design.widget.TextInputLayout>
 
     </LinearLayout>

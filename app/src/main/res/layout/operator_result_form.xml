@@ -9,14 +9,15 @@
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:orientation="vertical"
-        android:background="@color/colotBackgroundOperator"></LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:background="@color/colotBackgroundOperator">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -26,11 +27,11 @@
             android:layout_marginBottom="10dp"
             android:text="Result Packed Form"
             android:textAlignment="center"
-            android:textColor="@color/cardview_dark_background"
+            android:textColor="@color/cardview_light_background"
             android:textSize="30dp"
             android:textStyle="bold" />
 
-    </LinearLayout>
+        </LinearLayout></LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -152,7 +153,9 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:inputType="numberDecimal"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -180,7 +183,9 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:inputType="numberDecimal"
+                />
         </LinearLayout>
 
     </LinearLayout>
