@@ -100,7 +100,7 @@ public class UmkmLoadForm extends AppCompatActivity {
                     // Check for error node in json
                     if (error.equals("1")) {
 
-                        Intent i = new Intent(UmkmLoadForm.this, DriverReceiveOrder.class);
+                        Intent i = new Intent(UmkmLoadForm.this, UmkmReceiveOrder.class);
                         startActivity(i);
                         finish();
 

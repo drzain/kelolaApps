@@ -4,13 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center|top"
-    android:background="#FFF"
+    android:padding="5dp"
+    android:background="#F6F6F6"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:background="@color/colotBackgroundUmkm">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -20,9 +28,9 @@
             android:layout_marginBottom="10dp"
             android:text="UMKM Load Form"
             android:textAlignment="center"
-            android:textColor="@color/cardview_dark_background"
+            android:textColor="@color/cardview_light_background"
             android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textStyle="bold" /></LinearLayout>
 
     </LinearLayout>
 
@@ -34,51 +42,89 @@
         android:padding="5dp"
         android:textAlignment="center">
 
-        <android.support.design.widget.TextInputLayout
+        <LinearLayout
+            android:id="@+id/umkm_form_no"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:divider="@drawable/divider_shape"
-            android:background="#c6c6c6">
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:background="#c6c6c6"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:text="No UMKM"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/noUmkm"
-                android:layout_marginTop="5dp"
-                android:padding="5dp"
                 android:textSize="18sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="No UMKM"/>
+                />
 
-        </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
 
-        <android.support.design.widget.TextInputLayout
+        <LinearLayout
+            android:id="@+id/umkm_form_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:divider="@drawable/divider_shape">
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:background="#F6F6F6"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Date UMKM"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/dateUmkm"
-                android:layout_marginTop="5dp"
-                android:padding="5dp"
                 android:textSize="18sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Date UMKM"/>
-        </android.support.design.widget.TextInputLayout>
+                />
+        </LinearLayout>
 
-        <android.support.design.widget.TextInputLayout
+        <LinearLayout
+            android:id="@+id/umkm_form_qty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:divider="@drawable/divider_shape"
-            android:background="#c6c6c6">
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:background="#c6c6c6"
+            android:orientation="horizontal">
+            <TextView
+                android:hint="Qty UMKM"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18sp"
+                android:textStyle="bold" />
             <android.support.design.widget.TextInputEditText
-                android:layout_marginTop="5dp"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/qtyUmkm"
-                android:hint="Qty UMKM"
-                android:inputType="text"/>
-        </android.support.design.widget.TextInputLayout>
+                android:inputType="numberDecimal"/>
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -88,7 +134,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="25dp"
-        android:background="@color/colotBackgroundOperator"
+        android:background="@color/colotBackgroundUmkm"
         android:text="Save"
         android:textColor="@color/white" />
 
