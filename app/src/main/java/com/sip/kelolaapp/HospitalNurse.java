@@ -43,6 +43,9 @@ public class HospitalNurse  extends Activity
     EditText edtItem1, edtItem2, edtItem3;
     TextView infus_rekap, syringe_rekap, nacl_rekap;
     ProgressDialog pDialog;
+    int qtyInfus =0;
+    int qtySyringe =0;
+    int qtyNacl=0;
     protected void onCreate(Bundle savedInstanceState)
     {
 
@@ -212,6 +215,83 @@ public class HospitalNurse  extends Activity
             pDialog.dismiss();
     }
 
+    public void InfusionDecrement(View view)
+    {
+        if(qtyInfus==0){
+            Toast.makeText(this,"pesanan minimal 0",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        qtyInfus = qtyInfus-1 ;
+        display(qtyInfus);
+    }
 
+    private void display(int number)
+    {
+
+        edtItem1.setText(""+number);
+
+    }
+
+    public void InfusionIncrement(View view)
+    {
+        if(qtyInfus==1000){
+            Toast.makeText(this,"pesanan maximal 1000",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        qtyInfus = qtyInfus+1 ;
+        display(qtyInfus);
+
+    }
+
+
+
+    public void SyringeIncrement(View view)
+    {
+        if(qtySyringe==1000){
+            Toast.makeText(this,"pesanan maximal 1000",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        qtySyringe = qtySyringe+1 ;
+        display2(qtySyringe);
+    }
+
+    private void display2(int number2)
+    {
+        edtItem2.setText(""+number2);
+    }
+
+    public void SyringeDecrement(View view)
+    {
+        if(qtySyringe==0){
+            Toast.makeText(this,"pesanan minimal 0",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        qtySyringe = qtySyringe-1 ;
+        display2(qtySyringe);
+    }
+
+    public void NaclIncrement(View view)
+    {
+        if(qtyNacl==1000){
+            Toast.makeText(this,"pesanan maximal 1000",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        qtyNacl = qtyNacl+1 ;
+        display3(qtyNacl);
+    }
+
+    private void display3(int number3)
+    {
+        edtItem3.setText(""+number3);
+    }
+    public void NaclDecrement(View view)
+    {
+        if(qtyNacl==0){
+            Toast.makeText(this,"pesanan minimal 0",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        qtyNacl = qtyNacl-1 ;
+        display3(qtyNacl);
+    }
 
 }

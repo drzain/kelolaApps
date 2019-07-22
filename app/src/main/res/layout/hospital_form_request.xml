@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".HospitalFormRequest">
+    tools:context=".HospitalFormRequest"
+    android:background="@color/cardview_light_background">
 
     <RelativeLayout
         android:id="@+id/rel_form"
@@ -39,122 +40,190 @@
 
     <ScrollView
         android:id="@+id/scroll_form"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="50dp"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_below="@+id/rel_form"
-
-        >
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="50dp">
 
         <RelativeLayout
             android:id="@+id/rel_detail"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_centerHorizontal="true"
             android:layout_below="@+id/rel_profile"
-            >
+            android:layout_centerHorizontal="true">
 
             <TextView
                 android:id="@+id/txt_item1"
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
-                android:textSize="15dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
                 android:hint="Infusion Set"
                 android:textColor="#0000ff"
+                android:textSize="20dp"
                 android:textStyle="normal|bold" />
 
-            <EditText
-                android:id="@+id/edt_item1"
-                android:layout_width="fill_parent"
-                android:layout_height="40dp"
+            <LinearLayout
+                android:id="@+id/btn_edt_item1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/txt_item1"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:textColor="@color/colorTextView"
-                android:textColorHint="@color/colorAccent"
-                android:textStyle="normal|italic"
-                android:hint="ex : 1"
-                android:inputType="numberDecimal"
-                />
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_minus3"
+                    android:onClick="InfusionDecrement"/>
+
+                <EditText
+                    android:id="@+id/edt_item1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_item1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@color/colorTextView"
+                    android:textColorHint="@color/colorAccent"
+                    android:textSize="20dp"
+                    android:textStyle="normal|italic" />
+
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_plus3"
+                    android:onClick="InfusionIncrement"/>
+            </LinearLayout>
+
+
             <TextView
                 android:id="@+id/txt_item2"
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
-                android:textSize="15dp"
-                android:layout_below="@+id/edt_item1"
+                android:layout_below="@+id/btn_edt_item1"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
                 android:hint="Syringe 50ml"
                 android:textColor="#0000ff"
+                android:textSize="20dp"
                 android:textStyle="normal|bold" />
 
-            <EditText
-                android:id="@+id/edt_item2"
-                android:layout_width="fill_parent"
-                android:layout_height="40dp"
+            <LinearLayout
+                android:id="@+id/btn_edt_item2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/txt_item2"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:inputType="numberDecimal"
-                android:textStyle="normal|italic"
-                android:textColor="@color/colorTextView"
-                android:textColorHint="@color/colorAccent"
-                android:hint="ex : 1"
-                />
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_minus3"
+                    android:onClick="SyringeDecrement"/>
+
+                <EditText
+                    android:id="@+id/edt_item2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_item2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@color/colorTextView"
+                    android:textColorHint="@color/colorAccent"
+                    android:textSize="20dp"
+                    android:textStyle="normal|italic" />
+
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_plus3"
+                    android:onClick="SyringeIncrement"/>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/txt_item3"
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
-                android:textSize="15dp"
-                android:layout_below="@+id/edt_item2"
+                android:layout_below="@+id/btn_edt_item2"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
                 android:layout_marginTop="15dp"
-                android:hint="NaCl Infus 1000 ml"
-
+                android:layout_marginRight="10dp"
+                android:hint="NaCI 1000 ml"
                 android:textColor="#0000ff"
+                android:textSize="20dp"
                 android:textStyle="normal|bold" />
 
-
-
-            <EditText
-                android:id="@+id/edt_item3"
-                android:layout_width="fill_parent"
-                android:layout_height="40dp"
+            <LinearLayout
+                android:id="@+id/btn_edt_item3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_item3"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:textColor="@color/colorTextView"
-                android:textColorHint="@color/colorAccent"
-                android:layout_below="@+id/txt_item3"
-                android:textStyle="normal|italic"
-                android:hint="ex : 1"
-                android:inputType="numberDecimal"
-                />
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_minus3"
+                    android:onClick="NaclDecrement"/>
+
+                <EditText
+                    android:id="@+id/edt_item3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_item3"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@color/colorTextView"
+                    android:textColorHint="@color/colorAccent"
+                    android:textSize="20dp"
+                    android:textStyle="normal|italic" />
+
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_plus3"
+                    android:onClick="NaclIncrement"/>/>
+
+            </LinearLayout>
+
 
             <Button
                 android:id="@+id/btn_order_form"
-                android:layout_below="@id/edt_item3"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="fill_parent"
                 android:layout_height="40dp"
+                android:layout_below="@id/btn_edt_item3"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="15dp"
+                android:background="#FAA41A"
                 android:onClick="Order"
                 android:text="Order"
-                android:background="#FAA41A"
                 android:textColor="#fff"
-                style="@style/Widget.AppCompat.Button"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-
                 />
 
 
