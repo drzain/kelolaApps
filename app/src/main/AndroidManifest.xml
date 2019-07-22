@@ -46,6 +46,7 @@
         <activity android:name=".DashboardUmkm" />
         <activity android:name=".DashboardActivity" />
         <activity android:name=".DashboardHospital" />
+        <activity android:name=".DashboardReport"/>
         <activity android:name=".HospitalFormRequest" />
         <activity android:name=".HospitalPolyclinic" />
         <activity android:name=".HospitalNurse" />

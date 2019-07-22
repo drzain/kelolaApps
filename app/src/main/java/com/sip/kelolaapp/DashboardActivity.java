@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    private LinearLayout btn_hospital,btn_operator, btn_driver, btn_umkm, btn_logout, btn_landfill, btn_vendor;
+    private LinearLayout btn_hospital,btn_operator, btn_driver, btn_umkm, btn_logout, btn_landfill, btn_report;
     private SessionManager session;
 
     @Override
@@ -65,6 +65,15 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(DashboardActivity.this, DashboardUmkm.class);
+                startActivity(i);
+            }
+        });
+
+        btn_report = (LinearLayout) findViewById(R.id.admin_live_dashboard);
+        btn_report.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(DashboardActivity.this, DashboardReport.class);
                 startActivity(i);
             }
         });
