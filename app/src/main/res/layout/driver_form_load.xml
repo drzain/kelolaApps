@@ -4,13 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center|top"
-    android:background="#FFF"
+    android:background="#F6F6F6"
+    android:padding="5dp"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:background="@color/colotBackgroundOperator">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -20,67 +28,128 @@
             android:layout_marginBottom="10dp"
             android:text="Load Transport Form"
             android:textAlignment="center"
-            android:textColor="@color/cardview_dark_background"
+            android:textColor="@color/cardview_light_background"
             android:textSize="30dp"
             android:textStyle="bold" />
 
-    </LinearLayout>
+        </LinearLayout></LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:orientation="vertical"
-        android:padding="5dp"
         android:textAlignment="center">
 
-        <android.support.design.widget.TextInputLayout
+        <LinearLayout
+            android:id="@+id/driver_load_no"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:divider="@drawable/divider_shape"
-            android:background="#c6c6c6">
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="#c6c6c6"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:text="No Transport"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/noTransport"
-                android:layout_marginTop="5dp"
-                android:padding="5dp"
-                android:textSize="18sp"
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="No Transport"/>
+                android:gravity="center"
+                android:text="150"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                />
 
-        </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
 
-        <android.support.design.widget.TextInputLayout
+        <LinearLayout
+            android:id="@+id/driver_load_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:divider="@drawable/divider_shape">
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:background="#F6F6F6"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Date Transport"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/dateTransport"
-                android:layout_marginTop="5dp"
-                android:padding="5dp"
-                android:textSize="18sp"
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="Date Transport"/>
-        </android.support.design.widget.TextInputLayout>
+                android:gravity="center"
+                android:text="150"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                />
+        </LinearLayout>
 
-        <android.support.design.widget.TextInputLayout
+        <LinearLayout
+            android:id="@+id/driver_load_landfill"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:divider="@drawable/divider_shape"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
             android:background="#c6c6c6"
-            >
+            android:orientation="horizontal">
+
+        <TextView
+            android:text="Landfill"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
         <TextView
             android:id="@+id/dropTransport"
-            android:layout_marginTop="5dp"
-            android:padding="5dp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="150"
+            android:textColor="#000000"
             android:textSize="18sp"
+            />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/driver_load_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Landfill"/>
-        </android.support.design.widget.TextInputLayout>
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:background="#F6F6F6"
+            android:orientation="horizontal">
+
+            <TextView
+            android:text="No. Pol"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -94,21 +163,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"></Spinner>
         </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
 
-        <android.support.design.widget.TextInputLayout
+        <LinearLayout
+            android:id="@+id/driver_load_qty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:divider="@drawable/divider_shape"
-            android:background="#c6c6c6">
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:background="#c6c6c6"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="Qty"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+
         <android.support.design.widget.TextInputEditText
-            android:layout_marginTop="5dp"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/qtyTransport"
             android:textColor="@color/black"
             android:hint="Qty Transport"
             android:inputType="numberDecimal"/>
-        </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
 
     </LinearLayout>
 
