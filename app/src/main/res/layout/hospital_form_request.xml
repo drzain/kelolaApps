@@ -212,17 +212,48 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:background="@drawable/ic_plus3"
-                    android:onClick="NaclIncrement"/>/>
-
+                    android:onClick="NaclIncrement"/>
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/txt_total"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_edt_item3"
+                android:layout_marginRight="10dp"
+                >
+            <TextView
+                android:id="@+id/txt_item_total"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:hint="Total Weight"
+                android:textColor="#0000ff"
+                android:textSize="20dp"
+                android:textStyle="normal|bold" />
+
+                <TextView
+                    android:id="@+id/txt_total_hospital"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="30dp"
+                    android:gravity="right"
+                    android:inputType="numberDecimal"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:textStyle="normal|bold" />
+            </LinearLayout>
 
             <Button
                 android:id="@+id/btn_order_form"
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="fill_parent"
                 android:layout_height="40dp"
-                android:layout_below="@id/btn_edt_item3"
+                android:layout_below="@id/txt_total"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
@@ -231,7 +262,7 @@
                 android:layout_marginBottom="15dp"
                 android:background="#FAA41A"
                 android:onClick="Order"
-                android:text="Order"
+                android:text="Usage"
                 android:textColor="#fff"
                 />
 

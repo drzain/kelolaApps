@@ -42,11 +42,12 @@ public class HospitalFormRequest extends Activity
     private ImageView icon_form;
     String infus, syringe, nacl, uniqueid;
     EditText edtItem1, edtItem2, edtItem3;
-    TextView infus_rekap, syringe_rekap, nacl_rekap;
+    TextView infus_rekap, syringe_rekap, nacl_rekap, total;
     ProgressDialog pDialog;
     int qtyInfus =0;
     int qtySyringe =0;
     int qtyNacl=0;
+    int qtytotal =0, a, b,c;
 
 
     protected void onCreate(Bundle savedInstanceState)
@@ -70,6 +71,11 @@ public class HospitalFormRequest extends Activity
 
         icon_form = (ImageView) findViewById(R.id.img_loc);
         icon_form.setImageResource(R.drawable.ic_emergeny);
+
+        total = (TextView) findViewById(R.id.txt_total_hospital);
+        qtytotal = a+b+c;
+        total.setText("0");
+
     }
 
     public void Order(View v)
@@ -230,7 +236,7 @@ public class HospitalFormRequest extends Activity
             btn_infus_dec.setVisibility(View.INVISIBLE);
             edtItem1.setVisibility(View.INVISIBLE);
             //qtyInfus=0;
-            //Toast.makeText(this,"pesanan minimal 0",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"No less than zero",Toast.LENGTH_SHORT).show();
             return;
         }
         qtyInfus = qtyInfus-1 ;
@@ -250,7 +256,7 @@ public class HospitalFormRequest extends Activity
             btn_infus_dec.setVisibility(View.VISIBLE);
             edtItem1.setVisibility(View.VISIBLE);
             edtItem1.setBackgroundColor(Color.TRANSPARENT);
-            //Toast.makeText(this,"pesanan maximal 1000",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this,"No less than zero",Toast.LENGTH_SHORT).show();
          //   return;
      //   }
         qtyInfus = qtyInfus+1 ;
@@ -286,7 +292,7 @@ public class HospitalFormRequest extends Activity
         {
             btn_syringe_dec.setVisibility(View.INVISIBLE);
             edtItem2.setVisibility(View.INVISIBLE);
-            //Toast.makeText(this,"pesanan minimal 0",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"No less than zero",Toast.LENGTH_SHORT).show();
             return;
         }
         qtySyringe = qtySyringe-1 ;
@@ -317,7 +323,7 @@ public class HospitalFormRequest extends Activity
         {
             btn_nacl_dec.setVisibility(View.INVISIBLE);
             edtItem3.setVisibility(View.INVISIBLE);
-           // Toast.makeText(this,"pesanan minimal 0",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"No less than zero",Toast.LENGTH_SHORT).show();
             return;
         }
         qtyNacl = qtyNacl-1 ;

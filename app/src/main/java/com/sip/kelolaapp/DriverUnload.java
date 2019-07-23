@@ -52,7 +52,7 @@ public class DriverUnload extends AppCompatActivity {
         setContentView(R.layout.driver_receive_order_list);
 
         unload_title= (TextView) findViewById(R.id.driver_title);
-        unload_title.setText("Unload Received");
+        unload_title.setText("Unload");
 
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
@@ -201,7 +201,7 @@ public class DriverUnload extends AppCompatActivity {
                 public void onClick(View v) {
                     new AlertDialog.Builder(DriverUnload.this)
                     .setTitle("Set Finish")
-                    .setMessage("Apakah anda yakin sampah sudah sampai landfill?")
+                    .setMessage("Unload in landfill?")
                     .setIcon(android.R.drawable.ic_dialog_alert)
                     .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 

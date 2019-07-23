@@ -50,7 +50,7 @@ public class CommoditiesRecevied extends AppCompatActivity
         setContentView(R.layout.umkm_receive_order_list);
 
         commodities_recieved= (TextView) findViewById(R.id.commodities_title);
-        commodities_recieved.setText("Commodities Recieved");
+        commodities_recieved.setText("UMKM Recieved");
 
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
@@ -200,8 +200,8 @@ public class CommoditiesRecevied extends AppCompatActivity
                 public void onClick(View v)
                 {
                     new AlertDialog.Builder(CommoditiesRecevied.this)
-                    .setTitle("Set Receive UMKM")
-                    .setMessage("Apakah anda yakin sampah sudah sampai UMKM?")
+                    .setTitle("UMKM Received")
+                    .setMessage("Do you want to receive?")
                     .setIcon(android.R.drawable.ic_dialog_alert)
                     .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 

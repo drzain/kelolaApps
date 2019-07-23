@@ -88,7 +88,7 @@ public class DashboardReport extends AppCompatActivity implements OnChartValueSe
                             PieData data = new PieData(xVals, dataSet);
                             //data.setValueFormatter(new DefaultValueFormatter(0));
                             pieChart1.setData(data);
-                            pieChart1.setDescription("Chart Waste Produce");
+                            pieChart1.setDescription("Waste Produce");
 
                             pieChart1.setUsePercentValues(true);
                             pieChart1.setDrawHoleEnabled(true);
@@ -164,7 +164,7 @@ public class DashboardReport extends AppCompatActivity implements OnChartValueSe
                             PieData data = new PieData(xVals, dataSet);
                             //data.setValueFormatter(new DefaultValueFormatter(0));
                             pieChart2.setData(data);
-                            pieChart2.setDescription("Chart Data Proses");
+                            pieChart2.setDescription("Data Proses");
 
                             pieChart2.setUsePercentValues(true);
                             pieChart2.setDrawHoleEnabled(true);
@@ -237,7 +237,7 @@ public class DashboardReport extends AppCompatActivity implements OnChartValueSe
                             PieData data = new PieData(xVals, dataSet);
                             //data.setValueFormatter(new DefaultValueFormatter(0));
                             pieChart3.setData(data);
-                            pieChart3.setDescription("Chart Commodities");
+                            pieChart3.setDescription("Commodities");
 
                             pieChart3.setUsePercentValues(true);
                             pieChart3.setDrawHoleEnabled(true);
@@ -313,7 +313,7 @@ public class DashboardReport extends AppCompatActivity implements OnChartValueSe
                             PieData data = new PieData(xVals, dataSet);
                             //data.setValueFormatter(new DefaultValueFormatter(0));
                             pieChart4.setData(data);
-                            pieChart4.setDescription("Chart End Waste");
+                            pieChart4.setDescription("End Waste");
 
                             pieChart4.setUsePercentValues(true);
                             pieChart4.setDrawHoleEnabled(true);
@@ -386,7 +386,7 @@ public class DashboardReport extends AppCompatActivity implements OnChartValueSe
                             PieData data = new PieData(xVals, dataSet);
                             //data.setValueFormatter(new DefaultValueFormatter(0));
                             pieChart5.setData(data);
-                            pieChart5.setDescription("Chart Recycleble");
+                            pieChart5.setDescription("Recycleble");
 
                             pieChart5.setUsePercentValues(true);
                             pieChart5.setDrawHoleEnabled(true);

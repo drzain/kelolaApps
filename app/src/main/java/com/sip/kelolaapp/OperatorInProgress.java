@@ -57,7 +57,7 @@ public class OperatorInProgress extends AppCompatActivity
         myDialog = new Dialog(this);
 
         operator_inprogress= (TextView) findViewById(R.id.operator_title);
-        operator_inprogress.setText("Set Process Receive");
+        operator_inprogress.setText("In Process Receive");
 
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
@@ -213,8 +213,8 @@ public class OperatorInProgress extends AppCompatActivity
                 public void onClick(View v)
                 {
                     new AlertDialog.Builder(OperatorInProgress.this)
-                    .setTitle("Set Proses")
-                    .setMessage("Apakah anda yakin mengubah statusnya menjadi proses?")
+                    .setTitle("In Process")
+                    .setMessage("Do you want to process this receive?")
                     .setIcon(android.R.drawable.ic_dialog_alert)
                     .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 
