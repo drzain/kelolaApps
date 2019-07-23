@@ -166,7 +166,7 @@ public class DashboardReport extends AppCompatActivity implements OnChartValueSe
                             pieChart2.setData(data);
                             pieChart2.setDescription("Chart Data Proses");
 
-
+                            pieChart2.setUsePercentValues(true);
                             pieChart2.setDrawHoleEnabled(true);
                             pieChart2.setTransparentCircleRadius(25f);
                             pieChart2.setHoleRadius(25f);
@@ -239,7 +239,7 @@ public class DashboardReport extends AppCompatActivity implements OnChartValueSe
                             pieChart3.setData(data);
                             pieChart3.setDescription("Chart Commodities");
 
-
+                            pieChart3.setUsePercentValues(true);
                             pieChart3.setDrawHoleEnabled(true);
                             pieChart3.setTransparentCircleRadius(25f);
                             pieChart3.setHoleRadius(25f);
@@ -315,7 +315,7 @@ public class DashboardReport extends AppCompatActivity implements OnChartValueSe
                             pieChart4.setData(data);
                             pieChart4.setDescription("Chart End Waste");
 
-
+                            pieChart4.setUsePercentValues(true);
                             pieChart4.setDrawHoleEnabled(true);
                             pieChart4.setTransparentCircleRadius(25f);
                             pieChart4.setHoleRadius(25f);
@@ -388,7 +388,7 @@ public class DashboardReport extends AppCompatActivity implements OnChartValueSe
                             pieChart5.setData(data);
                             pieChart5.setDescription("Chart Recycleble");
 
-
+                            pieChart5.setUsePercentValues(true);
                             pieChart5.setDrawHoleEnabled(true);
                             pieChart5.setTransparentCircleRadius(25f);
                             pieChart5.setHoleRadius(25f);
