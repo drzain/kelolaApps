@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    android:background="@drawable/bg_landfill"
+    android:background="@color/bg_screen4"
     tools:context=".DashboardReport">
 
     <LinearLayout
@@ -36,21 +35,99 @@
 
         </RelativeLayout>
 
-        <GridLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_marginTop="40dp"
-            android:columnCount="2"
-            android:rowCount="3"
-            android:columnOrderPreserved="false"
             android:alignmentMode="alignMargins"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:elevation="6dp">
 
+                <com.github.mikephil.charting.charts.PieChart
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/barchart"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+                </com.github.mikephil.charting.charts.PieChart>
 
+            </android.support.v7.widget.CardView>
 
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:elevation="6dp">
 
+                <com.github.mikephil.charting.charts.PieChart
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/barchart2"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+                </com.github.mikephil.charting.charts.PieChart>
 
-        </GridLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:elevation="6dp">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/barchart3"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+                </com.github.mikephil.charting.charts.PieChart>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:elevation="6dp">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/barchart4"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+                </com.github.mikephil.charting.charts.PieChart>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:elevation="6dp">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/barchart5"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+                </com.github.mikephil.charting.charts.PieChart>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
 
     </LinearLayout>
 

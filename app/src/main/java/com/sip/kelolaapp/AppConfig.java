@@ -34,4 +34,14 @@ public class AppConfig {
 
     public static String URL_SAVE_UMKM = "http://35.240.141.26/api/receive/receive_umkm";
 
+    public static String URL_WASTE_PRODUCE = "http://35.240.141.26/api/receive/waste_produce";
+
+    public static String URL_DATA_PROSES = "http://35.240.141.26/api/receive/data_proses";
+
+    public static String URL_DATA_COMMODITIES = "http://35.240.141.26/api/receive/commodities";
+
+    public static String URL_DATA_ENDWASTE = "http://35.240.141.26/api/receive/endwaste";
+
+    public static String URL_DATA_RECYCLEBLE = "http://35.240.141.26/api/receive/recycleble";
+
 }
