@@ -33,7 +33,7 @@ import java.util.UUID;
 public class HospitalNurse  extends Activity
 {
 
-    private Button btn_order;
+    private Button btn_order,  btn_infus_dec, btn_syringe_dec, btn_nacl_dec;
     private LinearLayout btn_send;
     Dialog myDialog;
     private static final String TAG = HospitalNurse.class.getSimpleName();
@@ -58,12 +58,15 @@ public class HospitalNurse  extends Activity
         edtItem1 = (EditText) findViewById(R.id.edt_item1);
         edtItem2 = (EditText) findViewById(R.id.edt_item2);
         edtItem3 = (EditText) findViewById(R.id.edt_item3);
+        btn_infus_dec =(Button) findViewById(R.id.infus_decrement_id);
+        btn_syringe_dec =(Button) findViewById(R.id.syringe_decrment_id);
+        btn_nacl_dec = (Button) findViewById(R.id.nacl_decrement_id);
 
         judul = (TextView) findViewById(R.id.txt_form_request);
-        judul.setText("Form Emergency");
+        judul.setText("Form Nurse");
 
         icon_form = (ImageView) findViewById(R.id.img_loc);
-        icon_form.setImageResource(R.drawable.ic_emergeny);
+        icon_form.setImageResource(R.drawable.ic_nurse);
     }
 
     public void Order(View v)
@@ -217,8 +220,13 @@ public class HospitalNurse  extends Activity
 
     public void InfusionDecrement(View view)
     {
-        if(qtyInfus==0){
-            Toast.makeText(this,"pesanan minimal 0",Toast.LENGTH_SHORT).show();
+
+        if(qtyInfus==0)
+        {
+            btn_infus_dec.setVisibility(View.INVISIBLE);
+            edtItem1.setVisibility(View.INVISIBLE);
+            //qtyInfus=0;
+            //Toast.makeText(this,"pesanan minimal 0",Toast.LENGTH_SHORT).show();
             return;
         }
         qtyInfus = qtyInfus-1 ;
@@ -234,10 +242,13 @@ public class HospitalNurse  extends Activity
 
     public void InfusionIncrement(View view)
     {
-        if(qtyInfus==1000){
-            Toast.makeText(this,"pesanan maximal 1000",Toast.LENGTH_SHORT).show();
-            return;
-        }
+        //if(qtyInfus>0){
+        btn_infus_dec.setVisibility(View.VISIBLE);
+        edtItem1.setVisibility(View.VISIBLE);
+        edtItem1.setBackgroundColor(Color.TRANSPARENT);
+        //Toast.makeText(this,"pesanan maximal 1000",Toast.LENGTH_SHORT).show();
+        //   return;
+        //   }
         qtyInfus = qtyInfus+1 ;
         display(qtyInfus);
 
@@ -247,10 +258,15 @@ public class HospitalNurse  extends Activity
 
     public void SyringeIncrement(View view)
     {
-        if(qtySyringe==1000){
-            Toast.makeText(this,"pesanan maximal 1000",Toast.LENGTH_SHORT).show();
-            return;
-        }
+        //if(qtySyringe==1000)
+        //{
+        //  Toast.makeText(this,"pesanan maximal 1000",Toast.LENGTH_SHORT).show();
+        //return;
+        //}
+
+        btn_syringe_dec.setVisibility(View.VISIBLE);
+        edtItem2.setVisibility(View.VISIBLE);
+        edtItem2.setBackgroundColor(Color.TRANSPARENT);
         qtySyringe = qtySyringe+1 ;
         display2(qtySyringe);
     }
@@ -262,8 +278,11 @@ public class HospitalNurse  extends Activity
 
     public void SyringeDecrement(View view)
     {
-        if(qtySyringe==0){
-            Toast.makeText(this,"pesanan minimal 0",Toast.LENGTH_SHORT).show();
+        if(qtySyringe==0)
+        {
+            btn_syringe_dec.setVisibility(View.INVISIBLE);
+            edtItem2.setVisibility(View.INVISIBLE);
+            //Toast.makeText(this,"pesanan minimal 0",Toast.LENGTH_SHORT).show();
             return;
         }
         qtySyringe = qtySyringe-1 ;
@@ -272,10 +291,14 @@ public class HospitalNurse  extends Activity
 
     public void NaclIncrement(View view)
     {
-        if(qtyNacl==1000){
+        /*if(qtyNacl==1000){
             Toast.makeText(this,"pesanan maximal 1000",Toast.LENGTH_SHORT).show();
             return;
-        }
+        }*/
+
+        btn_nacl_dec.setVisibility(View.VISIBLE);
+        edtItem3.setVisibility(View.VISIBLE);
+        edtItem3.setBackgroundColor(Color.TRANSPARENT);
         qtyNacl = qtyNacl+1 ;
         display3(qtyNacl);
     }
@@ -286,8 +309,11 @@ public class HospitalNurse  extends Activity
     }
     public void NaclDecrement(View view)
     {
-        if(qtyNacl==0){
-            Toast.makeText(this,"pesanan minimal 0",Toast.LENGTH_SHORT).show();
+        if(qtyNacl==0)
+        {
+            btn_nacl_dec.setVisibility(View.INVISIBLE);
+            edtItem3.setVisibility(View.INVISIBLE);
+            // Toast.makeText(this,"pesanan minimal 0",Toast.LENGTH_SHORT).show();
             return;
         }
         qtyNacl = qtyNacl-1 ;

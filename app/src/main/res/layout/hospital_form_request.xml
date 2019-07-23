@@ -32,7 +32,7 @@
             android:id="@+id/img_loc"
             android:layout_height="75dp"
             android:layout_width="75dp"
-            android:background="@drawable/form"
+
             android:layout_alignParentRight="true"
             android:layout_marginTop="15dp"
             android:layout_marginRight="25dp" />
@@ -78,10 +78,12 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/infus_decrement_id"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:background="@drawable/ic_minus3"
-                    android:onClick="InfusionDecrement"/>
+                    android:onClick="InfusionDecrement"
+                    android:visibility="invisible"/>
 
                 <EditText
                     android:id="@+id/edt_item1"
@@ -95,7 +97,8 @@
                     android:textColor="@color/colorTextView"
                     android:textColorHint="@color/colorAccent"
                     android:textSize="20dp"
-                    android:textStyle="normal|italic" />
+                    android:textStyle="normal|italic"
+                    android:visibility="invisible"/>
 
                 <Button
                     android:layout_width="20dp"
@@ -129,10 +132,12 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/syringe_decrment_id"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:background="@drawable/ic_minus3"
-                    android:onClick="SyringeDecrement"/>
+                    android:onClick="SyringeDecrement"
+                    android:visibility="invisible"/>
 
                 <EditText
                     android:id="@+id/edt_item2"
@@ -146,7 +151,8 @@
                     android:textColor="@color/colorTextView"
                     android:textColorHint="@color/colorAccent"
                     android:textSize="20dp"
-                    android:textStyle="normal|italic" />
+                    android:textStyle="normal|italic"
+                    android:visibility="invisible"/>
 
                 <Button
                     android:layout_width="20dp"
@@ -180,10 +186,12 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/nacl_decrement_id"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:background="@drawable/ic_minus3"
-                    android:onClick="NaclDecrement"/>
+                    android:onClick="NaclDecrement"
+                    android:visibility="invisible"/>
 
                 <EditText
                     android:id="@+id/edt_item3"
@@ -197,7 +205,8 @@
                     android:textColor="@color/colorTextView"
                     android:textColorHint="@color/colorAccent"
                     android:textSize="20dp"
-                    android:textStyle="normal|italic" />
+                    android:textStyle="normal|italic"
+                    android:visibility="invisible"/>
 
                 <Button
                     android:layout_width="20dp"
