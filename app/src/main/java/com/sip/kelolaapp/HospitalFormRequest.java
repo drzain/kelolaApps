@@ -72,10 +72,6 @@ public class HospitalFormRequest extends Activity
         icon_form = (ImageView) findViewById(R.id.img_loc);
         icon_form.setImageResource(R.drawable.ic_emergeny);
 
-        total = (TextView) findViewById(R.id.txt_total_hospital);
-        qtytotal = a+b+c;
-        total.setText("0");
-
     }
 
     public void Order(View v)
