@@ -49,6 +49,14 @@
                 android:layout_rowWeight="1"
                 android:elevation="6dp">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Waste Produce"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"/>
+
                 <com.github.mikephil.charting.charts.PieChart
                     android:layout_marginBottom="20dp"
                     android:layout_gravity="center"
@@ -65,6 +73,14 @@
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 android:elevation="6dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Data Process"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"/>
 
                 <com.github.mikephil.charting.charts.PieChart
                     android:layout_marginBottom="20dp"
@@ -83,6 +99,14 @@
                 android:layout_rowWeight="1"
                 android:elevation="6dp">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Commodities"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"/>
+
                 <com.github.mikephil.charting.charts.PieChart
                     android:layout_marginBottom="20dp"
                     android:layout_gravity="center"
@@ -100,6 +124,14 @@
                 android:layout_rowWeight="1"
                 android:elevation="6dp">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="End Waste"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"/>
+
                 <com.github.mikephil.charting.charts.PieChart
                     android:layout_marginBottom="20dp"
                     android:layout_gravity="center"
@@ -116,6 +148,14 @@
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 android:elevation="6dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Recycleble"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"/>
 
                 <com.github.mikephil.charting.charts.PieChart
                     android:layout_marginBottom="20dp"

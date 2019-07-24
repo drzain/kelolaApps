@@ -74,22 +74,23 @@ public class DashboardReport extends AppCompatActivity implements OnChartValueSe
                             //now looping through all the elements of the json array
 
                             ArrayList<Entry> yvalues = new ArrayList<Entry>();
-                            yvalues.add(new Entry(Integer.parseInt(a), 0));
-                            yvalues.add(new Entry(Integer.parseInt(b), 1));
-                            yvalues.add(new Entry(Integer.parseInt(c), 2));
+                            yvalues.add(new Entry(Float.parseFloat(a), 0,"Emergency"));
+                            yvalues.add(new Entry(Float.parseFloat(b), 1, "nurse"));
+                            yvalues.add(new Entry(Float.parseFloat(c), 2, "polyclinic"));
 
-                            PieDataSet dataSet = new PieDataSet(yvalues, "");
+                            PieDataSet dataSet = new PieDataSet(yvalues, "Waste Produce");
 
                             ArrayList<String> xVals = new ArrayList<String>();
                             xVals.add("Emergency");
                             xVals.add("Nurse");
                             xVals.add("Polyclinic");
 
-                            PieData data = new PieData(xVals, dataSet);
-                            //data.setValueFormatter(new DefaultValueFormatter(0));
+                            //PieData data = new PieData(xVals, dataSet);
+                            PieData data = new PieData(xVals,dataSet);
                             pieChart1.setData(data);
-                            pieChart1.setDescription("Waste Produce");
 
+                            pieChart1.setDescription("");
+                            pieChart1.getLegend().setEnabled(false);
                             pieChart1.setUsePercentValues(true);
                             pieChart1.setDrawHoleEnabled(true);
                             pieChart1.setTransparentCircleRadius(25f);
@@ -98,6 +99,7 @@ public class DashboardReport extends AppCompatActivity implements OnChartValueSe
                             dataSet.setColors(ColorTemplate.LIBERTY_COLORS);
                             data.setValueTextSize(8f);
                             data.setValueTextColor(Color.DKGRAY);
+                            data.setValueFormatter(new PercentFormatter());
                             pieChart1.setOnChartValueSelectedListener(DashboardReport.this);
                             pieChart1.animateXY(1400, 1400);
 
@@ -164,8 +166,10 @@ public class DashboardReport extends AppCompatActivity implements OnChartValueSe
                             PieData data = new PieData(xVals, dataSet);
                             //data.setValueFormatter(new DefaultValueFormatter(0));
                             pieChart2.setData(data);
-                            pieChart2.setDescription("Data Proses");
+                            pieChart2.setDescription("");
 
+                            pieChart2.setDescription("");
+                            pieChart2.getLegend().setEnabled(false);
                             pieChart2.setUsePercentValues(true);
                             pieChart2.setDrawHoleEnabled(true);
                             pieChart2.setTransparentCircleRadius(25f);
@@ -174,6 +178,7 @@ public class DashboardReport extends AppCompatActivity implements OnChartValueSe
                             dataSet.setColors(ColorTemplate.LIBERTY_COLORS);
                             data.setValueTextSize(8f);
                             data.setValueTextColor(Color.DKGRAY);
+                            data.setValueFormatter(new PercentFormatter());
                             pieChart2.setOnChartValueSelectedListener(DashboardReport.this);
                             pieChart2.animateXY(1400, 1400);
 
@@ -239,6 +244,8 @@ public class DashboardReport extends AppCompatActivity implements OnChartValueSe
                             pieChart3.setData(data);
                             pieChart3.setDescription("Commodities");
 
+                            pieChart3.setDescription("");
+                            pieChart3.getLegend().setEnabled(false);
                             pieChart3.setUsePercentValues(true);
                             pieChart3.setDrawHoleEnabled(true);
                             pieChart3.setTransparentCircleRadius(25f);
@@ -247,6 +254,7 @@ public class DashboardReport extends AppCompatActivity implements OnChartValueSe
                             dataSet.setColors(ColorTemplate.LIBERTY_COLORS);
                             data.setValueTextSize(8f);
                             data.setValueTextColor(Color.DKGRAY);
+                            data.setValueFormatter(new PercentFormatter());
                             pieChart3.setOnChartValueSelectedListener(DashboardReport.this);
                             pieChart3.animateXY(1400, 1400);
 
@@ -315,6 +323,8 @@ public class DashboardReport extends AppCompatActivity implements OnChartValueSe
                             pieChart4.setData(data);
                             pieChart4.setDescription("End Waste");
 
+                            pieChart4.setDescription("");
+                            pieChart4.getLegend().setEnabled(false);
                             pieChart4.setUsePercentValues(true);
                             pieChart4.setDrawHoleEnabled(true);
                             pieChart4.setTransparentCircleRadius(25f);
@@ -323,6 +333,7 @@ public class DashboardReport extends AppCompatActivity implements OnChartValueSe
                             dataSet.setColors(ColorTemplate.LIBERTY_COLORS);
                             data.setValueTextSize(8f);
                             data.setValueTextColor(Color.DKGRAY);
+                            data.setValueFormatter(new PercentFormatter());
                             pieChart4.setOnChartValueSelectedListener(DashboardReport.this);
                             pieChart4.animateXY(1400, 1400);
 
@@ -388,6 +399,8 @@ public class DashboardReport extends AppCompatActivity implements OnChartValueSe
                             pieChart5.setData(data);
                             pieChart5.setDescription("Recycleble");
 
+                            pieChart5.setDescription("");
+                            pieChart5.getLegend().setEnabled(false);
                             pieChart5.setUsePercentValues(true);
                             pieChart5.setDrawHoleEnabled(true);
                             pieChart5.setTransparentCircleRadius(25f);
@@ -396,6 +409,7 @@ public class DashboardReport extends AppCompatActivity implements OnChartValueSe
                             dataSet.setColors(ColorTemplate.LIBERTY_COLORS);
                             data.setValueTextSize(8f);
                             data.setValueTextColor(Color.DKGRAY);
+                            data.setValueFormatter(new PercentFormatter());
                             pieChart5.setOnChartValueSelectedListener(DashboardReport.this);
                             pieChart5.animateXY(1400, 1400);
 
