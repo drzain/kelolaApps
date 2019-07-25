@@ -44,7 +44,6 @@ public class OperatorReceiveForm extends AppCompatActivity
         txtTransaksiDate = (TextView) findViewById(R.id.date_transaksi);
         txtWasteQty = (TextView) findViewById(R.id.total_qty);
         edtQtyReceive = (EditText) findViewById(R.id.receive_qty);
-
         Intent intent = getIntent();
         transaksi_no = intent.getStringExtra("transaksi_no");
         transaksi_date = intent.getStringExtra("transaksi_date");
@@ -60,6 +59,15 @@ public class OperatorReceiveForm extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                if (edtQtyReceive.getText().toString().equals("")|| edtQtyReceive.getText().toString().equals("0"))
+                {
+                    Toast.makeText(getApplicationContext(),
+                        "No less than Zero", Toast.LENGTH_LONG).show();
+                }
+
+                else
+                {
+
                 receive_qty = edtQtyReceive.getText().toString();
                 Long tsLong = System.currentTimeMillis()/1000;
                 String ts = tsLong.toString();
@@ -67,7 +75,7 @@ public class OperatorReceiveForm extends AppCompatActivity
                 sendReceive(transaksi_no,receive_qty,receive_no);
                 /*Intent i = new Intent(OperatorReceiveForm.this, ReceiveOrder.class);
                 startActivity(i);
-                finish();*/
+                finish();*/}
             }
         });
 

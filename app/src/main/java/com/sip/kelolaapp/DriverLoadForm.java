@@ -70,12 +70,20 @@ public class DriverLoadForm extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                transport_qty = edtQtyTransport.getText().toString();
-                nopolis = spNoPolis.getSelectedItem().toString();
-                sendResult(transport_no,transport_date,transport_qty,nopolis,receive_no);
+                if (edtQtyTransport.getText().toString().equals("")|| edtQtyTransport.getText().toString().equals("0"))
+                {
+                    Toast.makeText(getApplicationContext(),
+                            "No less than Zero", Toast.LENGTH_LONG).show();
+
+                }
+                else {
+                    transport_qty = edtQtyTransport.getText().toString();
+                    nopolis = spNoPolis.getSelectedItem().toString();
+                    sendResult(transport_no, transport_date, transport_qty, nopolis, receive_no);
                 /*Intent i = new Intent(OperatorReceiveForm.this, ReceiveOrder.class);
                 startActivity(i);
                 finish();*/
+                }
             }
         });
 

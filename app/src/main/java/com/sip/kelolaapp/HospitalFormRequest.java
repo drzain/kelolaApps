@@ -10,6 +10,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -34,7 +35,7 @@ import java.util.UUID;
 public class HospitalFormRequest extends Activity
 {
 
-    private Button btn_order,  btn_infus_dec, btn_syringe_dec, btn_nacl_dec;
+    private Button btn_order,  btn_infus_dec, btn_syringe_dec, btn_nacl_dec, btn_usage;
     private LinearLayout btn_send;
     Dialog myDialog;
     private static final String TAG = HospitalFormRequest.class.getSimpleName();
@@ -62,6 +63,8 @@ public class HospitalFormRequest extends Activity
         edtItem1 = (EditText) findViewById(R.id.edt_item1);
         edtItem2 = (EditText) findViewById(R.id.edt_item2);
         edtItem3 = (EditText) findViewById(R.id.edt_item3);
+
+
         btn_infus_dec =(Button) findViewById(R.id.infus_decrement_id);
         btn_syringe_dec =(Button) findViewById(R.id.syringe_decrment_id);
         btn_nacl_dec = (Button) findViewById(R.id.nacl_decrement_id);
@@ -74,37 +77,48 @@ public class HospitalFormRequest extends Activity
 
     }
 
+
+
     public void Order(View v)
     {
-        TextView txtclose;
-        myDialog.setContentView(R.layout.hospital_popup_order);
-        infus_rekap = (TextView) myDialog.findViewById(R.id.infus_rekap);
-        syringe_rekap = (TextView) myDialog.findViewById(R.id.syringe_rekap);
-        nacl_rekap = (TextView) myDialog.findViewById(R.id.nacl_rekap);
-
-        infus = edtItem1.getText().toString();
-        syringe = edtItem2.getText().toString();
-        nacl = edtItem3.getText().toString();
-        Long tsLong = System.currentTimeMillis()/1000;
-        String ts = tsLong.toString();
-        uniqueid = ts;
-
-        infus_rekap.setText(infus);
-        syringe_rekap.setText(syringe);
-        nacl_rekap.setText(nacl);
-
-        btn_order = (Button) myDialog.findViewById(R.id.btn_struck);
-        btn_order.setOnClickListener(new View.OnClickListener()
+        if(edtItem1.getText().toString().equals("0") && edtItem2.getText().toString().equals("0") && edtItem3.getText().toString().equals("0"))
         {
-            @Override
-            public void onClick(View v)
-            {
-                //myDialog.dismiss();
-                Log.e("nilai input",infus+" "+syringe+" "+nacl+" "+uniqueid);
-                sendData(infus,syringe,nacl,uniqueid);
-                /*myDialog.setContentView(R.layout.hospital_popup_ordersend);
+            Toast.makeText(getApplicationContext(),
+                    "Can't Send Because Zero All!", Toast.LENGTH_LONG).show();
+        }
+        else {
 
-                btn_send =(LinearLayout) myDialog.findViewById(R.id.popup_success);
+
+            TextView txtclose;
+            myDialog.setContentView(R.layout.hospital_popup_order);
+            infus_rekap = (TextView) myDialog.findViewById(R.id.infus_rekap);
+            syringe_rekap = (TextView) myDialog.findViewById(R.id.syringe_rekap);
+            nacl_rekap = (TextView) myDialog.findViewById(R.id.nacl_rekap);
+
+            infus = edtItem1.getText().toString();
+            syringe = edtItem2.getText().toString();
+            nacl = edtItem3.getText().toString();
+
+            Long tsLong = System.currentTimeMillis() / 1000;
+            String ts = tsLong.toString();
+            uniqueid = ts;
+
+            infus_rekap.setText(infus);
+            syringe_rekap.setText(syringe);
+            nacl_rekap.setText(nacl);
+
+            btn_order = (Button) myDialog.findViewById(R.id.btn_struck);
+            btn_order.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+
+                    //myDialog.dismiss();
+
+                    Log.e("nilai input", infus + " " + syringe + " " + nacl + " " + uniqueid);
+                    sendData(infus, syringe, nacl, uniqueid);
+                /*myDialog.setContentView(R.layout.hospital_popup_ordersend);
+=                btn_send =(LinearLayout) myDialog.findViewById(R.id.popup_success);
                 btn_send.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v)
@@ -116,19 +130,18 @@ public class HospitalFormRequest extends Activity
                 });*/
 
 
-            }
-        });
-        txtclose =(TextView) myDialog.findViewById(R.id.txtclose);
-        txtclose.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                myDialog.dismiss();
-            }
-        });
-        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        myDialog.show();
+                }
+            });
+            txtclose = (TextView) myDialog.findViewById(R.id.txtclose);
+            txtclose.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    myDialog.dismiss();
+                }
+            });
+            myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            myDialog.show();
+        }
     }
 
     private void sendData(final String infusx, final String syringex, final String naclx, final String uniqueidx)

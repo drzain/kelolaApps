@@ -56,17 +56,36 @@ public class OperatorResultForm extends AppCompatActivity {
         txtWasteQty.setText(receive_qty);
 
         btn_struck = (Button)findViewById(R.id.btn_struck);
-        btn_struck.setOnClickListener(new View.OnClickListener() {
+        btn_struck.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v)
-            {
-                recycleble_qty = edtQtyRecycleble.getText().toString();
-                end_qty = edtEndWaste.getText().toString();
-                sendResult(receive_no,recycleble_qty,end_qty);
+            public void onClick(View v) {
+                if
+                (
+                        edtQtyRecycleble.getText().toString().equals("") ||
+                                edtQtyRecycleble.getText().toString().equals("0")||
+                                    edtEndWaste.getText().toString().equals("")||
+                                        edtEndWaste.getText().toString().equals("0")
+                )
+                {
+
+                        Toast.makeText(getApplicationContext(),
+                                "No less than All Zero", Toast.LENGTH_LONG).show();
                 /*Intent i = new Intent(OperatorReceiveForm.this, ReceiveOrder.class);
                 startActivity(i);
                 finish();*/
+
+
+
+                } else
+                    {
+                        recycleble_qty = edtQtyRecycleble.getText().toString();
+                        end_qty = edtEndWaste.getText().toString();
+                        sendResult(receive_no, recycleble_qty, end_qty);
+                }
+
             }
+
         });
     }
 

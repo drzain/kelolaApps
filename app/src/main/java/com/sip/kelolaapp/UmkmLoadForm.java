@@ -67,11 +67,18 @@ public class UmkmLoadForm extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
+                if(edtQtyUmkm.getText().toString().equals("")||edtQtyUmkm.getText().toString().equals("0"))
+                {
+                    Toast.makeText(getApplicationContext(),
+                            "No less than Zero", Toast.LENGTH_LONG).show();
+                }
+                else
+                {
                 umkm_qty = edtQtyUmkm.getText().toString();
                 sendResult(umkm_no,umkm_date,umkm_qty,receive_no);
                 /*Intent i = new Intent(OperatorReceiveForm.this, ReceiveOrder.class);
                 startActivity(i);
-                finish();*/
+                finish();*/}
             }
         });
     }
