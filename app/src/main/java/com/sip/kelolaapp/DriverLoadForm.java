@@ -28,12 +28,13 @@ import java.util.Map;
 
 public class DriverLoadForm extends AppCompatActivity {
 
-    private Button btn_struck;
+    private Button btn_struck, btn_load_decre;
     String receive_no,transaksi_no, transaksi_date,transport_date,nopolis,transport_no,transport_qty,receive_qty,recycleble_qty,end_qty;
     TextView txtTransportNo, txtTransportDate, txtTransportDrop;
     EditText edtQtyTransport;
     Spinner spNoPolis;
     ProgressDialog pDialog;
+    int qtyTransport=0;
     private static final String TAG = DriverLoadForm.class.getSimpleName();
 
     @Override
@@ -49,6 +50,7 @@ public class DriverLoadForm extends AppCompatActivity {
         txtTransportDrop = (TextView) findViewById(R.id.dropTransport);
         edtQtyTransport = (EditText) findViewById(R.id.qtyTransport);
         spNoPolis = (Spinner) findViewById(R.id.nopolis);
+        btn_load_decre =(Button) findViewById(R.id.load_qty_decre);
 
         Intent intent = getIntent();
         receive_no = intent.getStringExtra("receive_no");
@@ -172,5 +174,33 @@ public class DriverLoadForm extends AppCompatActivity {
     private void hideDialog() {
         if (pDialog.isShowing())
             pDialog.dismiss();
+    }
+
+    public void LoadDecre(View view)
+    {
+        if(qtyTransport==0)
+        {
+            btn_load_decre.setVisibility(View.INVISIBLE);
+            edtQtyTransport.setVisibility(View.INVISIBLE);
+            Toast.makeText(this,"No less than zero",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        qtyTransport=qtyTransport-1;
+        display(qtyTransport);
+    }
+
+    private void display(int number)
+    {
+        edtQtyTransport.setText(""+number);
+    }
+
+    public void LoadIncre(View view)
+    {
+        btn_load_decre.setVisibility(View.VISIBLE);
+        edtQtyTransport.setVisibility(View.VISIBLE);
+        qtyTransport=qtyTransport+1;
+        display(qtyTransport);
+
+
     }
 }

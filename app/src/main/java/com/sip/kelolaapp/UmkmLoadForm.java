@@ -28,11 +28,12 @@ import java.util.Map;
 
 public class UmkmLoadForm extends AppCompatActivity {
 
-    private Button btn_struck;
-    String receive_no,transaksi_no, transaksi_date,umkm_date,nopolis,umkm_no,umkm_qty,receive_qty,recycleble_qty,end_qty;
+    private Button btn_struck, btn_umkm_decre;
+    String receive_no, transaksi_no, transaksi_date, umkm_date, nopolis, umkm_no, umkm_qty, receive_qty, recycleble_qty, end_qty;
     TextView txtUmkmNo, txtUmkmDate;
     EditText edtQtyUmkm;
     ProgressDialog pDialog;
+    int qtyUmkm = 0;
     private static final String TAG = DriverLoadForm.class.getSimpleName();
 
     @Override
@@ -46,6 +47,7 @@ public class UmkmLoadForm extends AppCompatActivity {
         txtUmkmNo = (TextView) findViewById(R.id.noUmkm);
         txtUmkmDate = (TextView) findViewById(R.id.dateUmkm);
         edtQtyUmkm = (EditText) findViewById(R.id.qtyUmkm);
+        btn_umkm_decre = (Button) findViewById(R.id.qtyUmkm);
 
         Intent intent = getIntent();
         receive_no = intent.getStringExtra("receive_no");
@@ -54,7 +56,7 @@ public class UmkmLoadForm extends AppCompatActivity {
         receive_qty = intent.getStringExtra("receive_qty");
         recycleble_qty = intent.getStringExtra("recycleble_qty");
         end_qty = intent.getStringExtra("end_qty");
-        Long tsLong = System.currentTimeMillis()/1000;
+        Long tsLong = System.currentTimeMillis() / 1000;
         String ts = tsLong.toString();
         umkm_no = ts;
         umkm_date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
@@ -62,29 +64,25 @@ public class UmkmLoadForm extends AppCompatActivity {
         txtUmkmNo.setText(umkm_no);
         txtUmkmDate.setText(umkm_date);
 
-        btn_struck = (Button)findViewById(R.id.btn_struck);
+        btn_struck = (Button) findViewById(R.id.btn_struck);
         btn_struck.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                if(edtQtyUmkm.getText().toString().equals("")||edtQtyUmkm.getText().toString().equals("0"))
-                {
+            public void onClick(View v) {
+                if (edtQtyUmkm.getText().toString().equals("") || edtQtyUmkm.getText().toString().equals("0")) {
                     Toast.makeText(getApplicationContext(),
                             "No less than Zero", Toast.LENGTH_LONG).show();
-                }
-                else
-                {
-                umkm_qty = edtQtyUmkm.getText().toString();
-                sendResult(umkm_no,umkm_date,umkm_qty,receive_no);
+                } else {
+                    umkm_qty = edtQtyUmkm.getText().toString();
+                    sendResult(umkm_no, umkm_date, umkm_qty, receive_no);
                 /*Intent i = new Intent(OperatorReceiveForm.this, ReceiveOrder.class);
                 startActivity(i);
-                finish();*/}
+                finish();*/
+                }
             }
         });
     }
 
-    private void sendResult(final String umkm_no,final String umkm_date, final String umkm_qty, final String receive_no)
-    {
+    private void sendResult(final String umkm_no, final String umkm_date, final String umkm_qty, final String receive_no) {
         // Tag used to cancel the request
         String tag_string_req = "req_senddata";
 
@@ -165,5 +163,27 @@ public class UmkmLoadForm extends AppCompatActivity {
     private void hideDialog() {
         if (pDialog.isShowing())
             pDialog.dismiss();
+    }
+
+    public void UMKMDecre(View view) {
+        if (qtyUmkm == 0) {
+            btn_umkm_decre.setVisibility(View.INVISIBLE);
+            edtQtyUmkm.setVisibility(View.INVISIBLE);
+            Toast.makeText(this, "No less than zero", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        qtyUmkm = qtyUmkm - 1;
+        display(qtyUmkm);
+    }
+
+    private void display(int number) {
+        edtQtyUmkm.setText("" + number);
+    }
+
+    public void UMKMIncre(View view) {
+        btn_umkm_decre.setVisibility(View.VISIBLE);
+        edtQtyUmkm.setVisibility(View.VISIBLE);
+        qtyUmkm = qtyUmkm + 1;
+        display(qtyUmkm);
     }
 }

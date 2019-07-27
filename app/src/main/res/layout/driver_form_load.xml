@@ -184,15 +184,33 @@
                 android:textSize="18sp"
                 android:textStyle="bold"/>
 
+            <Button
+                android:id="@+id/load_qty_decre"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/ic_minus3"
+                android:onClick="LoadDecre"
+                android:visibility="invisible"/>
 
         <android.support.design.widget.TextInputEditText
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/qtyTransport"
-            android:textColor="@color/black"
-            android:hint="Qty Transport"
-            android:inputType="numberDecimal"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:inputType="numberDecimal"
+            android:text="0"
+            android:textColor="@color/colorTextView"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="18dp"
+            android:textStyle="normal|italic"
+            android:visibility="invisible" />
+
+            <Button
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/ic_plus3"
+                android:onClick="LoadIncre"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -203,6 +221,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
         android:background="@color/colotBackgroundDriver"
         android:text="Save"
         android:textColor="@color/white" />

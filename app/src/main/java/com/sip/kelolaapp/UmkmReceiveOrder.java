@@ -46,7 +46,7 @@ public class UmkmReceiveOrder extends AppCompatActivity
         setContentView(R.layout.umkm_receive_order_list);
 
         commodities_recieved= (TextView) findViewById(R.id.commodities_title);
-        commodities_recieved.setText("UMKM Recieved");
+        commodities_recieved.setText("UMKM");
 
         // Session manager
         session = new SessionManager(this.getApplicationContext());
