@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -18,6 +19,9 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
 
         session = new SessionManager(getApplicationContext());
+        String nama = session.isNama();
+        TextView nama_dashboard =(TextView) findViewById(R.id.textDashboard);
+        nama_dashboard.setText("Hi, "+nama);
 
         action();
     }

@@ -5,13 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_driver"
+    android:background="#FFF"
     tools:context=".DashboardDriver">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/colotBackgroundDriver">
 
         <RelativeLayout
             android:layout_marginTop="32dp"
@@ -22,7 +27,7 @@
 
             <TextView
                 android:id="@+id/textDashboard"
-                android:text="Transpoter Dashboard"
+                android:text="Transpoter"
                 android:textColor="#ffffff"
                 android:textSize="22sp"
                 android:layout_width="wrap_content"
@@ -36,9 +41,10 @@
                 android:layout_height="62dp" />
 
         </RelativeLayout>
+    </LinearLayout>
 
         <GridLayout
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="15dp"
             android:columnCount="2"
             android:rowCount="3"
             android:columnOrderPreserved="false"
@@ -47,12 +53,12 @@
             android:layout_height="wrap_content">
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="150dp"
                 android:layout_margin="12dp"
                 android:layout_gravity="fill"
                 android:id="@+id/transpoter_load"
@@ -67,7 +73,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/ic_load"
+                        android:src="@drawable/ic_load2"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         />
@@ -86,12 +92,12 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="150dp"
                 android:layout_margin="12dp"
                 android:layout_gravity="fill"
                 android:id="@+id/transpoter_unload"
@@ -106,7 +112,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/ic_unload"
+                        android:src="@drawable/ic_unload2"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         />

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_hospital"
+    android:background="#FFF"
     tools:context=".DashboardHospital">
 
     <LinearLayout
@@ -13,6 +13,10 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/colotBackgroundHospital">
         <RelativeLayout
             android:layout_marginTop="32dp"
             android:layout_marginLeft="20dp"
@@ -22,7 +26,7 @@
 
             <TextView
                 android:id="@+id/textDashboard"
-                android:text="Hospital Dashboard"
+                android:text="Hospital"
                 android:textColor="#ffffff"
                 android:textSize="22sp"
                 android:layout_width="wrap_content"
@@ -36,9 +40,10 @@
                 android:layout_height="62dp" />
 
         </RelativeLayout>
+    </LinearLayout>
 
         <GridLayout
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="15dp"
             android:columnCount="2"
             android:rowCount="3"
             android:columnOrderPreserved="false"
@@ -47,12 +52,12 @@
             android:layout_height="wrap_content">
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="150dp"
                 android:layout_margin="12dp"
                 android:layout_gravity="fill"
                 >
@@ -73,25 +78,25 @@
                         />
 
                     <TextView
-
+                        android:textAlignment="center"
                         android:layout_marginTop="12dp"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp"
+                        android:textSize="14sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Emergency\nRoom"/>
+                        android:text="Emergency"/>
 
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="150dp"
                 android:layout_margin="12dp"
                 android:layout_gravity="fill"
                 >
@@ -114,7 +119,7 @@
 
                         android:layout_marginTop="12dp"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp"
+                        android:textSize="14sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Polyclinic"/>
@@ -129,11 +134,10 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                android:layout_columnSpan="2"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp"
                 android:layout_gravity="fill"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="150dp"
+                android:layout_margin="12dp"
                 >
 
                 <LinearLayout
@@ -151,13 +155,13 @@
                         />
 
                     <TextView
-
+                        android:textAlignment="center"
                         android:layout_marginTop="12dp"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp"
+                        android:textSize="14sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nursing\nRoom"/>
+                        android:text="Nurse"/>
 
                 </LinearLayout>
 

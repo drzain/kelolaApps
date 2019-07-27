@@ -26,11 +26,12 @@ import java.util.Map;
 
 public class OperatorReceiveForm extends AppCompatActivity
 {
-    private Button btn_struck;
+    private Button btn_struck, btn_weight;
     String transaksi_no,transaksi_date,waste_qty,receive_qty,receive_no;
     TextView txtTransaksiNo, txtTransaksiDate, txtWasteQty;
     EditText edtQtyReceive;
     ProgressDialog pDialog;
+    int qtyWeight =0;
     private static final String TAG = OperatorReceiveForm.class.getSimpleName();
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -44,6 +45,8 @@ public class OperatorReceiveForm extends AppCompatActivity
         txtTransaksiDate = (TextView) findViewById(R.id.date_transaksi);
         txtWasteQty = (TextView) findViewById(R.id.total_qty);
         edtQtyReceive = (EditText) findViewById(R.id.receive_qty);
+        btn_weight=(Button)findViewById(R.id.receive_qty_decre);
+
         Intent intent = getIntent();
         transaksi_no = intent.getStringExtra("transaksi_no");
         transaksi_date = intent.getStringExtra("transaksi_date");
@@ -163,4 +166,33 @@ public class OperatorReceiveForm extends AppCompatActivity
         if (pDialog.isShowing())
             pDialog.dismiss();
     }
+
+    public void WeightDecre(View view)
+    {
+            if(qtyWeight==0)
+            {
+                btn_weight.setVisibility(View.INVISIBLE);
+                edtQtyReceive.setVisibility(View.INVISIBLE);
+                Toast.makeText(this,"No less than zero",Toast.LENGTH_SHORT).show();
+                return;
+            }
+            qtyWeight=qtyWeight-1;
+            display(qtyWeight);
+    }
+
+    private void display(int number)
+    {
+        edtQtyReceive.setText(""+number);
+    }
+
+    public void WeightIncre(View view)
+    {
+        btn_weight.setVisibility(View.VISIBLE);
+        edtQtyReceive.setVisibility(View.VISIBLE);
+        qtyWeight=qtyWeight+1;
+        display(qtyWeight);
+
+
+    }
+
 }

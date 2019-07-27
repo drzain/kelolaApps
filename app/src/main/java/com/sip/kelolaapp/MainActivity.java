@@ -232,6 +232,7 @@ public class MainActivity extends AppCompatActivity {
                         String role = jObj.getString("id");
 
                         session.setStatus(role);
+                        session.setNama(username);
 
                         // Launch main activity
                         if(role.equals("1")) {

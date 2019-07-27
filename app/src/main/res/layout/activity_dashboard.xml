@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgapps"
+    android:background="#FFF"
     tools:context=".DashboardActivity">
 
     <LinearLayout
@@ -12,16 +12,21 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/design_default_color_primary_dark">
         <RelativeLayout
             android:layout_marginTop="32dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:background="@color/design_default_color_primary_dark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/textDashboard"
-                android:text="My Dashboard"
+                android:text="Hi,"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:textSize="22sp"
@@ -36,9 +41,10 @@
                 android:layout_height="62dp" />
 
         </RelativeLayout>
+        </LinearLayout>
 
         <GridLayout
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="15dp"
             android:columnCount="2"
             android:rowCount="4"
             android:columnOrderPreserved="false"
@@ -47,12 +53,12 @@
             android:layout_height="wrap_content">
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="150dp"
                 android:layout_margin="12dp"
                 >
 
@@ -75,7 +81,7 @@
 
                         android:layout_marginTop="12dp"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp"
+                        android:textSize="14sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Hospital"/>
@@ -85,54 +91,17 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="150dp"
                 android:layout_margin="12dp"
                 >
 
                 <LinearLayout
                     android:id="@+id/operator"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/ic_operator"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        />
-
-                    <TextView
-
-                        android:layout_marginTop="12dp"
-                        android:textColor="#6f6f6f"
-                        android:textSize="18sp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Processor"/>
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp"
-                >
-
-                <LinearLayout
-                    android:id="@+id/driver"
                     android:orientation="vertical"
                     android:padding="16dp"
                     android:gravity="center"
@@ -149,7 +118,44 @@
 
                         android:layout_marginTop="12dp"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp"
+                        android:textSize="14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Processor"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="150dp"
+                android:layout_margin="12dp"
+                >
+
+                <LinearLayout
+                    android:id="@+id/driver"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:src="@drawable/ic_driver4"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        />
+
+                    <TextView
+
+                        android:layout_marginTop="12dp"
+                        android:textColor="#6f6f6f"
+                        android:textSize="14sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Transporter"/>
@@ -159,12 +165,12 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="150dp"
                 android:layout_margin="12dp"
                 >
 
@@ -179,13 +185,13 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/ic_commodities" />
+                        android:src="@drawable/icon_umkm3" />
 
                     <TextView
 
                         android:layout_marginTop="12dp"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp"
+                        android:textSize="14sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Commodities"/>
@@ -270,13 +276,12 @@
                         -->
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_columnWeight="1"
-                android:layout_columnSpan="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="150dp"
                 android:layout_margin="12dp"
                 >
 
@@ -295,10 +300,10 @@
                         />
 
                     <TextView
-
+                        android:textAlignment="center"
                         android:layout_marginTop="12dp"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp"
+                        android:textSize="14sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Live Dashboard"/>
@@ -308,13 +313,12 @@
             </android.support.v7.widget.CardView>
 
                         <android.support.v7.widget.CardView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
                             android:layout_columnWeight="1"
-                            android:layout_columnSpan="1"
                             android:layout_rowWeight="1"
                             app:cardElevation="6dp"
-                            app:cardCornerRadius="12dp"
+                            app:cardCornerRadius="150dp"
                             android:layout_margin="12dp"
                             >
 
@@ -327,7 +331,7 @@
                                 android:layout_height="match_parent">
 
                                 <ImageView
-                                    android:src="@drawable/cancel"
+                                    android:src="@drawable/ic_exit2"
                                     android:layout_width="80dp"
                                     android:layout_height="80dp"
                                     />
@@ -336,7 +340,7 @@
 
                                     android:layout_marginTop="12dp"
                                     android:textColor="#6f6f6f"
-                                    android:textSize="18sp"
+                                    android:textSize="14sp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Logout"/>

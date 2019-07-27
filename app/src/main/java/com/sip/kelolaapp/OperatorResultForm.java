@@ -24,11 +24,13 @@ import java.util.Map;
 
 public class OperatorResultForm extends AppCompatActivity {
 
-    private Button btn_struck;
+    private Button btn_struck, btn_rec, btn_end;
     String receive_no,transaksi_date,receive_qty,recycleble_qty,end_qty;
     TextView txtTransaksiNo, txtTransaksiDate, txtWasteQty;
     EditText edtQtyRecycleble, edtEndWaste;
     ProgressDialog pDialog;
+    int qtyRec =0, qtyEnd=0;
+
     private static final String TAG = OperatorResultForm.class.getSimpleName();
 
     @Override
@@ -44,6 +46,8 @@ public class OperatorResultForm extends AppCompatActivity {
         txtWasteQty = (TextView) findViewById(R.id.total_qty);
         edtQtyRecycleble = (EditText) findViewById(R.id.receive_qty);
         edtEndWaste = (EditText) findViewById(R.id.end_qty);
+        btn_rec =(Button)findViewById(R.id.rec_qty_decre);
+        btn_end =(Button)findViewById(R.id.end_qty_decre);
 
         Intent intent = getIntent();
         receive_no = intent.getStringExtra("transaksi_no");
@@ -170,5 +174,59 @@ public class OperatorResultForm extends AppCompatActivity {
     private void hideDialog() {
         if (pDialog.isShowing())
             pDialog.dismiss();
+    }
+
+    public void RecDecre (View view)
+    {
+        if(qtyRec==0)
+        {
+            btn_rec.setVisibility(View.INVISIBLE);
+            edtQtyRecycleble.setVisibility(View.INVISIBLE);
+            Toast.makeText(this,"No less than zero",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        qtyRec = qtyRec - 1;
+        display(qtyRec);
+
+    }
+
+    private void display(int number)
+    {
+        edtQtyRecycleble.setText(""+number);
+    }
+
+    public void RecIncre (View view)
+    {
+        btn_rec.setVisibility(View.VISIBLE);
+        edtQtyRecycleble.setVisibility(View.VISIBLE);
+        qtyRec = qtyRec + 1;
+        display(qtyRec);
+
+    }
+
+    public  void EndDecre (View view)
+    {
+        if(qtyEnd==0)
+        {
+            btn_end.setVisibility(View.INVISIBLE);
+            edtEndWaste.setVisibility(View.INVISIBLE);
+            Toast.makeText(this,"No less than zero",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        qtyEnd = qtyEnd - 1;
+        display2(qtyEnd);
+    }
+
+    private void display2(int number2)
+    {
+        edtEndWaste.setText(""+number2);
+    }
+
+    public  void  EndIncre (View view)
+    {
+        btn_end.setVisibility(View.VISIBLE);
+        edtEndWaste.setVisibility(View.VISIBLE);
+        qtyEnd = qtyEnd + 1;
+        display2(qtyEnd);
     }
 }
