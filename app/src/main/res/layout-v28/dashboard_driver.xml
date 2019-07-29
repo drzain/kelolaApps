@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#FFF"
-    tools:context=".DashboardUmkm">
+    tools:context=".DashboardDriver">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="@color/colotBackgroundUmkm">
+        android:background="@color/colotBackgroundDriver">
 
         <RelativeLayout
             android:layout_marginTop="32dp"
@@ -27,11 +27,12 @@
 
             <TextView
                 android:id="@+id/textDashboard"
-                android:text="Commodities"
+                android:text="Transpoter"
                 android:textColor="#ffffff"
                 android:textSize="22sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
 
             <ImageView
                 android:layout_alignParentRight="true"
@@ -57,13 +58,14 @@
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
-                app:cardCornerRadius="50dp"
+                app:cardCornerRadius="150dp"
                 android:layout_margin="12dp"
                 android:layout_gravity="fill"
-                android:id="@+id/commodities_umkm"
+                android:id="@+id/transpoter_load"
                 >
 
                 <LinearLayout
+
                     android:orientation="vertical"
                     android:padding="16dp"
                     android:gravity="center"
@@ -71,8 +73,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-
-                        android:src="@drawable/ic_umkm"
+                        android:src="@drawable/ic_load2"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         />
@@ -84,7 +85,7 @@
                         android:textSize="18sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="UMKM"/>
+                        android:text="Load"/>
 
                 </LinearLayout>
 
@@ -96,13 +97,14 @@
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
-                app:cardCornerRadius="50dp"
+                app:cardCornerRadius="150dp"
                 android:layout_margin="12dp"
                 android:layout_gravity="fill"
-                android:id="@+id/commodities_received"
+                android:id="@+id/transpoter_unload"
                 >
 
                 <LinearLayout
+
                     android:orientation="vertical"
                     android:padding="16dp"
                     android:gravity="center"
@@ -110,8 +112,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-
-                        android:src="@drawable/ic_received"
+                        android:src="@drawable/ic_unload2"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         />
@@ -123,11 +124,14 @@
                         android:textSize="18sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Received"/>
+                        android:text="Unload"/>
 
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+
+
+
 
 
         </GridLayout>

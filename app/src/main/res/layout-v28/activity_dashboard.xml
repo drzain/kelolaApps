@@ -58,14 +58,14 @@
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
-                app:cardCornerRadius="50dp"
+                app:cardCornerRadius="150dp"
                 android:layout_margin="12dp"
                 >
 
                 <LinearLayout
                     android:id="@+id/hospital"
                     android:orientation="vertical"
-                    android:padding="16dp"
+					android:padding="16dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -96,14 +96,13 @@
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
-                app:cardCornerRadius="50dp"
+                app:cardCornerRadius="150dp"
                 android:layout_margin="12dp"
                 >
 
                 <LinearLayout
                     android:id="@+id/operator"
                     android:orientation="vertical"
-                    android:padding="16dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -133,7 +132,7 @@
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
-                app:cardCornerRadius="50dp"
+                app:cardCornerRadius="150dp"
                 android:layout_margin="12dp"
                 >
 
@@ -170,7 +169,7 @@
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
-                app:cardCornerRadius="50dp"
+                app:cardCornerRadius="150dp"
                 android:layout_margin="12dp"
                 >
 
@@ -281,7 +280,7 @@
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
-                app:cardCornerRadius="50dp"
+                app:cardCornerRadius="150dp"
                 android:layout_margin="12dp"
                 >
 
@@ -318,7 +317,7 @@
                             android:layout_columnWeight="1"
                             android:layout_rowWeight="1"
                             app:cardElevation="6dp"
-                            app:cardCornerRadius="50dp"
+                            app:cardCornerRadius="150dp"
                             android:layout_margin="12dp"
                             >
 
