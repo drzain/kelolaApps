@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -45,10 +46,15 @@ public class DashboardActivityNav extends AppCompatActivity implements BottomNav
 
         loadFragment(new DashboardActivity());
         // inisialisasi BottomNavigaionView
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bn_main);
+
+        //BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bn_main);
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bn_main);
         // beri listener pada saat item/menu bottomnavigation terpilih
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+        //CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) bottomNavigationView.getLayoutParams();
+        //layoutParams.setBehavior(new BottomNavigationBehavior());
+
 
     }
 

@@ -5,11 +5,21 @@ import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.util.Log;
 
+
+import android.content.Context;
+import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.v4.view.ViewCompat;
+import android.util.AttributeSet;
+import android.view.View;
+import android.widget.FrameLayout;
+
 import java.lang.reflect.Field;
 
 public class BottomNavigationViewHelper {
 
-    public static void disableShiftMode(BottomNavigationView view) {
+    public static void disableShiftMode(BottomNavigationView view)
+    {
         BottomNavigationMenuView menuView = (BottomNavigationMenuView) view.getChildAt(0);
         try {
             Field shiftingMode = menuView.getClass().getDeclaredField("mShiftingMode");
@@ -29,6 +39,10 @@ public class BottomNavigationViewHelper {
         } catch (IllegalAccessException e) {
             Log.e("BNVHelper", "Unable to change value of shift mode", e);
         }
+
+
     }
+
+
 
 }
