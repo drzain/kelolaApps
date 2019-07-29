@@ -1,84 +1,88 @@
 package com.sip.kelolaapp;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class DashboardActivity extends AppCompatActivity {
+public class DashboardActivity extends Fragment
+{
 
     private LinearLayout btn_hospital,btn_operator, btn_driver, btn_umkm, btn_logout, btn_landfill, btn_report;
     private SessionManager session;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
+        View view = inflater.inflate(R.layout.activity_dashboard, container, false);
 
-        session = new SessionManager(getApplicationContext());
+        session = new SessionManager(getActivity().getApplicationContext());
         String nama = session.isNama();
-        TextView nama_dashboard =(TextView) findViewById(R.id.textDashboard);
+        TextView nama_dashboard =(TextView) view.findViewById(R.id.textDashboard);
         nama_dashboard.setText("Hi, "+nama);
 
-        action();
-    }
 
-    private void action()
-    {
-        btn_hospital = (LinearLayout) findViewById(R.id.hospital);
+
+
+        btn_hospital = (LinearLayout) view.findViewById(R.id.hospital);
         btn_hospital.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(DashboardActivity.this, DashboardHospital.class);
-                startActivity(i);
+                Intent i = new Intent(getActivity(), DashboardHospital.class);
+                getActivity().startActivity(i);
 
             }
         });
 
-        btn_operator = (LinearLayout) findViewById(R.id.operator);
+        btn_operator = (LinearLayout) view.findViewById(R.id.operator);
         btn_operator.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(DashboardActivity.this, DashboardOperator.class);
-                startActivity(i);
+                Intent i = new Intent(getActivity(), DashboardOperator.class);
+                getActivity().startActivity(i);
 
             }
         });
 
-        btn_driver = (LinearLayout) findViewById(R.id.driver);
+        btn_driver = (LinearLayout) view.findViewById(R.id.driver);
         btn_driver.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(DashboardActivity.this, DashboardDriver.class);
-                startActivity(i);
+                Intent i = new Intent(getActivity(), DashboardDriver.class);
+                getActivity().startActivity(i);
 
             }
         });
 
-        btn_umkm = (LinearLayout) findViewById(R.id.umkm);
+        btn_umkm = (LinearLayout) view.findViewById(R.id.umkm);
         btn_umkm.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent i = new Intent(DashboardActivity.this, DashboardUmkm.class);
-                startActivity(i);
+            public void onClick(View view)
+            {
+                Intent i = new Intent(getActivity(), DashboardUmkm.class);
+                getActivity().startActivity(i);
             }
         });
 
-        btn_report = (LinearLayout) findViewById(R.id.admin_live_dashboard);
+        btn_report = (LinearLayout) view.findViewById(R.id.admin_live_dashboard);
         btn_report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(DashboardActivity.this, DashboardReport.class);
-                startActivity(i);
+                Intent i = new Intent(getActivity(), DashboardReport.class);
+                getActivity().startActivity(i);
             }
         });
 
@@ -100,16 +104,18 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 */
-        btn_logout = (LinearLayout) findViewById(R.id.logout_admin);
+        btn_logout = (LinearLayout) view.findViewById(R.id.logout_admin);
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 session.setLogin(false);
-                Intent i = new Intent(DashboardActivity.this, MainActivity.class);
-                startActivity(i);
-                finish();
+                Intent i = new Intent(getActivity(), MainActivity.class);
+                getActivity().startActivity(i);
+                getActivity().finish();
             }
         });
+
+        return  view;
 
 
     }

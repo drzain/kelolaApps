@@ -10,6 +10,11 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import com.crashlytics.android.Crashlytics;
+//import com.onesignal.OneSignal;
+
+import io.fabric.sdk.android.Fabric;
+
 public class DashboardActivityNav extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener
 {
 
@@ -18,6 +23,15 @@ public class DashboardActivityNav extends AppCompatActivity implements BottomNav
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard_nav);
+/*
+        Fabric.with(this, new Crashlytics());
+        // OneSignal Initialization
+        OneSignal.startInit(this)
+                .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
+                .unsubscribeWhenNotificationsAreDisabled(true)
+                .init();*/
+
+
 
         session = new SessionManager(getApplicationContext());
         // Check if user is already logged in or not
@@ -39,7 +53,8 @@ public class DashboardActivityNav extends AppCompatActivity implements BottomNav
     }
 
     private boolean loadFragment(Fragment fragment){
-        if (fragment != null) {
+        if (fragment != null)
+        {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fl_container, fragment)
                     .commit();
@@ -53,8 +68,7 @@ public class DashboardActivityNav extends AppCompatActivity implements BottomNav
         Fragment fragment = null;
         switch (menuItem.getItemId()){
             case R.id.home_menu:
-                Intent intent = new Intent(DashboardActivityNav.this, DashboardActivity.class);
-                startActivity(intent);
+                fragment = new DashboardActivity();
                 break;
             case R.id.history_menu:
                 fragment = new FragmentHistory();
