@@ -47,7 +47,7 @@ public class UmkmLoadForm extends AppCompatActivity {
         txtUmkmNo = (TextView) findViewById(R.id.noUmkm);
         txtUmkmDate = (TextView) findViewById(R.id.dateUmkm);
         edtQtyUmkm = (EditText) findViewById(R.id.qtyUmkm);
-        btn_umkm_decre = (Button) findViewById(R.id.qtyUmkm);
+        btn_umkm_decre = (Button) findViewById(R.id.umkm_qty_decre);
 
         Intent intent = getIntent();
         receive_no = intent.getStringExtra("receive_no");
