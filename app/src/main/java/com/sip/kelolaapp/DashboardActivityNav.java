@@ -43,7 +43,7 @@ public class DashboardActivityNav extends AppCompatActivity implements BottomNav
             finish();
         }
 
-        loadFragment(new FragmentAccount());
+        loadFragment(new DashboardActivity());
         // inisialisasi BottomNavigaionView
         BottomNavigationView bottomNavigationView = findViewById(R.id.bn_main);
         // beri listener pada saat item/menu bottomnavigation terpilih

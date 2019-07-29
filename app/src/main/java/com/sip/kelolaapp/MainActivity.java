@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         if (session.isLoggedIn()) {
             if(session.isUser().equals("1")) {
                 // User is already logged in. Take him to main activity
-                Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
+                Intent intent = new Intent(MainActivity.this, DashboardActivityNav.class);
                 startActivity(intent);
                 finish();
             }else if(session.isUser().equals("2")){

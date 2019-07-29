@@ -45,7 +45,6 @@
         <activity android:name=".UmkmReceiveOrder" />
         <activity android:name=".CommoditiesRecevied" />
         <activity android:name=".DashboardUmkm" />
-        <activity android:name=".DashboardActivity" />
         <activity android:name=".DashboardHospital" />
         <activity android:name=".DashboardReport"/>
         <activity android:name=".HospitalFormRequest" />
