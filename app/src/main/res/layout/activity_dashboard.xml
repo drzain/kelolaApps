@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF"
+    android:layout_marginBottom="50dp"
     tools:context=".DashboardActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -23,7 +23,6 @@
             android:background="@color/design_default_color_primary_dark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <TextView
                 android:id="@+id/textDashboard"
                 android:text="Hi,"
@@ -344,17 +343,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Logout"/>
-
                             </LinearLayout>
-
                         </android.support.v7.widget.CardView>
-
-
-
-
-
                     </GridLayout>
-
                 </LinearLayout>
-
             </ScrollView>
