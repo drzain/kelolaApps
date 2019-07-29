@@ -236,8 +236,8 @@ public class MainActivity extends AppCompatActivity {
 
                         // Launch main activity
                         if(role.equals("1")) {
-                            Intent intent = new Intent(MainActivity.this,
-                                    DashboardActivity.class);
+                            //Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
+                            Intent intent = new Intent(MainActivity.this, DashboardActivityNav.class);
                             startActivity(intent);
                             finish();
                         }else if(role.equals("2")){

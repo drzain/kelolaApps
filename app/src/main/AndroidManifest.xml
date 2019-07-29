@@ -38,6 +38,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".DashboardDriver" />
         </activity>
+        <activity android:name=".DashboardActivityNav"/>
         <activity android:name=".OperatorReceiveForm" />
         <activity android:name=".OperatorInProgress" />
         <activity android:name=".OperatorPacked" />
