@@ -180,9 +180,16 @@ public class UmkmLoadForm extends AppCompatActivity {
         edtQtyUmkm.setText("" + number);
     }
 
-    public void UMKMIncre(View view) {
+    public void UMKMIncre(View view)
+    {
+        int qty =Integer.parseInt(recycleble_qty);
         btn_umkm_decre.setVisibility(View.VISIBLE);
         edtQtyUmkm.setVisibility(View.VISIBLE);
+        if(qtyUmkm==qty)
+        {
+            Toast.makeText(this,"Max Qty Recycleble!!!",Toast.LENGTH_SHORT).show();
+            return;
+        }
         qtyUmkm = qtyUmkm + 1;
         display(qtyUmkm);
     }

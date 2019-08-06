@@ -65,7 +65,7 @@ public class HospitalPolyclinic extends Activity
         judul.setText("Form Polyclinic");
 
         icon_form = (ImageView) findViewById(R.id.img_loc);
-        icon_form.setImageResource(R.drawable.ic_polyclinic);
+        icon_form.setImageResource(R.drawable.ic_polyclinic2);
     }
 
 

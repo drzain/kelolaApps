@@ -196,8 +196,14 @@ public class DriverLoadForm extends AppCompatActivity {
 
     public void LoadIncre(View view)
     {
+        int qty = Integer.parseInt(end_qty);
         btn_load_decre.setVisibility(View.VISIBLE);
         edtQtyTransport.setVisibility(View.VISIBLE);
+        if(qtyTransport==qty)
+        {
+            Toast.makeText(this,"Max Qty End Waste!!!",Toast.LENGTH_SHORT).show();
+            return;
+        }
         qtyTransport=qtyTransport+1;
         display(qtyTransport);
 

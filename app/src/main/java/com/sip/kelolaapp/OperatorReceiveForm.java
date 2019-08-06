@@ -187,8 +187,14 @@ public class OperatorReceiveForm extends AppCompatActivity
 
     public void WeightIncre(View view)
     {
+        int qty = Integer.parseInt(waste_qty);
         btn_weight.setVisibility(View.VISIBLE);
         edtQtyReceive.setVisibility(View.VISIBLE);
+        if(qtyWeight==qty)
+        {
+            Toast.makeText(this,"Max Qty Weight!!!",Toast.LENGTH_SHORT).show();
+            return;
+        }
         qtyWeight=qtyWeight+1;
         display(qtyWeight);
 
