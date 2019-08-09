@@ -2,46 +2,46 @@ package com.sip.kelolaapp;
 
 public class AppConfig {
 
-    public static String URL_LOGIN = "http://35.240.141.26/api/auth";
+    public static String URL_LOGIN = "http://kelola.youngdev.web.id/api/auth";
 
-    public static String URL_ORDER_WASTE = "http://35.240.141.26/api/receive";
+    public static String URL_ORDER_WASTE = "http://kelola.youngdev.web.id/api/receive";
 
-    public static String URL_RECEIVE_WASTE = "http://35.240.141.26/api/receive/order";
+    public static String URL_RECEIVE_WASTE = "http://kelola.youngdev.web.id/api/receive/order";
 
-    public static String URL_ASSET_LIST = "http://35.240.141.26/api/receive/list_receive";
+    public static String URL_ASSET_LIST = "http://kelola.youngdev.web.id/api/receive/list_receive";
 
-    public static String URL_ASSET_LIST_PROSES = "http://35.240.141.26/api/receive/list_proses";
+    public static String URL_ASSET_LIST_PROSES = "http://kelola.youngdev.web.id/api/receive/list_proses";
 
-    public static String URL_ASSET_LIST_RESULT = "http://35.240.141.26/api/receive/list_result";
+    public static String URL_ASSET_LIST_RESULT = "http://kelola.youngdev.web.id/api/receive/list_result";
 
-    public static String URL_SET_PROSES = "http://35.240.141.26/api/receive/set_proses";
+    public static String URL_SET_PROSES = "http://kelola.youngdev.web.id/api/receive/set_proses";
 
-    public static String URL_SET_RESULT = "http://35.240.141.26/api/receive/set_result";
+    public static String URL_SET_RESULT = "http://kelola.youngdev.web.id/api/receive/set_result";
 
-    public static String URL_TRANSPORT_LIST = "http://35.240.141.26/api/receive/list_transport";
+    public static String URL_TRANSPORT_LIST = "http://kelola.youngdev.web.id/api/receive/list_transport";
 
-    public static String URL_UMKM_LIST = "http://35.240.141.26/api/receive/list_umkm";
+    public static String URL_UMKM_LIST = "http://kelola.youngdev.web.id/api/receive/list_umkm";
 
-    public static String URL_DELIVERY_LIST = "http://35.240.141.26/api/receive/list_delivery";
+    public static String URL_DELIVERY_LIST = "http://kelola.youngdev.web.id/api/receive/list_delivery";
 
-    public static String URL_REQUEST_LIST = "http://35.240.141.26/api/receive/list_request";
+    public static String URL_REQUEST_LIST = "http://kelola.youngdev.web.id/api/receive/list_request";
 
-    public static String URL_SET_LOAD = "http://35.240.141.26/api/receive/load_transport";
+    public static String URL_SET_LOAD = "http://kelola.youngdev.web.id/api/receive/load_transport";
 
-    public static String URL_SET_UMKM = "http://35.240.141.26/api/receive/load_umkm";
+    public static String URL_SET_UMKM = "http://kelola.youngdev.web.id/api/receive/load_umkm";
 
-    public static String URL_SET_FINISH = "http://35.240.141.26/api/receive/finish_transport";
+    public static String URL_SET_FINISH = "http://kelola.youngdev.web.id/api/receive/finish_transport";
 
-    public static String URL_SAVE_UMKM = "http://35.240.141.26/api/receive/receive_umkm";
+    public static String URL_SAVE_UMKM = "http://kelola.youngdev.web.id/api/receive/receive_umkm";
 
-    public static String URL_WASTE_PRODUCE = "http://35.240.141.26/api/receive/waste_produce";
+    public static String URL_WASTE_PRODUCE = "http://kelola.youngdev.web.id/api/receive/waste_produce";
 
-    public static String URL_DATA_PROSES = "http://35.240.141.26/api/receive/data_proses";
+    public static String URL_DATA_PROSES = "http://kelola.youngdev.web.id/api/receive/data_proses";
 
-    public static String URL_DATA_COMMODITIES = "http://35.240.141.26/api/receive/commodities";
+    public static String URL_DATA_COMMODITIES = "http://kelola.youngdev.web.id/api/receive/commodities";
 
-    public static String URL_DATA_ENDWASTE = "http://35.240.141.26/api/receive/endwaste";
+    public static String URL_DATA_ENDWASTE = "http://kelola.youngdev.web.id/api/receive/endwaste";
 
-    public static String URL_DATA_RECYCLEBLE = "http://35.240.141.26/api/receive/recycleble";
+    public static String URL_DATA_RECYCLEBLE = "http://kelola.youngdev.web.id/api/receive/recycleble";
 
 }
