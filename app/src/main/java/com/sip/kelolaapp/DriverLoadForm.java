@@ -79,12 +79,25 @@ public class DriverLoadForm extends AppCompatActivity {
 
                 }
                 else {
+
+                    int qty2 = Integer.parseInt(end_qty);
+                    String b = edtQtyTransport.getText().toString();
+                    int c = Integer.parseInt(b);
+                    if(c > qty2)
+                    {
+                        Toast.makeText(getApplicationContext(),
+                                "Max Qty End Waste!!!", Toast.LENGTH_LONG).show();
+                        return;
+                    }
+                    else
+                        {
                     transport_qty = edtQtyTransport.getText().toString();
                     nopolis = spNoPolis.getSelectedItem().toString();
                     sendResult(transport_no, transport_date, transport_qty, nopolis, receive_no);
                 /*Intent i = new Intent(OperatorReceiveForm.this, ReceiveOrder.class);
                 startActivity(i);
                 finish();*/
+                    }
                 }
             }
         });

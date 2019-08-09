@@ -32,6 +32,7 @@ public class OperatorReceiveForm extends AppCompatActivity
     EditText edtQtyReceive;
     ProgressDialog pDialog;
     int qtyWeight =0;
+
     private static final String TAG = OperatorReceiveForm.class.getSimpleName();
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -58,10 +59,12 @@ public class OperatorReceiveForm extends AppCompatActivity
         txtWasteQty.setText(waste_qty);
 
         btn_struck = (Button)findViewById(R.id.btn_struck);
-        btn_struck.setOnClickListener(new View.OnClickListener() {
+        btn_struck.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v)
             {
+
                 if (edtQtyReceive.getText().toString().equals("")|| edtQtyReceive.getText().toString().equals("0"))
                 {
                     Toast.makeText(getApplicationContext(),
@@ -70,15 +73,31 @@ public class OperatorReceiveForm extends AppCompatActivity
 
                 else
                 {
+                    int qty2 = Integer.parseInt(waste_qty);
+                    String b = edtQtyReceive.getText().toString();
+                    int c = Integer.parseInt(b);
+                    if(c > qty2)
+                    {
+                        Toast.makeText(getApplicationContext(),
+                                "Max Qty Weight!!!", Toast.LENGTH_LONG).show();
+                        return;
+                    }
+                   else {
+                        receive_qty = edtQtyReceive.getText().toString();
+                        Long tsLong = System.currentTimeMillis() / 1000;
+                        String ts = tsLong.toString();
+                        receive_no = ts;
+                        sendReceive(transaksi_no, receive_qty, receive_no);
+                        /*Intent i = new Intent(OperatorReceiveForm.this, ReceiveOrder.class);
+                        startActivity(i);
+                        finish();*/
 
-                receive_qty = edtQtyReceive.getText().toString();
-                Long tsLong = System.currentTimeMillis()/1000;
-                String ts = tsLong.toString();
-                receive_no = ts;
-                sendReceive(transaksi_no,receive_qty,receive_no);
-                /*Intent i = new Intent(OperatorReceiveForm.this, ReceiveOrder.class);
-                startActivity(i);
-                finish();*/}
+                    }
+
+
+                }
+
+
             }
         });
 
@@ -187,6 +206,7 @@ public class OperatorReceiveForm extends AppCompatActivity
 
     public void WeightIncre(View view)
     {
+
         int qty = Integer.parseInt(waste_qty);
         btn_weight.setVisibility(View.VISIBLE);
         edtQtyReceive.setVisibility(View.VISIBLE);

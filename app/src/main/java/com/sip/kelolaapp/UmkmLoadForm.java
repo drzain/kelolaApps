@@ -71,12 +71,24 @@ public class UmkmLoadForm extends AppCompatActivity {
                 if (edtQtyUmkm.getText().toString().equals("") || edtQtyUmkm.getText().toString().equals("0")) {
                     Toast.makeText(getApplicationContext(),
                             "No less than Zero", Toast.LENGTH_LONG).show();
-                } else {
-                    umkm_qty = edtQtyUmkm.getText().toString();
-                    sendResult(umkm_no, umkm_date, umkm_qty, receive_no);
+                } else
+                    {
+                        int qty2 = Integer.parseInt(recycleble_qty);
+                        String b = edtQtyUmkm.getText().toString();
+                        int c = Integer.parseInt(b);
+                        if(c > qty2)
+                        {
+                            Toast.makeText(getApplicationContext(),
+                                    "Max Qty Recycleble!!!", Toast.LENGTH_LONG).show();
+                            return;
+                        }
+                        else {
+                            umkm_qty = edtQtyUmkm.getText().toString();
+                            sendResult(umkm_no, umkm_date, umkm_qty, receive_no);
                 /*Intent i = new Intent(OperatorReceiveForm.this, ReceiveOrder.class);
                 startActivity(i);
                 finish();*/
+                        }
                 }
             }
         });
