@@ -26,7 +26,7 @@ public class DashboardActivityNew extends Fragment
         nama_dashboard.setText("Hi, "+nama);
 
 
-/*
+
 
         btn_hospital = (LinearLayout) view.findViewById(R.id.hospital);
         btn_hospital.setOnClickListener(new View.OnClickListener()
@@ -64,7 +64,7 @@ public class DashboardActivityNew extends Fragment
             }
         });
 
-        btn_umkm = (LinearLayout) view.findViewById(R.id.umkm);
+        btn_umkm = (LinearLayout) view.findViewById(R.id.tracker);
         btn_umkm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
@@ -73,7 +73,7 @@ public class DashboardActivityNew extends Fragment
                 getActivity().startActivity(i);
             }
         });
-
+/*
         btn_report = (LinearLayout) view.findViewById(R.id.admin_live_dashboard);
         btn_report.setOnClickListener(new View.OnClickListener() {
             @Override
