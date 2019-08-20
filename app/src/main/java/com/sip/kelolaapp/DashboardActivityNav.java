@@ -44,7 +44,8 @@ public class DashboardActivityNav extends AppCompatActivity implements BottomNav
             finish();
         }
 
-        loadFragment(new DashboardActivity());
+        //loadFragment(new DashboardActivity());
+        loadFragment(new DashboardActivityNew());
         // inisialisasi BottomNavigaionView
 
         //BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bn_main);
@@ -74,7 +75,8 @@ public class DashboardActivityNav extends AppCompatActivity implements BottomNav
         Fragment fragment = null;
         switch (menuItem.getItemId()){
             case R.id.home_menu:
-                fragment = new DashboardActivity();
+                //fragment = new DashboardActivity();
+                fragment = new DashboardActivityNew();
                 break;
             case R.id.history_menu:
                 fragment = new FragmentHistory();
