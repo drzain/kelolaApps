@@ -128,7 +128,7 @@
                                         android:gravity="center"
                                         android:text="Hospital"
                                         android:textColor="@color/black"
-                                        android:textSize="10dp"
+                                        android:textSize="12dp"
                                         tools:ignore="MissingPrefix" />
 
                                 </LinearLayout>
@@ -157,7 +157,7 @@
                                         android:gravity="center"
                                         android:text="Processing"
                                         android:textColor="@color/black"
-                                        android:textSize="10dp"
+                                        android:textSize="12dp"
                                         tools:ignore="MissingPrefix" />
 
                             </LinearLayout>
@@ -187,7 +187,7 @@
                                         android:gravity="center"
                                         android:text="Transpoter"
                                         android:textColor="@color/black"
-                                        android:textSize="10dp"
+                                        android:textSize="12dp"
                                         tools:ignore="MissingPrefix" />
 
                             </LinearLayout>
@@ -217,7 +217,7 @@
                                         android:gravity="center"
                                         android:text="Tracking"
                                         android:textColor="@color/black"
-                                        android:textSize="10dp"
+                                        android:textSize="12dp"
                                         tools:ignore="MissingPrefix" />
 
                             </LinearLayout>
