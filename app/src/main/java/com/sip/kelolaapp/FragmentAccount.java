@@ -22,7 +22,9 @@ public class FragmentAccount extends Fragment
 {
     public View onCreateView( LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState)
     {
-        return inflater.inflate(R.layout.fragment_account, container,false);
+        View view = inflater.inflate(R.layout.fragment_account, container,false);
+        TextView nama_dashboard =(TextView) view.findViewById(R.id.textAccount);
+        return view;
     }
 
 }
