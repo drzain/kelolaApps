@@ -49,7 +49,9 @@
         <activity android:name=".DashboardReport"/>
         <activity android:name=".HospitalFormRequest" />
         <activity android:name=".HospitalPolyclinic" />
+        <activity android:name=".HospitalFarmasi" />
         <activity android:name=".HospitalNurse" />
+        <activity android:name=".HospitalInTransit" />
         <activity android:name=".DashboardOperator" />
         <activity android:name=".DashboardDriver" />
         <activity android:name=".MainActivity">

@@ -3,18 +3,20 @@ package com.sip.kelolaapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.LinearLayout;
 
 public class DashboardHospital extends AppCompatActivity
 {
-    private LinearLayout btn_emergency,btn_polyclinic, btn_nurse, btn_logout;
+    private LinearLayout btn_emergency,btn_polyclinic, btn_nurse, btn_farmasi;
+    private CardView btn_inTransit;
     private SessionManager session;
 
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dashboard_hospital);
+        setContentView(R.layout.dashboard_hospital_new);
 
         session = new SessionManager(getApplicationContext());
 
@@ -56,6 +58,31 @@ public class DashboardHospital extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent i = new Intent(DashboardHospital.this, HospitalNurse.class);
+                startActivity(i);
+                finish();
+
+            }
+        });
+        btn_farmasi=(LinearLayout)findViewById(R.id.hospital_farmasi_order);
+        btn_farmasi.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent i = new Intent(DashboardHospital.this, HospitalFarmasi.class);
+                startActivity(i);
+                finish();
+
+            }
+        });
+
+        btn_inTransit=(CardView) findViewById(R.id.hospitalPickupbtn);
+        btn_inTransit.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent i = new Intent(DashboardHospital.this, HospitalInTransit.class);
                 startActivity(i);
                 finish();
 

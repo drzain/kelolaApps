@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.CardView
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/toolbar"
+        android:background="@color/white">
+        <TextView
+            android:id="@+id/textDashboard"
+            android:text="Hi, RSUD Kariadi"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="22sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </android.support.v7.widget.CardView>
+
+
+    <ScrollView
+        android:id="@+id/scrollHospital"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                >
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:layout_alignParentBottom="true">
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/hospitalDashboard"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:layout_margin="11dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="5dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+                            <RelativeLayout
+                                android:id="@+id/hospitalDashboard2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colotBackgroundHospital">
+                                <TextView
+                                    fontPath="fonts/Poppins-SemiBold.otf"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:text="Dashboard Hospital"
+                                    android:textColor="@color/white"
+                                    android:textSize="17sp"
+                                    tools:ignore="MissingPrefix"                                />
+                            </RelativeLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/garis"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_below="@id/hospitalDashboard2"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/white"
+                                android:orientation="horizontal" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/garis"
+                                android:layout_marginTop="10dp"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:id="@+id/hospital_emergency_order"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="70dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_weight="0.50"
+                                    android:background="?attr/selectableItemBackground">
+                                    <ImageView
+                                        android:id="@+id/ic_emergency"
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:src="@drawable/ic_emergeny" />
+                                    <TextView
+                                        fontPath="fonts/Poppins-Medium.otf"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/ic_emergency"
+                                        android:gravity="center"
+                                        android:text="Emergency"
+                                        android:textColor="@color/black"
+                                        android:textSize="12dp"
+                                        tools:ignore="MissingPrefix" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:id="@+id/hospital_polyclinic_order"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="70dp"
+                                    android:layout_weight="0.50"
+                                    android:background="?attr/selectableItemBackground">
+                                    <ImageView
+                                        android:id="@+id/ic_polyclinic"
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/ic_polyclinic2" />
+                                    <TextView
+                                        fontPath="fonts/Poppins-Medium.otf"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/ic_polyclinic"
+                                        android:gravity="center"
+                                        android:text="Polyclinic"
+                                        android:textColor="@color/black"
+                                        android:textSize="12dp"
+                                        tools:ignore="MissingPrefix" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:id="@+id/hospital_nurse_order"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="70dp"
+                                    android:layout_weight="0.50"
+                                    android:background="?attr/selectableItemBackground">
+                                    <ImageView
+                                        android:id="@+id/ic_nurse"
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/ic_nurse" />
+                                    <TextView
+                                        fontPath="fonts/Poppins-Medium.otf"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/ic_nurse"
+                                        android:gravity="center"
+                                        android:text="Nurse"
+                                        android:textColor="@color/black"
+                                        android:textSize="12dp"
+                                        tools:ignore="MissingPrefix" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:id="@+id/hospital_farmasi_order"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="70dp"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_weight="0.50"
+                                    android:background="?attr/selectableItemBackground">
+                                    <ImageView
+                                        android:id="@+id/ic_farmasi"
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/ic_polyclinic" />
+                                    <TextView
+                                        fontPath="fonts/Poppins-Medium.otf"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/ic_farmasi"
+                                        android:gravity="center"
+                                        android:text="Farmasi"
+                                        android:textColor="@color/black"
+                                        android:textSize="12dp"
+                                        tools:ignore="MissingPrefix" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/hospitalIndicator"
+                    fontPath="fonts/Poppins-Bold.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:text="Indicator"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    tools:ignore="MissingPrefix" />
+            </RelativeLayout>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/hospitalChart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="10dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.33"
+                android:clickable="true"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_above="@+id/textView3"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="105dp"
+                        android:scaleType="center"
+                        android:src="@drawable/icon_wm" />
+                    <TextView
+                        android:id="@+id/textView3"
+                        fontPath="fonts/Poppins-SemiBold.otf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:maxLines="1"
+                        android:text="Chart"
+                        android:textColor="@color/black"
+                        android:textSize="12dp"
+                        android:textStyle="bold"
+                        tools:ignore="MissingPrefix" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/hospitalPickupbtn"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_weight="0.33"
+                android:clickable="true"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/colotBackgroundHospital"
+                    >
+                    <TextView
+                        fontPath="fonts/Poppins-SemiBold.otf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:maxLines="1"
+                        android:text="Pick Up"
+                        android:textColor="@color/white"
+                        android:textSize="12dp"
+                        android:textStyle="bold"
+                        tools:ignore="MissingPrefix" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
