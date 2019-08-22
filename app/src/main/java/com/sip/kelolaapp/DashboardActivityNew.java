@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class DashboardActivityNew extends Fragment
 {
-    private LinearLayout btn_hospital,btn_operator, btn_driver, btn_umkm, btn_logout, btn_landfill, btn_report;
+    private LinearLayout btn_hospital,btn_operator, btn_driver, btn_tracker, btn_logout, btn_landfill, btn_report;
     private SessionManager session;
 
     @Override
@@ -64,12 +64,12 @@ public class DashboardActivityNew extends Fragment
             }
         });
 
-        btn_umkm = (LinearLayout) view.findViewById(R.id.tracker);
-        btn_umkm.setOnClickListener(new View.OnClickListener() {
+        btn_tracker = (LinearLayout) view.findViewById(R.id.tracker);
+        btn_tracker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
-                Intent i = new Intent(getActivity(), DashboardUmkm.class);
+                Intent i = new Intent(getActivity(), DashboardTracker.class);
                 getActivity().startActivity(i);
             }
         });

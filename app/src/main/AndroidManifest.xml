@@ -53,7 +53,10 @@
         <activity android:name=".HospitalNurse" />
         <activity android:name=".HospitalInTransit" />
         <activity android:name=".DashboardOperator" />
+        <activity android:name=".DashboardOperatorProcess"/>
+        <activity android:name=".DashboardOPeratorRework"/>
         <activity android:name=".DashboardDriver" />
+        <activity android:name=".DashboardTracker"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

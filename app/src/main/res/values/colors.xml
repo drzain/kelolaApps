@@ -15,4 +15,5 @@
     <color name="colotBackgroundLandfill">#8000ff</color>
     <color name="contentTextColor">#020000</color>
     <color name="whiteTextColor">#fff</color>
+    <color name="formcolor">#f8f8f8</color>
 </resources>
