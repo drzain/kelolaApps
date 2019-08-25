@@ -56,6 +56,7 @@
         <activity android:name=".DashboardOperatorProcess"/>
         <activity android:name=".DashboardOPeratorRework"/>
         <activity android:name=".DashboardDriver" />
+        <activity android:name=".DashboardDriverDetail" />
         <activity android:name=".DashboardTracker"/>
         <activity android:name=".MainActivity">
             <intent-filter>
