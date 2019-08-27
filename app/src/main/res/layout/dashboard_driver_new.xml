@@ -83,14 +83,14 @@
                                 android:textSize="@dimen/size_storage"
                                 android:textStyle="normal|bold" />
                             <Button
-                                android:layout_marginRight="10dp"
+                                android:layout_marginRight="20dp"
                                 android:id="@+id/btn_take1"
                                 android:layout_alignParentRight="true"
                                 android:layout_centerVertical="true"
-                                android:layout_width="wrap_content"
+                                android:layout_width="100dp"
                                 android:layout_height="30dp"
-                                android:background="@color/df_green"
-                                android:textColor="@color/white"
+                                android:background="@color/white"
+                                android:textColor="@color/df_green"
                                 android:text="Take Order"/>
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
@@ -114,22 +114,23 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="15dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginTop="15dp"
                             android:layout_marginBottom="15dp"
                             android:text="RSUD Adam Malik"
                             android:textColor="@color/black"
                             android:textSize="@dimen/size_storage"
                             android:textStyle="normal|bold" />
                         <Button
-                            android:layout_marginRight="10dp"
+
+                            android:layout_marginRight="20dp"
                             android:id="@+id/btn_take2"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
-                            android:layout_width="wrap_content"
+                            android:layout_width="100dp"
                             android:layout_height="30dp"
-                            android:background="@color/df_green"
-                            android:textColor="@color/white"
+                            android:background="@color/white"
+                            android:textColor="@color/df_green"
                             android:text="Take Order"/>
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
