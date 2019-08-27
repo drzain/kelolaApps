@@ -42,6 +42,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:orientation="vertical">
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -51,7 +52,6 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:layout_alignParentBottom="true">
 
                     <android.support.v7.widget.CardView
@@ -231,16 +231,13 @@
             </RelativeLayout>
 
             <RelativeLayout
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:gravity="center_vertical">
-
-
                 <TextView
-                    android:id="@+id/txte"
+                    android:id="@+id/txtnew1"
                     fontPath="fonts/Poppins-Bold.otf"
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
@@ -257,7 +254,7 @@
                     fontPath="fonts/Poppins-Regular.otf"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/txte"
+                    android:layout_below="@id/txtnew1"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:gravity="center"
@@ -268,18 +265,21 @@
 
 
             </RelativeLayout>
-
-            <!--<LinearLayout
+            <HorizontalScrollView
+                android:id="@+id/scrollNew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10px">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:baselineAligned="true"
                 android:orientation="horizontal"
-                android:weightSum="1">-->
-
+                android:weightSum="1">
                 <android.support.v7.widget.CardView
-                    android:id="@+id/home_mRide"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:id="@+id/new1"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
                     android:layout_margin="10dp"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
@@ -288,7 +288,6 @@
                     android:clickable="true"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="5dp">
-
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -297,14 +296,14 @@
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:layout_above="@+id/textView3"
+                            android:layout_above="@+id/txtNew1"
                             android:layout_centerHorizontal="true"
                             android:layout_marginBottom="5dp"
                             android:scaleType="center"
                             android:src="@drawable/icon_wm" />
 
                         <TextView
-                            android:id="@+id/textView3"
+                            android:id="@+id/txtNew1"
                             fontPath="fonts/Poppins-SemiBold.otf"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -312,7 +311,7 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginBottom="5dp"
                             android:maxLines="1"
-                            android:text="Hospital"
+                            android:text="News 1"
                             android:textColor="@color/black"
                             android:textSize="12dp"
                             android:textStyle="bold"
@@ -321,9 +320,9 @@
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/home_mSend"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:id="@+id/new2"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
                     android:layout_margin="10dp"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="0.33"
@@ -333,14 +332,13 @@
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-
                         android:layout_height="match_parent"
                         android:background="?attr/selectableItemBackground">
 
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:layout_above="@+id/textView2"
+                            android:layout_above="@+id/txtNew2"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
@@ -349,7 +347,7 @@
 
                         <TextView
 
-                            android:id="@+id/textView2"
+                            android:id="@+id/txtNew2"
                             fontPath="fonts/Poppins-SemiBold.otf"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -357,7 +355,7 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginBottom="5dp"
                             android:maxLines="1"
-                            android:text="Hospital"
+                            android:text="News 2"
                             android:textColor="@color/black"
                             android:textSize="12dp"
                             android:textStyle="bold"
@@ -367,8 +365,10 @@
 
                 </android.support.v7.widget.CardView>
 
-            <RelativeLayout
+            </LinearLayout>
+            </HorizontalScrollView>
 
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -376,7 +376,7 @@
                 android:gravity="center_vertical"
                 android:layout_marginBottom="10dp">
                 <TextView
-                    android:id="@+id/txte2"
+                    android:id="@+id/txtChart"
                     fontPath="fonts/Poppins-Bold.otf"
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
@@ -393,7 +393,7 @@
                     fontPath="fonts/Poppins-Regular.otf"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/txte2"
+                    android:layout_below="@id/txtChart"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:gravity="center"
@@ -401,25 +401,27 @@
                     android:textColor="@color/black"
                     android:textSize="10dp"
                     tools:ignore="MissingPrefix" />
-
-
             </RelativeLayout>
 
-            <ScrollView
-                android:id="@+id/scroll3"
+        <HorizontalScrollView
+            android:id="@+id/scrollChart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10px"            >
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                >
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                android:baselineAligned="true"
+                android:orientation="horizontal"
+                android:weightSum="1">
                 <android.support.v7.widget.CardView
-                    android:id="@+id/home_mCar"
-                    android:layout_width="500dp"
-                    android:layout_height="100dp"
-
-                    android:layout_marginLeft="10dp"
+                    android:id="@+id/chart1"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_margin="10dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:layout_marginLeft="5dp"
                     android:layout_weight="0.33"
                     android:clickable="true"
                     app:cardCornerRadius="10dp"
@@ -428,28 +430,69 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="?attr/selectableItemBackground">
+
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_above="@+id/textView6"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_above="@+id/txtChart1"
                             android:layout_centerHorizontal="true"
                             android:layout_marginBottom="5dp"
                             android:scaleType="center"
                             android:src="@drawable/icon_wm" />
 
                         <TextView
-
-                            android:id="@+id/textView6"
+                            android:id="@+id/txtChart1"
                             fontPath="fonts/Poppins-SemiBold.otf"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
                             android:layout_marginBottom="5dp"
-
                             android:maxLines="1"
-                            android:text="Hospital"
+                            android:text="Report Chart 1"
+                            android:textColor="@color/black"
+                            android:textSize="12dp"
+                            android:textStyle="bold"
+                            tools:ignore="MissingPrefix" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
 
+                <android.support.v7.widget.CardView
+                    android:id="@+id/chart2"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.33"
+                    android:clickable="true"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_above="@+id/txtChart2"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:scaleType="center"
+                            android:src="@drawable/icon_wm" />
+
+                        <TextView
+                            android:id="@+id/txtChart2"
+                            fontPath="fonts/Poppins-SemiBold.otf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="5dp"
+                            android:maxLines="1"
+                            android:text="Report Chart 2"
                             android:textColor="@color/black"
                             android:textSize="12dp"
                             android:textStyle="bold"
@@ -457,103 +500,10 @@
 
                     </RelativeLayout>
 
-
                 </android.support.v7.widget.CardView>
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/home_mCar6"
-                android:layout_width="500dp"
-                android:layout_height="100dp"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="0.33"
-                android:clickable="true"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="5dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="?attr/selectableItemBackground">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_above="@+id/textView7"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="5dp"
-
-                        android:scaleType="center"
-                        android:src="@drawable/icon_wm" />
-
-                    <TextView
-
-                        android:id="@+id/textView7"
-                        fontPath="fonts/Poppins-SemiBold.otf"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="5dp"
-
-                        android:maxLines="1"
-                        android:text="Hospital"
-
-                        android:textColor="@color/black"
-                        android:textSize="12dp"
-                        android:textStyle="bold"
-                        tools:ignore="MissingPrefix" />
-
-                </RelativeLayout>
-            </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/home_mCar9"
-                        android:layout_width="500dp"
-                        android:layout_height="100dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="0.33"
-                        android:clickable="true"
-                        app:cardCornerRadius="10dp"
-                        app:cardElevation="5dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="?attr/selectableItemBackground">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_above="@+id/textView9"
-                                android:layout_centerHorizontal="true"
-                                android:layout_marginBottom="5dp"
-
-                                android:scaleType="center"
-                                android:src="@drawable/icon_wm" />
-
-                            <TextView
-
-                                android:id="@+id/textView9"
-                                fontPath="fonts/Poppins-SemiBold.otf"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentBottom="true"
-                                android:layout_centerHorizontal="true"
-                                android:layout_marginBottom="5dp"
-
-                                android:maxLines="1"
-                                android:text="Hospital"
-
-                                android:textColor="@color/black"
-                                android:textSize="12dp"
-                                android:textStyle="bold"
-                                tools:ignore="MissingPrefix" />
-
-                        </RelativeLayout>
-                    </android.support.v7.widget.CardView>
-
-                </LinearLayout>
-            </ScrollView>
+            </LinearLayout>
+        </HorizontalScrollView>
         </LinearLayout>
 
     </ScrollView>

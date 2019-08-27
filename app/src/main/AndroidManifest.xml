@@ -58,6 +58,7 @@
         <activity android:name=".DashboardDriver" />
         <activity android:name=".DashboardDriverDetail" />
         <activity android:name=".DashboardTracker"/>
+        <activity android:name=".AuthReset"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

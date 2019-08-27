@@ -35,6 +35,7 @@ public class DashboardDriver extends Activity
             {
                 Intent i = new Intent(DashboardDriver.this, DashboardDriverDetail.class);
                 startActivity(i);
+                finish();
 
             }
         });

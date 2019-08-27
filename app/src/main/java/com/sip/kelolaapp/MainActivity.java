@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     boolean doubleBackToExitPressedOnce = false;
     private ImageView bookIconImageView;
     private EditText usernameEdt, passwordEdt;
-    private TextView bookITextView;
+    private TextView bookITextView, auth_forgot;
     private ProgressBar loadingProgressBar;
     private SessionManager session;
     private ProgressDialog pDialog;
@@ -57,9 +57,9 @@ public class MainActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.auth_login);
         initViews();
-        new CountDownTimer(5000, 1000) {
+        /*new CountDownTimer(5000, 1000) {
 
             @Override
             public void onTick(long millisUntilFinished) {
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFinish() {
 
             }
-        }.start();
+        }.start();*/
 
         //Fabric.with(this, new Crashlytics());
 
@@ -122,7 +122,8 @@ public class MainActivity extends AppCompatActivity {
         pDialog.setCancelable(false);
 
         btnLogin = (Button) findViewById(R.id.loginButton);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view) {
                 String username = usernameEdt.getText().toString().trim();
@@ -139,6 +140,19 @@ public class MainActivity extends AppCompatActivity {
                             "Please enter the credentials!", Toast.LENGTH_LONG)
                             .show();
                 }
+            }
+        });
+
+        auth_forgot =(TextView)findViewById(R.id.auth_forgot);
+        auth_forgot.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(MainActivity.this, AuthReset.class);
+                startActivity(intent);
+                finish();
+
             }
         });
     }
