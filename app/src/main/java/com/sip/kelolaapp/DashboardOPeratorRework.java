@@ -21,7 +21,7 @@ public class DashboardOPeratorRework extends Activity
         {
             public void onClick(View v)
             {
-                Intent i = new Intent(DashboardOPeratorRework.this, DashboardActivityNav.class);
+                Intent i = new Intent(DashboardOPeratorRework.this, DashboardOperatorPickUp.class);
                 startActivity(i);
                 finish();
 

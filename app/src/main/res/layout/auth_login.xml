@@ -92,7 +92,7 @@
             android:id="@+id/loginButton"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:layout_above="@+id/skipTextView"
+            android:layout_above="@+id/signUptxt"
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
@@ -104,7 +104,7 @@
             android:textSize="20dp" />
 
         <TextView
-            android:id="@+id/skipTextView"
+            android:id="@+id/signUptxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

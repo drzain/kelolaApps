@@ -27,7 +27,7 @@ public class DashboardDriverDetail extends Activity
         {
             public void onClick(View v)
             {
-                Intent i = new Intent(DashboardDriverDetail.this, DashboardActivityNav.class);
+                Intent i = new Intent(DashboardDriverDetail.this, DashboardDriverDestination.class);
                 startActivity(i);
                 finish();
 

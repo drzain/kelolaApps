@@ -7,4 +7,5 @@
     <dimen name="size_storage">20dp</dimen>
     <dimen name="size_storege_sub">18dp</dimen>
     <dimen name="header">22dp</dimen>
+    <dimen name="signUpicon">35dp</dimen>
 </resources>

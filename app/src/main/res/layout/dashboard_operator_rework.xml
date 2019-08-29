@@ -61,10 +61,16 @@
                 <android.support.v7.widget.CardView
                     android:id="@+id/rework_date"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="wrap_content"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="5dp">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="30dp"
+                        android:text="Date 29/ Aug/ 2019\n 16:40:50"/>
 
                 </android.support.v7.widget.CardView>
                 <ImageView

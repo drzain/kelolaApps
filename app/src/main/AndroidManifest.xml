@@ -55,10 +55,15 @@
         <activity android:name=".DashboardOperator" />
         <activity android:name=".DashboardOperatorProcess"/>
         <activity android:name=".DashboardOPeratorRework"/>
+        <activity android:name=".DashboardOperatorPickUp"/>
         <activity android:name=".DashboardDriver" />
         <activity android:name=".DashboardDriverDetail" />
+        <activity android:name=".DashboardDriverDestination" />
         <activity android:name=".DashboardTracker"/>
         <activity android:name=".AuthReset"/>
+        <activity android:name=".AuthSignUp"/>
+        <activity android:name=".AuthSignUpRole"/>
+        <activity android:name=".AuthSignUpCreate"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

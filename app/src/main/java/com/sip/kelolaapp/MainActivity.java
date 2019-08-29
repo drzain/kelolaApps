@@ -44,12 +44,13 @@ public class MainActivity extends AppCompatActivity {
     boolean doubleBackToExitPressedOnce = false;
     private ImageView bookIconImageView;
     private EditText usernameEdt, passwordEdt;
-    private TextView bookITextView, auth_forgot;
+    private TextView bookITextView, auth_forgot, auth_signUp;
     private ProgressBar loadingProgressBar;
     private SessionManager session;
     private ProgressDialog pDialog;
     private RelativeLayout rootView, afterAnimationView;
     private Button btnLogin;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,10 +156,24 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        auth_signUp = (TextView) findViewById(R.id.signUptxt);
+        auth_signUp.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(MainActivity.this, AuthSignUp.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed()
+    {
         if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
             return;
