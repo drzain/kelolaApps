@@ -7,14 +7,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/formcolor"
-    android:layout_marginBottom="50dp"    >
+    android:layout_marginBottom="15dp"    >
     <ScrollView
         android:id="@+id/scroll_form"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -56,8 +56,9 @@
 
         <RelativeLayout
             android:id="@+id/form_id"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             >
 
             <android.support.v7.widget.CardView
@@ -67,18 +68,17 @@
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp">
 
-                <RelativeLayout
+                <LinearLayout
                     android:id="@+id/rel_detail"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:id="@+id/operator_infus"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
-
                         <TextView
                             android:id="@+id/txt_item1"
                             android:layout_width="150dp"
@@ -86,8 +86,8 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="15dp"
                             android:layout_marginRight="10dp"
-                            android:hint="Infectious"
-                            android:textColor="#0000ff"
+                            android:text="Infectious"
+                            android:textColor="#000000"
                             android:textSize="@dimen/size_storage"
                             android:textStyle="normal|bold" />
 
@@ -97,15 +97,11 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:orientation="horizontal">
-
                             <Button
-                                android:id="@+id/infus_decrement_id"
                                 android:layout_width="@dimen/size_storage"
                                 android:layout_height="@dimen/size_storage"
                                 android:background="@drawable/ic_minus3"
-                                android:onClick="InfusionDecrement"
                                 android:visibility="invisible" />
-
                             <EditText
                                 android:id="@+id/edt_item1"
                                 android:layout_width="wrap_content"
@@ -119,12 +115,10 @@
                                 android:textSize="@dimen/size_storage"
                                 android:textStyle="normal|italic"
                                 android:visibility="visible" />
-
                             <Button
                                 android:layout_width="@dimen/size_storage"
                                 android:layout_height="@dimen/size_storage"
                                 android:background="@drawable/ic_plus3"
-                                android:onClick="InfusionIncrement"
                                 android:visibility="invisible"/>
                         </LinearLayout>
 
@@ -135,15 +129,14 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="15dp"
                             android:layout_marginRight="10dp"
-                            android:hint="Kg"
-                            android:textColor="#0000ff"
+                            android:text="Kg"
+                            android:textColor="#000000"
                             android:textSize="@dimen/size_storage"
                             android:textStyle="normal|bold" />
 
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/ll_infec_emer"
-                        android:layout_below="@+id/operator_infus"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
@@ -169,7 +162,7 @@
                                 android:layout_width="@dimen/size_storege_sub"
                                 android:layout_height="@dimen/size_storege_sub"
                                 android:background="@drawable/ic_minus3"
-                                android:onClick="InfusionEmerDecrement"
+                                android:onClick="InfecEmerDecrement"
                                 android:visibility="invisible" />
                             <EditText
                                 android:id="@+id/edt_item_infec_emer"
@@ -188,7 +181,7 @@
                                 android:layout_width="@dimen/size_storege_sub"
                                 android:layout_height="@dimen/size_storege_sub"
                                 android:background="@drawable/ic_plus3"
-                                android:onClick="InfusionEmerIncrement" />
+                                android:onClick="InfecEmerIncrement" />
                         </LinearLayout>
                         <TextView
                             android:id="@+id/txt_items_infec_emer"
@@ -205,7 +198,7 @@
 
                     <LinearLayout
                         android:id="@+id/ll_infec_poli"
-                        android:layout_below="@+id/ll_infec_emer"
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
@@ -231,7 +224,7 @@
                                 android:layout_width="@dimen/size_storege_sub"
                                 android:layout_height="@dimen/size_storege_sub"
                                 android:background="@drawable/ic_minus3"
-                                android:onClick="InfusionPoliDecrement"
+                                android:onClick="InfecPoliDecrement"
                                 android:visibility="invisible" />
                             <EditText
                                 android:id="@+id/edt_item_infec_poli"
@@ -250,7 +243,7 @@
                                 android:layout_width="@dimen/size_storege_sub"
                                 android:layout_height="@dimen/size_storege_sub"
                                 android:background="@drawable/ic_plus3"
-                                android:onClick="InfusionPoliIncrement" />
+                                android:onClick="InfecPoliIncrement" />
                         </LinearLayout>
                         <TextView
                             android:id="@+id/txt_items_infec_poli"
@@ -267,7 +260,6 @@
 
                     <LinearLayout
                         android:id="@+id/ll_infec_nur"
-                        android:layout_below="@+id/ll_infec_poli"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
@@ -293,7 +285,7 @@
                                 android:layout_width="@dimen/size_storege_sub"
                                 android:layout_height="@dimen/size_storege_sub"
                                 android:background="@drawable/ic_minus3"
-                                android:onClick="InfusionNurDecrement"
+                                android:onClick="InfecNurDecrement"
                                 android:visibility="invisible" />
                             <EditText
                                 android:id="@+id/edt_item_infec_nur"
@@ -312,7 +304,7 @@
                                 android:layout_width="@dimen/size_storege_sub"
                                 android:layout_height="@dimen/size_storege_sub"
                                 android:background="@drawable/ic_plus3"
-                                android:onClick="InfusionNurIncrement" />
+                                android:onClick="InfecNurIncrement" />
                         </LinearLayout>
                         <TextView
                             android:id="@+id/txt_items_infec_nur"
@@ -328,7 +320,6 @@
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/ll_infec_far"
-                        android:layout_below="@+id/ll_infec_nur"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
@@ -354,7 +345,7 @@
                                 android:layout_width="@dimen/size_storege_sub"
                                 android:layout_height="@dimen/size_storege_sub"
                                 android:background="@drawable/ic_minus3"
-                                android:onClick="InfusionFarDecrement"
+                                android:onClick="InfecFarDecrement"
                                 android:visibility="invisible" />
                             <EditText
                                 android:id="@+id/edt_item_infec_far"
@@ -373,7 +364,7 @@
                                 android:layout_width="@dimen/size_storege_sub"
                                 android:layout_height="@dimen/size_storege_sub"
                                 android:background="@drawable/ic_plus3"
-                                android:onClick="InfusionFarIncrement" />
+                                android:onClick="InfecFarIncrement" />
                         </LinearLayout>
                         <TextView
                             android:id="@+id/txt_items_infec_far"
@@ -387,7 +378,623 @@
                             android:textSize="@dimen/size_storege_sub"
                             android:textStyle="normal|bold" />
                     </LinearLayout>
-                </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/operator_noninfus"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/txt_item11"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Non Infectious"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/size_storage"
+                            android:textStyle="normal|bold" />
+
+                        <LinearLayout
+                            android:id="@+id/btn_edt_item11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <Button
+                                android:layout_width="@dimen/size_storage"
+                                android:layout_height="@dimen/size_storage"
+                                android:background="@drawable/ic_minus3"
+                                android:visibility="invisible" />
+
+                            <EditText
+                                android:id="@+id/edt_item11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:inputType="numberDecimal"
+                                android:text="0"
+                                android:textColor="@color/colorTextView"
+                                android:textColorHint="@color/colorAccent"
+                                android:textSize="@dimen/size_storage"
+                                android:textStyle="normal|italic"
+                                android:visibility="visible" />
+
+                            <Button
+                                android:layout_width="@dimen/size_storage"
+                                android:layout_height="@dimen/size_storage"
+                                android:background="@drawable/ic_plus3"
+                                android:visibility="invisible"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txt_items11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Kg"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/size_storage"
+                            android:textStyle="normal|bold" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_noninfec_emer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/txt_item_noninfec_emer"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="1. Emergency"
+                            android:textColor="#0000ff"
+                            android:textSize="@dimen/size_storege_sub"
+                            android:textStyle="normal|bold" />
+                        <LinearLayout
+                            android:id="@+id/btn_edt_noninfec_emer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <Button
+                                android:id="@+id/noninfec_emer_decrement_id"
+                                android:layout_width="@dimen/size_storege_sub"
+                                android:layout_height="@dimen/size_storege_sub"
+                                android:background="@drawable/ic_minus3"
+                                android:onClick="NonInfecEmerDecrement"
+                                android:visibility="invisible" />
+                            <EditText
+                                android:id="@+id/edt_item_noninfec_emer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:inputType="numberDecimal"
+                                android:text="0"
+                                android:textColor="@color/colorTextView"
+                                android:textColorHint="@color/colorAccent"
+                                android:textSize="@dimen/size_storege_sub"
+                                android:textStyle="normal|italic"
+                                android:visibility="invisible" />
+                            <Button
+                                android:layout_width="@dimen/size_storege_sub"
+                                android:layout_height="@dimen/size_storege_sub"
+                                android:background="@drawable/ic_plus3"
+                                android:onClick="NonInfecEmerIncrement" />
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/txt_items_noninfec_emer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="Kg"
+                            android:textColor="#0000ff"
+                            android:textSize="@dimen/size_storege_sub"
+                            android:textStyle="normal|bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_noninfec_poli"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/txt_item_noninfec_poli"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="2. Policlyinic"
+                            android:textColor="#0000ff"
+                            android:textSize="@dimen/size_storege_sub"
+                            android:textStyle="normal|bold" />
+                        <LinearLayout
+                            android:id="@+id/btn_edt_noninfec_poli"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <Button
+                                android:id="@+id/noninfec_poli_decrement_id"
+                                android:layout_width="@dimen/size_storege_sub"
+                                android:layout_height="@dimen/size_storege_sub"
+                                android:background="@drawable/ic_minus3"
+                                android:onClick="NonInfecPoliDecrement"
+                                android:visibility="invisible" />
+                            <EditText
+                                android:id="@+id/edt_item_noninfec_poli"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:inputType="numberDecimal"
+                                android:text="0"
+                                android:textColor="@color/colorTextView"
+                                android:textColorHint="@color/colorAccent"
+                                android:textSize="@dimen/size_storege_sub"
+                                android:textStyle="normal|italic"
+                                android:visibility="invisible" />
+                            <Button
+                                android:layout_width="@dimen/size_storege_sub"
+                                android:layout_height="@dimen/size_storege_sub"
+                                android:background="@drawable/ic_plus3"
+                                android:onClick="NonInfecPoliIncrement" />
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/txt_items_noninfec_poli"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="Kg"
+                            android:textColor="#0000ff"
+                            android:textSize="@dimen/size_storege_sub"
+                            android:textStyle="normal|bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_noninfec_nur"
+                        android:layout_below="@+id/ll_noninfec_poli"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/txt_item_noninfec_nur"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="3. Nurse"
+                            android:textColor="#0000ff"
+                            android:textSize="@dimen/size_storege_sub"
+                            android:textStyle="normal|bold" />
+                        <LinearLayout
+                            android:id="@+id/btn_edt_noninfec_nur"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <Button
+                                android:id="@+id/noninfec_nur_decrement_id"
+                                android:layout_width="@dimen/size_storege_sub"
+                                android:layout_height="@dimen/size_storege_sub"
+                                android:background="@drawable/ic_minus3"
+                                android:onClick="NonInfecNurDecrement"
+                                android:visibility="invisible" />
+                            <EditText
+                                android:id="@+id/edt_item_noninfec_nur"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:inputType="numberDecimal"
+                                android:text="0"
+                                android:textColor="@color/colorTextView"
+                                android:textColorHint="@color/colorAccent"
+                                android:textSize="@dimen/size_storege_sub"
+                                android:textStyle="normal|italic"
+                                android:visibility="invisible" />
+                            <Button
+                                android:layout_width="@dimen/size_storege_sub"
+                                android:layout_height="@dimen/size_storege_sub"
+                                android:background="@drawable/ic_plus3"
+                                android:onClick="NonInfecNurIncrement" />
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/txt_items_noninfec_nur"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="Kg"
+                            android:textColor="#0000ff"
+                            android:textSize="@dimen/size_storege_sub"
+                            android:textStyle="normal|bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_noninfec_far"
+                        android:layout_below="@+id/ll_noninfec_nur"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/txt_item_noninfec_far"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="4. Farmasi"
+                            android:textColor="#0000ff"
+                            android:textSize="@dimen/size_storege_sub"
+                            android:textStyle="normal|bold" />
+                        <LinearLayout
+                            android:id="@+id/btn_edt_noninfec_far"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <Button
+                                android:id="@+id/noninfec_far_decrement_id"
+                                android:layout_width="@dimen/size_storege_sub"
+                                android:layout_height="@dimen/size_storege_sub"
+                                android:background="@drawable/ic_minus3"
+                                android:onClick="NonInfecFarDecrement"
+                                android:visibility="invisible" />
+                            <EditText
+                                android:id="@+id/edt_item_noninfec_far"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:inputType="numberDecimal"
+                                android:text="0"
+                                android:textColor="@color/colorTextView"
+                                android:textColorHint="@color/colorAccent"
+                                android:textSize="@dimen/size_storege_sub"
+                                android:textStyle="normal|italic"
+                                android:visibility="invisible" />
+                            <Button
+                                android:layout_width="@dimen/size_storege_sub"
+                                android:layout_height="@dimen/size_storege_sub"
+                                android:background="@drawable/ic_plus3"
+                                android:onClick="NonInfecFarIncrement" />
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/txt_items_noninfec_far"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="Kg"
+                            android:textColor="#0000ff"
+                            android:textSize="@dimen/size_storege_sub"
+                            android:textStyle="normal|bold" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/operator_sharp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/txt_item111"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Sharp"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/size_storage"
+                            android:textStyle="normal|bold" />
+
+                        <LinearLayout
+                            android:id="@+id/btn_edt_item111"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <Button
+                                android:layout_width="@dimen/size_storage"
+                                android:layout_height="@dimen/size_storage"
+                                android:background="@drawable/ic_minus3"
+                                android:visibility="invisible" />
+
+                            <EditText
+                                android:id="@+id/edt_item111"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:inputType="numberDecimal"
+                                android:text="0"
+                                android:textColor="@color/colorTextView"
+                                android:textColorHint="@color/colorAccent"
+                                android:textSize="@dimen/size_storage"
+                                android:textStyle="normal|italic"
+                                android:visibility="visible" />
+
+                            <Button
+                                android:layout_width="@dimen/size_storage"
+                                android:layout_height="@dimen/size_storage"
+                                android:background="@drawable/ic_plus3"
+                                android:visibility="invisible"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txt_items111"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Kg"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/size_storage"
+                            android:textStyle="normal|bold" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_sharp_emer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/txt_item_sharp_emer"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="1. Emergency"
+                            android:textColor="#0000ff"
+                            android:textSize="@dimen/size_storege_sub"
+                            android:textStyle="normal|bold" />
+                        <LinearLayout
+                            android:id="@+id/btn_edt_sharp_emer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <Button
+                                android:id="@+id/sharp_emer_decrement_id"
+                                android:layout_width="@dimen/size_storege_sub"
+                                android:layout_height="@dimen/size_storege_sub"
+                                android:background="@drawable/ic_minus3"
+                                android:onClick="SharpEmerDecrement"
+                                android:visibility="invisible" />
+                            <EditText
+                                android:id="@+id/edt_item_sharp_emer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:inputType="numberDecimal"
+                                android:text="0"
+                                android:textColor="@color/colorTextView"
+                                android:textColorHint="@color/colorAccent"
+                                android:textSize="@dimen/size_storege_sub"
+                                android:textStyle="normal|italic"
+                                android:visibility="invisible" />
+                            <Button
+                                android:layout_width="@dimen/size_storege_sub"
+                                android:layout_height="@dimen/size_storege_sub"
+                                android:background="@drawable/ic_plus3"
+                                android:onClick="SharpEmerIncrement" />
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/txt_items_sharp_emer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="Kg"
+                            android:textColor="#0000ff"
+                            android:textSize="@dimen/size_storege_sub"
+                            android:textStyle="normal|bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_sharp_poli"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/txt_item_sharp_poli"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="2. Policlyinic"
+                            android:textColor="#0000ff"
+                            android:textSize="@dimen/size_storege_sub"
+                            android:textStyle="normal|bold" />
+                        <LinearLayout
+                            android:id="@+id/btn_edt_sharp_poli"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <Button
+                                android:id="@+id/sharp_poli_decrement_id"
+                                android:layout_width="@dimen/size_storege_sub"
+                                android:layout_height="@dimen/size_storege_sub"
+                                android:background="@drawable/ic_minus3"
+                                android:onClick="SharpPoliDecrement"
+                                android:visibility="invisible" />
+                            <EditText
+                                android:id="@+id/edt_item_sharp_poli"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:inputType="numberDecimal"
+                                android:text="0"
+                                android:textColor="@color/colorTextView"
+                                android:textColorHint="@color/colorAccent"
+                                android:textSize="@dimen/size_storege_sub"
+                                android:textStyle="normal|italic"
+                                android:visibility="invisible" />
+                            <Button
+                                android:layout_width="@dimen/size_storege_sub"
+                                android:layout_height="@dimen/size_storege_sub"
+                                android:background="@drawable/ic_plus3"
+                                android:onClick="SharpPoliIncrement" />
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/txt_items_sharp_poli"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="Kg"
+                            android:textColor="#0000ff"
+                            android:textSize="@dimen/size_storege_sub"
+                            android:textStyle="normal|bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_sharp_nur"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/txt_item_sharp_nur"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="3. Nurse"
+                            android:textColor="#0000ff"
+                            android:textSize="@dimen/size_storege_sub"
+                            android:textStyle="normal|bold" />
+                        <LinearLayout
+                            android:id="@+id/btn_edt_sharp_nur"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <Button
+                                android:id="@+id/sharp_nur_decrement_id"
+                                android:layout_width="@dimen/size_storege_sub"
+                                android:layout_height="@dimen/size_storege_sub"
+                                android:background="@drawable/ic_minus3"
+                                android:onClick="SharpNurDecrement"
+                                android:visibility="invisible" />
+                            <EditText
+                                android:id="@+id/edt_item_sharp_nur"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:inputType="numberDecimal"
+                                android:text="0"
+                                android:textColor="@color/colorTextView"
+                                android:textColorHint="@color/colorAccent"
+                                android:textSize="@dimen/size_storege_sub"
+                                android:textStyle="normal|italic"
+                                android:visibility="invisible" />
+                            <Button
+                                android:layout_width="@dimen/size_storege_sub"
+                                android:layout_height="@dimen/size_storege_sub"
+                                android:background="@drawable/ic_plus3"
+                                android:onClick="SharpNurIncrement" />
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/txt_items_sharp_nur"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="Kg"
+                            android:textColor="#0000ff"
+                            android:textSize="@dimen/size_storege_sub"
+                            android:textStyle="normal|bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_sharp_far"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/txt_item_sharp_far"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="4. Farmasi"
+                            android:textColor="#0000ff"
+                            android:textSize="@dimen/size_storege_sub"
+                            android:textStyle="normal|bold" />
+                        <LinearLayout
+                            android:id="@+id/btn_edt_sharp_far"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <Button
+                                android:id="@+id/sharp_far_decrement_id"
+                                android:layout_width="@dimen/size_storege_sub"
+                                android:layout_height="@dimen/size_storege_sub"
+                                android:background="@drawable/ic_minus3"
+                                android:onClick="SharpFarDecrement"
+                                android:visibility="invisible" />
+                            <EditText
+                                android:id="@+id/edt_item_sharp_far"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:inputType="numberDecimal"
+                                android:text="0"
+                                android:textColor="@color/colorTextView"
+                                android:textColorHint="@color/colorAccent"
+                                android:textSize="@dimen/size_storege_sub"
+                                android:textStyle="normal|italic"
+                                android:visibility="invisible" />
+                            <Button
+                                android:layout_width="@dimen/size_storege_sub"
+                                android:layout_height="@dimen/size_storege_sub"
+                                android:background="@drawable/ic_plus3"
+                                android:onClick="SharpFarIncrement" />
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/txt_items_sharp_far"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="Kg"
+                            android:textColor="#0000ff"
+                            android:textSize="@dimen/size_storege_sub"
+                            android:textStyle="normal|bold" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView

@@ -29,24 +29,23 @@ public class HospitalInTransit extends Activity
 
 
     }
-    public void InfusionDecrement(View view) {
+
+
+    public void InfectionDecrement2(View view) {
     }
 
-    public void InfusionIncrement(View view) {
+    public void InfectionIncrement2(View view) {
     }
 
-    public void SyringeDecrement(View view) {
+    public void NonInfecDecrement2(View view) {
     }
 
-    public void SyringeIncrement(View view) {
+    public void NonInfecIncrement2(View view) {
     }
 
-    public void NaclDecrement(View view) {
+    public void SharpDecrement2(View view) {
     }
 
-    public void NaclIncrement(View view) {
-    }
-
-    public void Drop(View view) {
+    public void SharpIncrement2(View view) {
     }
 }

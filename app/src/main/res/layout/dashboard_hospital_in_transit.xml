@@ -102,11 +102,9 @@
                             android:orientation="horizontal">
 
                             <Button
-                                android:id="@+id/infus_decrement_id"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:background="@drawable/ic_minus3"
-                                android:onClick="InfusionDecrement"
                                 android:visibility="invisible" />
 
                             <EditText
@@ -127,7 +125,6 @@
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:background="@drawable/ic_plus3"
-                                android:onClick="InfusionIncrement"
                                 android:visibility="invisible"/>
                         </LinearLayout>
 
@@ -171,11 +168,11 @@
                             android:orientation="horizontal">
 
                             <Button
-                                android:id="@+id/infus_decrement_id2"
+                                android:id="@+id/infec_decrement_id2"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:background="@drawable/ic_minus3"
-                                android:onClick="InfusionDecrement"
+                                android:onClick="InfectionDecrement2"
                                 android:visibility="invisible" />
 
                             <EditText
@@ -196,7 +193,7 @@
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:background="@drawable/ic_plus3"
-                                android:onClick="InfusionIncrement" />
+                                android:onClick="InfectionIncrement2" />
                         </LinearLayout>
 
                         <TextView
@@ -241,11 +238,11 @@
                             android:orientation="horizontal">
 
                             <Button
-                                android:id="@+id/syringe_decrment_id"
+
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:background="@drawable/ic_minus3"
-                                android:onClick="SyringeDecrement"
+
                                 android:visibility="invisible" />
 
                             <EditText
@@ -266,7 +263,7 @@
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:background="@drawable/ic_plus3"
-                                android:onClick="SyringeIncrement"
+
                                 android:visibility="invisible"/>
                         </LinearLayout>
 
@@ -309,11 +306,11 @@
                             android:orientation="horizontal">
 
                             <Button
-                                android:id="@+id/syringe_decrment_id2"
+                                android:id="@+id/noninfec_decrment_id2"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:background="@drawable/ic_minus3"
-                                android:onClick="SyringeDecrement"
+                                android:onClick="NonInfecDecrement2"
                                 android:visibility="invisible" />
 
                             <EditText
@@ -334,7 +331,7 @@
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:background="@drawable/ic_plus3"
-                                android:onClick="SyringeIncrement" />
+                                android:onClick="NonInfecIncrement2" />
                         </LinearLayout>
 
                         <TextView
@@ -377,11 +374,11 @@
                             android:orientation="horizontal">
 
                             <Button
-                                android:id="@+id/nacl_decrement_id"
+
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:background="@drawable/ic_minus3"
-                                android:onClick="NaclDecrement"
+
                                 android:visibility="invisible" />
 
                             <EditText
@@ -402,7 +399,7 @@
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:background="@drawable/ic_plus3"
-                                android:onClick="NaclIncrement"
+
                                 android:visibility="invisible"/>
                         </LinearLayout>
 
@@ -445,11 +442,11 @@
                             android:orientation="horizontal">
 
                             <Button
-                                android:id="@+id/nacl_decrement_id2"
+                                android:id="@+id/sharp_decrement_id2"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:background="@drawable/ic_minus3"
-                                android:onClick="NaclDecrement"
+                                android:onClick="SharpDecrement2"
                                 android:visibility="invisible" />
 
                             <EditText
@@ -470,7 +467,7 @@
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:background="@drawable/ic_plus3"
-                                android:onClick="NaclIncrement" />
+                                android:onClick="SharpIncrement2" />
                         </LinearLayout>
 
                         <TextView
@@ -480,7 +477,7 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="15dp"
                             android:layout_marginRight="10dp"
-                            android:hint="Box"
+                            android:hint="Kg"
                             android:textColor="#0000ff"
                             android:textSize="20dp"
                             android:textStyle="normal|bold" />
