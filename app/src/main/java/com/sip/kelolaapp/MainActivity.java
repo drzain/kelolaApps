@@ -131,7 +131,8 @@ public class MainActivity extends AppCompatActivity {
                 String password = passwordEdt.getText().toString().trim();
 
                 // Check for empty data in the form
-                if (!username.isEmpty() && !password.isEmpty()) {
+                if (!username.isEmpty() && !password.isEmpty())
+                {
                     // login user
                     Log.e("isi",username+password);
                     checkLogin(username, password);

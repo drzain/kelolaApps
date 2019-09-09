@@ -66,7 +66,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginRight="10dp"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:entries="@array/role"/>
 
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
@@ -96,7 +97,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginRight="10dp"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:entries="@array/company"/>
 
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>

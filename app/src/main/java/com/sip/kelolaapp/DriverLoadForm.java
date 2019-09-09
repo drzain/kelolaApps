@@ -68,7 +68,8 @@ public class DriverLoadForm extends AppCompatActivity {
         txtTransportDate.setText(transport_date);
 
         btn_struck = (Button)findViewById(R.id.btn_struck);
-        btn_struck.setOnClickListener(new View.OnClickListener() {
+        btn_struck.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v)
             {

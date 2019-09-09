@@ -4,6 +4,8 @@ public class AppConfig {
 
     public static String URL_LOGIN = "http://kelola.youngdev.web.id/api/auth";
 
+    public static String URL_REG ="http://kelola.youngdev.web.id/api/auth/register";
+
     public static String URL_ORDER_WASTE = "http://kelola.youngdev.web.id/api/receive";
 
     public static String URL_RECEIVE_WASTE = "http://kelola.youngdev.web.id/api/receive/order";
@@ -43,5 +45,6 @@ public class AppConfig {
     public static String URL_DATA_ENDWASTE = "http://kelola.youngdev.web.id/api/receive/endwaste";
 
     public static String URL_DATA_RECYCLEBLE = "http://kelola.youngdev.web.id/api/receive/recycleble";
+
 
 }

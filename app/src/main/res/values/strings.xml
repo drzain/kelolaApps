@@ -22,6 +22,24 @@
         <item>B9945UXR</item>
     </string-array>
 
+    <string-array name="role">
+        <item>--Selected--</item>
+        <item>Doc</item>
+        <item>Nurse</item>
+        <item>Opr</item>
+        <item>Driver</item>
+        <item>House Keeping</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="company">
+        <item>--Selected--</item>
+        <item>Hospital</item>
+        <item>Processor</item>
+        <item>Transpoter</item>
+        <item>Other</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
