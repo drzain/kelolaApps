@@ -59,14 +59,14 @@ public class AuthSignUpRole extends Activity
                 if (role.equals("--Selected--"))
                 {
                     Toast.makeText(getApplicationContext(),
-                            "Must Select Role", Toast.LENGTH_LONG).show();
+                            "Must select role", Toast.LENGTH_LONG).show();
                 }
                 else
                 {
                     if(company.equals("--Selected--"))
                     {
                         Toast.makeText(getApplicationContext(),
-                                "Must Select Company Type", Toast.LENGTH_LONG).show();
+                                "Must select company type", Toast.LENGTH_LONG).show();
                     }
                     else
                     {
@@ -74,7 +74,7 @@ public class AuthSignUpRole extends Activity
                         {
                             /*Toast.makeText(getApplicationContext(),
                                     "Entry Your Company Name", Toast.LENGTH_LONG).show();*/
-                            eDcompany.setError("Entry Your Company Name");
+                            eDcompany.setError("Entry your company name");
                         }
                         else
                         {

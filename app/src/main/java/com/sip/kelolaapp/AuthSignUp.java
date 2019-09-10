@@ -52,13 +52,13 @@ public class AuthSignUp extends Activity
                 {
                     if (user.equals(""))
                     {
-                        eDuser.setError("Masukan Username");
+                        eDuser.setError("Input your username");
                     }
                     else
                         {
                         if (pass.equals(""))
                         {
-                            eDpass.setError("Masukan Password");
+                            eDpass.setError("Input your password");
                         }
                         else
                         {
@@ -79,13 +79,13 @@ public class AuthSignUp extends Activity
                             }
                             else
                             {
-                                eDrepass.setError("Sandi Tidak sama");
+                                eDrepass.setError("Password is not same");
                             }
                            }
                         }
                 }
                 else {
-                    eDemail.setError("Format Email dengan benar!!!");
+                    eDemail.setError("Wrong fromat email");
                 }
 
 
