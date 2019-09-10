@@ -89,7 +89,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:hint="Mobile"
-                        android:inputType="text"
+                        android:inputType="phone"
                         android:textColor="@color/colorTextView"
                         android:textColorHint="@color/colorAccent"
                         android:textSize="20dp" />
@@ -103,13 +103,12 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp">
             <CheckBox
-                android:layout_width="50dp"
-                android:layout_height="50dp" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="I am not robot"
-                    android:textSize="20dp"/>
+                android:id="@+id/authcheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="i am not robot"
+                />
+
             </LinearLayout>
 
 
