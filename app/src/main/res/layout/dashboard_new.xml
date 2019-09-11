@@ -306,6 +306,7 @@
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|end"
                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                             android:textStyle="bold"
                             android:padding="16dp" />
@@ -341,6 +342,7 @@
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|end"
                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                             android:textStyle="bold"
                             android:padding="16dp" />
