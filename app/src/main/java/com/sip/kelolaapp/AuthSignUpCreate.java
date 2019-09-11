@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,9 +27,10 @@ public class AuthSignUpCreate extends Activity
 {
     private Button btn_nextCreate;
     private TextView btn_backCreate;
-    public String email, user, pass, repass, role, company, companyDet, fullname, mobile;
+    public String email, username, password, repass, role, company_tipe, company_name, fullname, phone;
     public EditText edFullname, edMobile;
     ProgressDialog pDialog;
+    CheckBox checkbox;
     private static final String TAG = AuthSignUpCreate.class.getSimpleName();
 
     protected void  onCreate(Bundle savedInstanceState)
@@ -38,17 +40,24 @@ public class AuthSignUpCreate extends Activity
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
 
-        Intent intent = getIntent();
-        email = intent.getStringExtra("email");
-        user = intent.getStringExtra("user");
-        pass = intent.getStringExtra("pass");
-        repass = intent.getStringExtra("repass");
-        role = intent.getStringExtra("role");
-        company = intent.getStringExtra("company");
-        companyDet = intent.getStringExtra("companyDet");
 
+        email = getIntent().getStringExtra("email");
+        username     = getIntent().getStringExtra("user");
+        password = getIntent().getStringExtra("pass");
+        repass = getIntent().getStringExtra("repass");
+        role = getIntent().getStringExtra("role");
+        company_tipe = getIntent().getStringExtra("company");
+        company_name = getIntent().getStringExtra("companyDet");
+        Log.e("Email get", ""+email);
+        Log.e("User get", ""+username);
+        Log.e("Pass get",""+ password);
+        Log.e("Role get", ""+role);
+        Log.e("Company get", ""+company_tipe);
+        Log.e("Company Detail get", ""+company_name);
         edFullname=(EditText) findViewById(R.id.fullnameEdit);
         edMobile =(EditText)findViewById(R.id.mobileEdit);
+        checkbox =(CheckBox)findViewById(R.id.authcheckbox);
+
 
 
         action();
@@ -64,9 +73,33 @@ public class AuthSignUpCreate extends Activity
             {
 
                 fullname = edFullname.getText().toString();
-                mobile= edMobile.getText().toString();
+                phone= edMobile.getText().toString();
+                if(fullname.equals(""))
+                {
+                    edFullname.setError("Put Your Fullname, Please!!!");
+                }
+                else
+                {
+                    if(phone.equals(""))
+                    {
+                        edMobile.setError("Put Your Phone Number , Please!!!");
+                    }
+                    else
+                    {
+                        if(checkbox.isChecked())
+                        {
+                            sendCreate(email,username,password,role,company_tipe, company_name,fullname,phone);
+                        }
+                        else
+                        {
+                            Toast.makeText(getApplicationContext(),
+                                    "Checked, if you are not robot", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
 
-                sendCreate(email,user,pass,role,company, companyDet,fullname,mobile);
+
+
 
 
                 //Intent intent = new Intent(AuthSignUpCreate.this, MainActivity.class);
@@ -152,15 +185,23 @@ public class AuthSignUpCreate extends Activity
 
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("email",email);
-                params.put("user",user);
-                params.put("pass",pass);
-                params.put("repass",repass);
+                params.put("username",username);
+                params.put("password",password);
                 params.put("role",role);
-                params.put("company",company);
-                params.put("companyDet", companyDet);
+                params.put("company_tipe",company_tipe);
+                params.put("company_name", company_name);
                 params.put("fullname", fullname);
                 params.put("mobile",mobile);
                 Log.e("param ",params.toString());
+                params.put("phone",phone);
+                Log.e("email push",""+email);
+                Log.e("user push",""+username);
+                Log.e("role push",""+role);
+                Log.e("pass push ",""+password);
+                Log.e("company push",""+company_tipe);
+                Log.e("company detail push",""+company_name);
+                Log.e("fullname push",""+fullname);
+                Log.e("mobile push",""+phone);
                 return params;
             }
 

@@ -54,7 +54,7 @@
                 android:textColorHint="@color/colorTextView">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/emailEditText"
+                    android:id="@+id/emailReset"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
