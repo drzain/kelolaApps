@@ -279,7 +279,7 @@
                 <android.support.v7.widget.CardView
                     android:id="@+id/new1"
                     android:layout_width="300dp"
-                    android:layout_height="150dp"
+                    android:layout_height="match_parent"
                     android:layout_margin="10dp"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
@@ -288,41 +288,34 @@
                     android:clickable="true"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="5dp">
-                    <RelativeLayout
+                    <LinearLayout
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="?attr/selectableItemBackground">
+                        android:layout_height="wrap_content"
+                        android:minHeight="96dp">
 
                         <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_above="@+id/txtNew1"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="5dp"
-                            android:scaleType="center"
-                            android:src="@drawable/icon_wm" />
+                            android:id="@+id/newsThumbnailImageView"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:scaleType="centerCrop"
+                            android:contentDescription="@null" />
 
                         <TextView
-                            android:id="@+id/txtNew1"
-                            fontPath="fonts/Poppins-SemiBold.otf"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/newsTitleTextView"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentBottom="true"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="5dp"
-                            android:maxLines="1"
-                            android:text="News 1"
-                            android:textColor="@color/black"
-                            android:textSize="12dp"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                             android:textStyle="bold"
-                            tools:ignore="MissingPrefix" />
-                    </RelativeLayout>
+                            android:padding="16dp" />
+                    </LinearLayout>
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/new2"
                     android:layout_width="300dp"
-                    android:layout_height="150dp"
+                    android:layout_height="match_parent"
                     android:layout_margin="10dp"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="0.33"
@@ -330,38 +323,28 @@
                     app:cardCornerRadius="10dp"
                     app:cardElevation="5dp">
 
-                    <RelativeLayout
+                    <LinearLayout
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="?attr/selectableItemBackground">
+                        android:layout_height="wrap_content"
+                        android:minHeight="96dp">
 
                         <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_above="@+id/txtNew2"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:scaleType="center"
-                            android:src="@drawable/icon_wm" />
+                            android:id="@+id/newsThumbnailImageView2"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:scaleType="centerCrop"
+                            android:contentDescription="@null" />
 
                         <TextView
-
-                            android:id="@+id/txtNew2"
-                            fontPath="fonts/Poppins-SemiBold.otf"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/newsTitleTextView2"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentBottom="true"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="5dp"
-                            android:maxLines="1"
-                            android:text="News 2"
-                            android:textColor="@color/black"
-                            android:textSize="12dp"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                             android:textStyle="bold"
-                            tools:ignore="MissingPrefix" />
-
-                    </RelativeLayout>
+                            android:padding="16dp" />
+                    </LinearLayout>
 
                 </android.support.v7.widget.CardView>
 

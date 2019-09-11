@@ -46,5 +46,5 @@ public class AppConfig {
 
     public static String URL_DATA_RECYCLEBLE = "http://kelola.youngdev.web.id/api/receive/recycleble";
 
-
+    public static String URL_BERITA = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.antaranews.com%2Frss%2Fterkini&api_key=ojzcu2wkfhtucucotq9bkuolmqosjfsuqilt14k6";
 }

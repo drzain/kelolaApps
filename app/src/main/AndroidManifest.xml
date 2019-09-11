@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sip.kelolaapp">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:name=".AppController"
         android:allowBackup="true"
@@ -13,13 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UmkmLoadForm"></activity>
+        <activity android:name=".WebActivity"></activity>
+        <activity android:name=".UmkmLoadForm" />
         <activity android:name=".DriverLoadForm" />
         <activity android:name=".OperatorResultForm" />
-
-        <uses-library
-            android:name="org.apache.http.legacy"
-            android:required="false" />
 
         <activity
             android:name=".ReceiveOrder"
@@ -29,6 +24,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".DashboardOperator" />
         </activity>
+
         <activity android:name=".DriverUnload" />
         <activity
             android:name=".DriverReceiveOrder"
@@ -38,7 +34,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".DashboardDriver" />
         </activity>
-        <activity android:name=".DashboardActivityNav"/>
+        <activity android:name=".DashboardActivityNav" />
         <activity android:name=".OperatorReceiveForm" />
         <activity android:name=".OperatorInProgress" />
         <activity android:name=".OperatorPacked" />
@@ -46,24 +42,24 @@
         <activity android:name=".CommoditiesRecevied" />
         <activity android:name=".DashboardUmkm" />
         <activity android:name=".DashboardHospital" />
-        <activity android:name=".DashboardReport"/>
+        <activity android:name=".DashboardReport" />
         <activity android:name=".HospitalFormRequest" />
         <activity android:name=".HospitalPolyclinic" />
         <activity android:name=".HospitalFarmasi" />
         <activity android:name=".HospitalNurse" />
         <activity android:name=".HospitalInTransit" />
         <activity android:name=".DashboardOperator" />
-        <activity android:name=".DashboardOperatorProcess"/>
-        <activity android:name=".DashboardOPeratorRework"/>
-        <activity android:name=".DashboardOperatorPickUp"/>
+        <activity android:name=".DashboardOperatorProcess" />
+        <activity android:name=".DashboardOPeratorRework" />
+        <activity android:name=".DashboardOperatorPickUp" />
         <activity android:name=".DashboardDriver" />
         <activity android:name=".DashboardDriverDetail" />
         <activity android:name=".DashboardDriverDestination" />
-        <activity android:name=".DashboardTracker"/>
-        <activity android:name=".AuthReset"/>
-        <activity android:name=".AuthSignUp"/>
-        <activity android:name=".AuthSignUpRole"/>
-        <activity android:name=".AuthSignUpCreate"/>
+        <activity android:name=".DashboardTracker" />
+        <activity android:name=".AuthReset" />
+        <activity android:name=".AuthSignUp" />
+        <activity android:name=".AuthSignUpRole" />
+        <activity android:name=".AuthSignUpCreate" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -71,10 +67,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="544ff378536f524ca9b029e3c750ec0083b74133" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

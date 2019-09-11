@@ -160,6 +160,7 @@ public class AuthSignUpCreate extends Activity
                 params.put("companyDet", companyDet);
                 params.put("fullname", fullname);
                 params.put("mobile",mobile);
+                Log.e("param ",params.toString());
                 return params;
             }
 
