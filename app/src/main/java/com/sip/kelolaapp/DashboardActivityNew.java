@@ -21,6 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.github.mikephil.charting.charts.PieChart;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -37,6 +38,8 @@ public class DashboardActivityNew extends Fragment
     ImageView gambar1,gambar2;
     TextView judul1,judul2;
     CardView news1, news2;
+    String a, b, c, d;
+    PieChart pieChart1,pieChart2;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,6 +56,8 @@ public class DashboardActivityNew extends Fragment
         judul2 = (TextView) view.findViewById(R.id.newsTitleTextView2);
         news1 = (CardView) view.findViewById(R.id.new1);
         news2 = (CardView) view.findViewById(R.id.new2);
+        pieChart1 = (PieChart) view.findViewById(R.id.reportChart1);
+        pieChart2 = (PieChart) view.findViewById(R.id.reportChart2);
         nama_dashboard.setText("Hi, "+nama);
 
         LoadAsset();
