@@ -83,37 +83,29 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/txt_item1"
                             android:layout_width="150dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="15dp"
                             android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
                             android:hint="Infectious"
                             android:textColor="#0000ff"
                             android:textSize="20dp"
                             android:textStyle="normal|bold" />
 
                         <LinearLayout
-                            android:id="@+id/btn_edt_item1"
-                            android:layout_width="wrap_content"
+                            android:layout_width="80dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:orientation="horizontal">
 
-                            <Button
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:background="@drawable/ic_minus3"
-                                android:visibility="invisible" />
 
-                            <EditText
-                                android:id="@+id/edt_item1"
-                                android:layout_width="wrap_content"
+                            <TextView
+                                android:id="@+id/txt_infec"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                android:inputType="numberDecimal"
+                                android:textAlignment="center"
+                                android:inputType="number"
                                 android:text="0"
                                 android:textColor="@color/colorTextView"
                                 android:textColorHint="@color/colorAccent"
@@ -121,15 +113,10 @@
                                 android:textStyle="normal|italic"
                                 android:visibility="visible" />
 
-                            <Button
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:background="@drawable/ic_plus3"
-                                android:visibility="invisible"/>
+
                         </LinearLayout>
 
                         <TextView
-                            android:id="@+id/txt_items1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
@@ -153,7 +140,7 @@
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="15dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
                             android:hint=""
                             android:textColor="#0000ff"
@@ -176,12 +163,12 @@
                                 android:visibility="invisible" />
 
                             <EditText
-                                android:id="@+id/edt_item12"
+                                android:id="@+id/edt_infec"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
-                                android:inputType="numberDecimal"
+                                android:inputType="number"
                                 android:text="0"
                                 android:textColor="@color/colorTextView"
                                 android:textColorHint="@color/colorAccent"
@@ -221,9 +208,9 @@
                         <TextView
                             android:id="@+id/txt_item2"
                             android:layout_width="150dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="15dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
                             android:hint="Non Infectious"
                             android:textColor="#0000ff"
@@ -232,26 +219,19 @@
 
                         <LinearLayout
                             android:id="@+id/btn_edt_item2"
-                            android:layout_width="wrap_content"
+                            android:layout_width="80dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:orientation="horizontal">
 
-                            <Button
 
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:background="@drawable/ic_minus3"
 
-                                android:visibility="invisible" />
-
-                            <EditText
-                                android:id="@+id/edt_item2"
-                                android:layout_width="wrap_content"
+                            <TextView
+                                android:id="@+id/txt_noninfec"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                android:inputType="numberDecimal"
+                                android:textAlignment="center"
+                                android:inputType="number"
                                 android:text="0"
                                 android:textColor="@color/colorTextView"
                                 android:textColorHint="@color/colorAccent"
@@ -259,18 +239,13 @@
                                 android:textStyle="normal|italic"
                                 android:visibility="visible" />
 
-                            <Button
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:background="@drawable/ic_plus3"
-
-                                android:visibility="invisible"/>
                         </LinearLayout>
 
                         <TextView
-                            android:id="@+id/txt_items2"
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="15dp"
                             android:layout_marginRight="10dp"
@@ -291,7 +266,7 @@
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="15dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
                             android:hint=""
                             android:textColor="#0000ff"
@@ -314,12 +289,12 @@
                                 android:visibility="invisible" />
 
                             <EditText
-                                android:id="@+id/edt_item22"
+                                android:id="@+id/edt_noninfec"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
-                                android:inputType="numberDecimal"
+                                android:inputType="number"
                                 android:text="0"
                                 android:textColor="@color/colorTextView"
                                 android:textColorHint="@color/colorAccent"
@@ -357,9 +332,9 @@
                         <TextView
                             android:id="@+id/txt_item3"
                             android:layout_width="150dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="15dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
                             android:hint="Sharps"
                             android:textColor="#0000ff"
@@ -368,26 +343,19 @@
 
                         <LinearLayout
                             android:id="@+id/btn_edt_item3"
-                            android:layout_width="wrap_content"
+                            android:layout_width="80dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:orientation="horizontal">
 
-                            <Button
 
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:background="@drawable/ic_minus3"
 
-                                android:visibility="invisible" />
-
-                            <EditText
+                            <TextView
                                 android:id="@+id/edt_item3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
                                 android:inputType="numberDecimal"
+                                android:textAlignment="center"
                                 android:text="0"
                                 android:textColor="@color/colorTextView"
                                 android:textColorHint="@color/colorAccent"
@@ -395,12 +363,7 @@
                                 android:textStyle="normal|italic"
                                 android:visibility="visible" />
 
-                            <Button
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:background="@drawable/ic_plus3"
 
-                                android:visibility="invisible"/>
                         </LinearLayout>
 
                         <TextView
@@ -450,7 +413,7 @@
                                 android:visibility="invisible" />
 
                             <EditText
-                                android:id="@+id/edt_item32"
+                                android:id="@+id/edt_sharp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
@@ -469,7 +432,6 @@
                                 android:background="@drawable/ic_plus3"
                                 android:onClick="SharpIncrement2" />
                         </LinearLayout>
-
                         <TextView
                             android:id="@+id/txt_items32"
                             android:layout_width="wrap_content"
@@ -481,6 +443,7 @@
                             android:textColor="#0000ff"
                             android:textSize="20dp"
                             android:textStyle="normal|bold" />
+
                     </LinearLayout>
 
                 </RelativeLayout>
@@ -501,6 +464,8 @@
                     android:background="@color/colotBackgroundHospital"
                     android:text="Drop"
                     android:textColor="#fff" />
+
+
             </android.support.v7.widget.CardView>
 
         </RelativeLayout>
