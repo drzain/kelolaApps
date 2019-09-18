@@ -23,7 +23,7 @@ import android.widget.TextView;
 
 public class FragmentAccount extends Fragment
 {
-    private CardView btn_logout;
+    private Button btn_logout;
     private SessionManager session;
     public View onCreateView( LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState)
     {
@@ -31,8 +31,9 @@ public class FragmentAccount extends Fragment
         TextView nama_dashboard =(TextView) view.findViewById(R.id.textAccount);
         session = new SessionManager(getActivity().getApplicationContext());
         String nama = session.isNama();
+        nama_dashboard.setText(nama);
 
-        btn_logout = (CardView) view.findViewById(R.id.logout_admin);
+        btn_logout = (Button) view.findViewById(R.id.logout_admin);
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
