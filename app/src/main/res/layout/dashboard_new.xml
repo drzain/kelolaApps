@@ -71,7 +71,7 @@
                                 android:id="@+id/fitur"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@color/startblue">
+                                android:background="#4bb6ef">
 
                                 <TextView
                                     fontPath="fonts/Poppins-SemiBold.otf"
